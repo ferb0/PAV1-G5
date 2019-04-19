@@ -1,0 +1,11 @@
+Z:\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.exe.config
+Z:\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.exe
+Z:\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.pdb
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csprojAssemblyReference.cache
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.MaxiKiosko.resources
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.Sesion.resources
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Properties.Resources.resources
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.GenerateResource.cache
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.CoreCompileInputs.cache
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.exe
+Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.pdb
