@@ -35,6 +35,8 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.panel_clientes = new System.Windows.Forms.Panel();
+            this.button_clientecancelar = new System.Windows.Forms.Button();
+            this.button_clienteguardar = new System.Windows.Forms.Button();
             this.textBox_idcuentacorrienet = new System.Windows.Forms.TextBox();
             this.textBox_emailcliente = new System.Windows.Forms.TextBox();
             this.textBox_telefonocliente = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.label_apellidocliente = new System.Windows.Forms.Label();
             this.label_idcliente = new System.Windows.Forms.Label();
             this.label_nuevocliente = new System.Windows.Forms.Label();
-            this.button_clienteguardar = new System.Windows.Forms.Button();
-            this.button_clientecancelar = new System.Windows.Forms.Button();
             this.menuMaxiKiosko.SuspendLayout();
             this.panel_clientes.SuspendLayout();
             this.SuspendLayout();
@@ -77,14 +77,14 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // productosToolStripMenuItem
@@ -126,6 +126,25 @@
             this.panel_clientes.Size = new System.Drawing.Size(800, 426);
             this.panel_clientes.TabIndex = 2;
             this.panel_clientes.Visible = false;
+            // 
+            // button_clientecancelar
+            // 
+            this.button_clientecancelar.Location = new System.Drawing.Point(264, 302);
+            this.button_clientecancelar.Name = "button_clientecancelar";
+            this.button_clientecancelar.Size = new System.Drawing.Size(75, 23);
+            this.button_clientecancelar.TabIndex = 14;
+            this.button_clientecancelar.Text = "Cancelar";
+            this.button_clientecancelar.UseVisualStyleBackColor = true;
+            // 
+            // button_clienteguardar
+            // 
+            this.button_clienteguardar.Location = new System.Drawing.Point(157, 302);
+            this.button_clienteguardar.Name = "button_clienteguardar";
+            this.button_clienteguardar.Size = new System.Drawing.Size(75, 23);
+            this.button_clienteguardar.TabIndex = 13;
+            this.button_clienteguardar.Text = "Guardar";
+            this.button_clienteguardar.UseVisualStyleBackColor = true;
+            this.button_clienteguardar.Click += new System.EventHandler(this.button_clienteguardar_Click);
             // 
             // textBox_idcuentacorrienet
             // 
@@ -233,24 +252,6 @@
             this.label_nuevocliente.Size = new System.Drawing.Size(74, 13);
             this.label_nuevocliente.TabIndex = 0;
             this.label_nuevocliente.Text = "Nuevo Cliente";
-            // 
-            // button_clienteguardar
-            // 
-            this.button_clienteguardar.Location = new System.Drawing.Point(157, 302);
-            this.button_clienteguardar.Name = "button_clienteguardar";
-            this.button_clienteguardar.Size = new System.Drawing.Size(75, 23);
-            this.button_clienteguardar.TabIndex = 13;
-            this.button_clienteguardar.Text = "Guardar";
-            this.button_clienteguardar.UseVisualStyleBackColor = true;
-            // 
-            // button_clientecancelar
-            // 
-            this.button_clientecancelar.Location = new System.Drawing.Point(264, 302);
-            this.button_clientecancelar.Name = "button_clientecancelar";
-            this.button_clientecancelar.Size = new System.Drawing.Size(75, 23);
-            this.button_clientecancelar.TabIndex = 14;
-            this.button_clientecancelar.Text = "Cancelar";
-            this.button_clientecancelar.UseVisualStyleBackColor = true;
             // 
             // MaxiKiosko
             // 

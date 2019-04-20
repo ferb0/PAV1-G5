@@ -29,5 +29,41 @@ namespace MaxiKiosko
         {
             panel_clientes.Visible = true;
         }
+
+        private void button_clienteguardar_Click(object sender, EventArgs e)
+        {
+            if ( this.textBox_apellidocliente.Text == "" )
+            {
+                MessageBox.Show("Apellido no ingresado.");
+                this.textBox_apellidocliente.Focus();
+                return;
+            }
+
+            if (this.textBox_nombrecliente.Text == "")
+            {
+                MessageBox.Show("Nombre no ingresado.");
+                this.textBox_nombrecliente.Focus();
+                return;
+            }
+
+            if (this.textBox_telefonocliente.Text == "")
+            {
+                MessageBox.Show("Teléfono no ingresado.");
+                this.textBox_telefonocliente.Focus();
+                return;
+            }
+
+            Conexion nueva_conexion = new Conexion();
+            nueva_conexion.abrirConexion();
+
+            Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_telefonocliente.Text);
+
+            if ( nuevo_cliente.agregarCliente(nueva_conexion) > 0 )
+            {
+                MessageBox.Show("Cliente guardado.");
+            }
+
+            nueva_conexion.cerrarConexion();
+        }
     }
 }
