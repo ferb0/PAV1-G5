@@ -13,7 +13,7 @@ namespace MaxiKiosko
 
         public Conexion()
         {
-            conexion = new MySqlConnection("Server = localhost; Port = 3306; Database = mxikiosko; Uid = root; Pwd = ContraseñaMySQL;");
+            conexion = new MySqlConnection("Server = localhost; Port = 3306; Database = mxikiosko; Uid = root; Pwd = PasswordMySQL;");
         }
 
         public void abrirConexion()
