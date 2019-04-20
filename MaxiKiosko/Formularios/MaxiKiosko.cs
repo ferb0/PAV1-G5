@@ -56,7 +56,7 @@ namespace MaxiKiosko
             Conexion nueva_conexion = new Conexion();
             nueva_conexion.abrirConexion();
 
-            Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_telefonocliente.Text);
+            Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_emailcliente.Text);
 
             if ( nuevo_cliente.agregarCliente(nueva_conexion) > 0 )
             {
@@ -64,6 +64,16 @@ namespace MaxiKiosko
             }
 
             nueva_conexion.cerrarConexion();
+
+            this.textBox_apellidocliente.Clear();
+            this.textBox_nombrecliente.Clear();
+            this.textBox_telefonocliente.Clear();
+            this.textBox_emailcliente.Clear();
+        }
+
+        private void button_clientecancelar_Click(object sender, EventArgs e)
+        {
+            panel_clientes.Visible = false;
         }
     }
 }

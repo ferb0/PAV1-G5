@@ -37,18 +37,14 @@
             this.panel_clientes = new System.Windows.Forms.Panel();
             this.button_clientecancelar = new System.Windows.Forms.Button();
             this.button_clienteguardar = new System.Windows.Forms.Button();
-            this.textBox_idcuentacorrienet = new System.Windows.Forms.TextBox();
             this.textBox_emailcliente = new System.Windows.Forms.TextBox();
             this.textBox_telefonocliente = new System.Windows.Forms.TextBox();
             this.textBox_nombrecliente = new System.Windows.Forms.TextBox();
             this.textBox_apellidocliente = new System.Windows.Forms.TextBox();
-            this.textBox_idcliente = new System.Windows.Forms.TextBox();
-            this.label_idcuentacorriente = new System.Windows.Forms.Label();
             this.label_emailcliente = new System.Windows.Forms.Label();
             this.label_telefonocliente = new System.Windows.Forms.Label();
             this.label_nombrecliente = new System.Windows.Forms.Label();
             this.label_apellidocliente = new System.Windows.Forms.Label();
-            this.label_idcliente = new System.Windows.Forms.Label();
             this.label_nuevocliente = new System.Windows.Forms.Label();
             this.menuMaxiKiosko.SuspendLayout();
             this.panel_clientes.SuspendLayout();
@@ -61,7 +57,7 @@
             this.productosToolStripMenuItem});
             this.menuMaxiKiosko.Location = new System.Drawing.Point(0, 0);
             this.menuMaxiKiosko.Name = "menuMaxiKiosko";
-            this.menuMaxiKiosko.Size = new System.Drawing.Size(800, 24);
+            this.menuMaxiKiosko.Size = new System.Drawing.Size(513, 24);
             this.menuMaxiKiosko.TabIndex = 0;
             this.menuMaxiKiosko.Text = "menuStrip1";
             // 
@@ -98,7 +94,7 @@
             this.label_maxikiosko.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_maxikiosko.Location = new System.Drawing.Point(0, 24);
             this.label_maxikiosko.Name = "label_maxikiosko";
-            this.label_maxikiosko.Size = new System.Drawing.Size(800, 426);
+            this.label_maxikiosko.Size = new System.Drawing.Size(513, 423);
             this.label_maxikiosko.TabIndex = 1;
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,23 +103,19 @@
             // 
             this.panel_clientes.Controls.Add(this.button_clientecancelar);
             this.panel_clientes.Controls.Add(this.button_clienteguardar);
-            this.panel_clientes.Controls.Add(this.textBox_idcuentacorrienet);
             this.panel_clientes.Controls.Add(this.textBox_emailcliente);
             this.panel_clientes.Controls.Add(this.textBox_telefonocliente);
             this.panel_clientes.Controls.Add(this.textBox_nombrecliente);
             this.panel_clientes.Controls.Add(this.textBox_apellidocliente);
-            this.panel_clientes.Controls.Add(this.textBox_idcliente);
-            this.panel_clientes.Controls.Add(this.label_idcuentacorriente);
             this.panel_clientes.Controls.Add(this.label_emailcliente);
             this.panel_clientes.Controls.Add(this.label_telefonocliente);
             this.panel_clientes.Controls.Add(this.label_nombrecliente);
             this.panel_clientes.Controls.Add(this.label_apellidocliente);
-            this.panel_clientes.Controls.Add(this.label_idcliente);
             this.panel_clientes.Controls.Add(this.label_nuevocliente);
             this.panel_clientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_clientes.Location = new System.Drawing.Point(0, 24);
             this.panel_clientes.Name = "panel_clientes";
-            this.panel_clientes.Size = new System.Drawing.Size(800, 426);
+            this.panel_clientes.Size = new System.Drawing.Size(513, 423);
             this.panel_clientes.TabIndex = 2;
             this.panel_clientes.Visible = false;
             // 
@@ -135,6 +127,7 @@
             this.button_clientecancelar.TabIndex = 14;
             this.button_clientecancelar.Text = "Cancelar";
             this.button_clientecancelar.UseVisualStyleBackColor = true;
+            this.button_clientecancelar.Click += new System.EventHandler(this.button_clientecancelar_Click);
             // 
             // button_clienteguardar
             // 
@@ -145,14 +138,6 @@
             this.button_clienteguardar.Text = "Guardar";
             this.button_clienteguardar.UseVisualStyleBackColor = true;
             this.button_clienteguardar.Click += new System.EventHandler(this.button_clienteguardar_Click);
-            // 
-            // textBox_idcuentacorrienet
-            // 
-            this.textBox_idcuentacorrienet.Enabled = false;
-            this.textBox_idcuentacorrienet.Location = new System.Drawing.Point(200, 250);
-            this.textBox_idcuentacorrienet.Name = "textBox_idcuentacorrienet";
-            this.textBox_idcuentacorrienet.Size = new System.Drawing.Size(100, 20);
-            this.textBox_idcuentacorrienet.TabIndex = 12;
             // 
             // textBox_emailcliente
             // 
@@ -181,23 +166,6 @@
             this.textBox_apellidocliente.Name = "textBox_apellidocliente";
             this.textBox_apellidocliente.Size = new System.Drawing.Size(100, 20);
             this.textBox_apellidocliente.TabIndex = 8;
-            // 
-            // textBox_idcliente
-            // 
-            this.textBox_idcliente.Enabled = false;
-            this.textBox_idcliente.Location = new System.Drawing.Point(200, 61);
-            this.textBox_idcliente.Name = "textBox_idcliente";
-            this.textBox_idcliente.Size = new System.Drawing.Size(100, 20);
-            this.textBox_idcliente.TabIndex = 7;
-            // 
-            // label_idcuentacorriente
-            // 
-            this.label_idcuentacorriente.AutoSize = true;
-            this.label_idcuentacorriente.Location = new System.Drawing.Point(80, 257);
-            this.label_idcuentacorriente.Name = "label_idcuentacorriente";
-            this.label_idcuentacorriente.Size = new System.Drawing.Size(94, 13);
-            this.label_idcuentacorriente.TabIndex = 6;
-            this.label_idcuentacorriente.Text = "ID Cuenta Corriete";
             // 
             // label_emailcliente
             // 
@@ -235,15 +203,6 @@
             this.label_apellidocliente.TabIndex = 2;
             this.label_apellidocliente.Text = "Apellido";
             // 
-            // label_idcliente
-            // 
-            this.label_idcliente.AutoSize = true;
-            this.label_idcliente.Location = new System.Drawing.Point(121, 64);
-            this.label_idcliente.Name = "label_idcliente";
-            this.label_idcliente.Size = new System.Drawing.Size(53, 13);
-            this.label_idcliente.TabIndex = 1;
-            this.label_idcliente.Text = "ID Cliente";
-            // 
             // label_nuevocliente
             // 
             this.label_nuevocliente.AutoSize = true;
@@ -257,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(513, 447);
             this.Controls.Add(this.panel_clientes);
             this.Controls.Add(this.label_maxikiosko);
             this.Controls.Add(this.menuMaxiKiosko);
@@ -284,18 +243,14 @@
         private System.Windows.Forms.Label label_nuevocliente;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox_idcuentacorrienet;
         private System.Windows.Forms.TextBox textBox_emailcliente;
         private System.Windows.Forms.TextBox textBox_telefonocliente;
         private System.Windows.Forms.TextBox textBox_nombrecliente;
         private System.Windows.Forms.TextBox textBox_apellidocliente;
-        private System.Windows.Forms.TextBox textBox_idcliente;
-        private System.Windows.Forms.Label label_idcuentacorriente;
         private System.Windows.Forms.Label label_emailcliente;
         private System.Windows.Forms.Label label_telefonocliente;
         private System.Windows.Forms.Label label_nombrecliente;
         private System.Windows.Forms.Label label_apellidocliente;
-        private System.Windows.Forms.Label label_idcliente;
         private System.Windows.Forms.Button button_clientecancelar;
         private System.Windows.Forms.Button button_clienteguardar;
     }
