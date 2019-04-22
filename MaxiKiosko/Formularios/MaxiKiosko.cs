@@ -27,7 +27,8 @@ namespace MaxiKiosko
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel_clientes.Visible = true;
+            panel_clienteconsultar.Visible = false;
+            panel_clientenuevo.Visible = true;
         }
 
         private void button_clienteguardar_Click(object sender, EventArgs e)
@@ -73,7 +74,40 @@ namespace MaxiKiosko
 
         private void button_clientecancelar_Click(object sender, EventArgs e)
         {
-            panel_clientes.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = true;
+        }
+
+        private void button_consultarcliente_Click(object sender, EventArgs e)
+        {
+            if ( this.textBox_consultarcliente.Text == "")
+            {
+                MessageBox.Show("No ha ingresado ningún dato.");
+                this.textBox_consultarcliente.Focus();
+            }
+
+            // Hacer consulta en base da datos formato datos y mostar en listbox.
+
+        }
+
+        private void listBox_consultacliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = true;
+        }
+
+        private void button_clienteconsultadocancelar_Click(object sender, EventArgs e)
+        {
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
         }
     }
 }
