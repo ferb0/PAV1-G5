@@ -57,17 +57,10 @@ namespace MaxiKiosko
                 return;
             }
 
-            Conexion nueva_conexion = new Conexion();
-            nueva_conexion.abrirConexion();
-
             Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_emailcliente.Text);
 
-            if ( nuevo_cliente.agregarCliente(nueva_conexion) > 0 )
-            {
-                MessageBox.Show("Cliente guardado.");
-            }
-
-            nueva_conexion.cerrarConexion();
+            nuevo_cliente.agregarCliente();
+            MessageBox.Show("Cliente Guardado con exito");
 
             this.textBox_apellidocliente.Clear();
             this.textBox_nombrecliente.Clear();
@@ -99,9 +92,13 @@ namespace MaxiKiosko
             {
                 MessageBox.Show("No ha ingresado ningún dato.");
                 this.textBox_consultarcliente.Focus();
+                return;
             }
 
-            // Hacer consulta en base da datos formato datos y mostar en listbox.
+            Conexion nueva_conexion = new Conexion();
+            nueva_conexion.abrirConexion();
+            Cliente cliente = new Cliente();
+            cliente.consultarCliente();
 
         }
 

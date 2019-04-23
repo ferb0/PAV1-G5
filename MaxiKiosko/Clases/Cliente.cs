@@ -9,6 +9,7 @@ namespace MaxiKiosko
 {
     class Cliente
     {
+        Conexion _BD = new Conexion();
 
         public int id_usuario { get; set; }
         public string apellido { get; set; }
@@ -24,12 +25,22 @@ namespace MaxiKiosko
             this.email = pemail;
         }
 
-        public int agregarCliente( Conexion nueva_conexion )
+        public int agregarCliente( Cliente cliente )
         {
-            int retorno = 0;
-            MySqlCommand comando = new MySqlCommand( String.Format( "INSERT INTO cliente (apellido, nombre, telefono, email) VALUES ('{0}', '{1}', '{2}', '{3}')", apellido, nombre, telefono, email), nueva_conexion.conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
+            string SqlInsert = "";
+            SqlInsert = @" INSERT INTO cliente
+                         (apellido, nombre, telefono, email) VALUES ('" +
+                            this.apellido + "', '" +
+                            this.nombre + "', '" +
+                            this.telefono + "', '" +
+                            this.email +
+                             "')";
+            MesssageBox.Show(SqlInsert);
+            this.conexion.grabar_modificar(SqlInsert);
+        }
+
+        public DataTable consultarCliente(string nombreOApellido) {
+            return this.conexion.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%' OR apellido LIKE '%{1}%'", nombreOApellido, nombreOApellido));
         }
     }
 }
