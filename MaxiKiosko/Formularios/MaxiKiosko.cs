@@ -27,6 +27,9 @@ namespace MaxiKiosko
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
             panel_clienteconsultar.Visible = false;
             panel_clientenuevo.Visible = true;
         }
@@ -74,12 +77,18 @@ namespace MaxiKiosko
 
         private void button_clientecancelar_Click(object sender, EventArgs e)
         {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
             panel_clientenuevo.Visible = false;
             panel_clienteconsultar.Visible = false;
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
             panel_clientenuevo.Visible = false;
             panel_clienteconsultar.Visible = true;
         }
@@ -98,6 +107,9 @@ namespace MaxiKiosko
 
         private void listBox_consultacliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
             panel_clientenuevo.Visible = false;
             panel_clienteconsultar.Visible = false;
             panel_clienteconsultado.Visible = true;
@@ -105,9 +117,63 @@ namespace MaxiKiosko
 
         private void button_clienteconsultadocancelar_Click(object sender, EventArgs e)
         {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
             panel_clientenuevo.Visible = false;
             panel_clienteconsultar.Visible = false;
             panel_clienteconsultado.Visible = false;
+        }
+
+        private void button_productonuevocancelar_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+            panel_productonuevo.Visible = false;
+        }
+
+        private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+            panel_productonuevo.Visible = true;
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+            panel_productonuevo.Visible = false;
+            panel_productoconsultar.Visible = true;
+        }
+
+        private void button_productoconsultadocancelar_Click(object sender, EventArgs e)
+        {
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+            panel_productonuevo.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productoconsultado.Visible = false;
+        }
+
+        private void button_productoconsultar_Click(object sender, EventArgs e)
+        {
+            if (this.textBox_productoconsultar.Text == "")
+            {
+                MessageBox.Show("No ha ingresado ningún dato.");
+                this.textBox_productoconsultar.Focus();
+            }
+
+            // Hacer consulta en base da datos formato datos y mostar en listbox.
         }
     }
 }

@@ -13,3 +13,17 @@ Z:\PAV1-G5\MaxiKiosko\bin\Debug\MySql.Data.dll
 Z:\PAV1-G5\MaxiKiosko\bin\Debug\Google.Protobuf.dll
 Z:\PAV1-G5\MaxiKiosko\bin\Debug\MySql.Data.xml
 Z:\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.CopyComplete
+D:\0Descargas\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.exe.config
+D:\0Descargas\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.exe
+D:\0Descargas\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko.pdb
+D:\0Descargas\PAV1-G5\MaxiKiosko\bin\Debug\Google.Protobuf.dll
+D:\0Descargas\PAV1-G5\MaxiKiosko\bin\Debug\MySql.Data.xml
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csprojAssemblyReference.cache
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.MaxiKiosko.resources
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.Sesion.resources
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Properties.Resources.resources
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.GenerateResource.cache
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.CoreCompileInputs.cache
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.CopyComplete
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.exe
+D:\0Descargas\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.pdb
