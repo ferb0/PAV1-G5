@@ -33,6 +33,8 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.panel_clientenuevo = new System.Windows.Forms.Panel();
             this.button_clientecancelar = new System.Windows.Forms.Button();
@@ -64,9 +66,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_productonuevo = new System.Windows.Forms.Panel();
+            this.label_nuevoproducto = new System.Windows.Forms.Label();
             this.button_productonuevocancelar = new System.Windows.Forms.Button();
             this.button_productonuevoguardar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -77,8 +78,10 @@
             this.label_productonuevostock = new System.Windows.Forms.Label();
             this.label_productonuevoprecio = new System.Windows.Forms.Label();
             this.label_productonuevonombre = new System.Windows.Forms.Label();
-            this.label_nuevoproducto = new System.Windows.Forms.Label();
             this.panel_productoconsultado = new System.Windows.Forms.Panel();
+            this.button_productoconsultadocancelar = new System.Windows.Forms.Button();
+            this.button_productoconsultadoeliminar = new System.Windows.Forms.Button();
+            this.button_productoconsultadomodificar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_productoconsultadodescripcion = new System.Windows.Forms.TextBox();
             this.textBox_productoconsultadostock = new System.Windows.Forms.TextBox();
@@ -94,9 +97,6 @@
             this.button_productoconsultar = new System.Windows.Forms.Button();
             this.textBox_productoconsultar = new System.Windows.Forms.TextBox();
             this.label_consultarproducto = new System.Windows.Forms.Label();
-            this.button_productoconsultadocancelar = new System.Windows.Forms.Button();
-            this.button_productoconsultadoeliminar = new System.Windows.Forms.Button();
-            this.button_productoconsultadomodificar = new System.Windows.Forms.Button();
             this.menuMaxiKiosko.SuspendLayout();
             this.panel_clientenuevo.SuspendLayout();
             this.panel_clienteconsultar.SuspendLayout();
@@ -129,14 +129,14 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -148,6 +148,20 @@
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
+            // 
+            // nuevoToolStripMenuItem1
+            // 
+            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
+            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.nuevoToolStripMenuItem1.Text = "Nuevo";
+            this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // label_maxikiosko
             // 
@@ -442,20 +456,6 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Apellido";
             // 
-            // nuevoToolStripMenuItem1
-            // 
-            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.nuevoToolStripMenuItem1.Text = "Nuevo";
-            this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
-            // 
-            // consultarToolStripMenuItem1
-            // 
-            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem1.Text = "Consultar";
-            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
-            // 
             // panel_productonuevo
             // 
             this.panel_productonuevo.Controls.Add(this.label_nuevoproducto);
@@ -475,6 +475,15 @@
             this.panel_productonuevo.Size = new System.Drawing.Size(513, 423);
             this.panel_productonuevo.TabIndex = 26;
             this.panel_productonuevo.Visible = false;
+            // 
+            // label_nuevoproducto
+            // 
+            this.label_nuevoproducto.AutoSize = true;
+            this.label_nuevoproducto.Location = new System.Drawing.Point(0, 404);
+            this.label_nuevoproducto.Name = "label_nuevoproducto";
+            this.label_nuevoproducto.Size = new System.Drawing.Size(85, 13);
+            this.label_nuevoproducto.TabIndex = 25;
+            this.label_nuevoproducto.Text = "Nuevo Producto";
             // 
             // button_productonuevocancelar
             // 
@@ -559,15 +568,6 @@
             this.label_productonuevonombre.TabIndex = 15;
             this.label_productonuevonombre.Text = "Nombre";
             // 
-            // label_nuevoproducto
-            // 
-            this.label_nuevoproducto.AutoSize = true;
-            this.label_nuevoproducto.Location = new System.Drawing.Point(0, 404);
-            this.label_nuevoproducto.Name = "label_nuevoproducto";
-            this.label_nuevoproducto.Size = new System.Drawing.Size(85, 13);
-            this.label_nuevoproducto.TabIndex = 25;
-            this.label_nuevoproducto.Text = "Nuevo Producto";
-            // 
             // panel_productoconsultado
             // 
             this.panel_productoconsultado.Controls.Add(this.button_productoconsultadocancelar);
@@ -588,6 +588,34 @@
             this.panel_productoconsultado.Size = new System.Drawing.Size(513, 423);
             this.panel_productoconsultado.TabIndex = 27;
             this.panel_productoconsultado.Visible = false;
+            // 
+            // button_productoconsultadocancelar
+            // 
+            this.button_productoconsultadocancelar.Location = new System.Drawing.Point(306, 254);
+            this.button_productoconsultadocancelar.Name = "button_productoconsultadocancelar";
+            this.button_productoconsultadocancelar.Size = new System.Drawing.Size(75, 23);
+            this.button_productoconsultadocancelar.TabIndex = 28;
+            this.button_productoconsultadocancelar.Text = "Cancelar";
+            this.button_productoconsultadocancelar.UseVisualStyleBackColor = true;
+            this.button_productoconsultadocancelar.Click += new System.EventHandler(this.button_productoconsultadocancelar_Click);
+            // 
+            // button_productoconsultadoeliminar
+            // 
+            this.button_productoconsultadoeliminar.Location = new System.Drawing.Point(209, 254);
+            this.button_productoconsultadoeliminar.Name = "button_productoconsultadoeliminar";
+            this.button_productoconsultadoeliminar.Size = new System.Drawing.Size(75, 23);
+            this.button_productoconsultadoeliminar.TabIndex = 27;
+            this.button_productoconsultadoeliminar.Text = "Eliminar";
+            this.button_productoconsultadoeliminar.UseVisualStyleBackColor = true;
+            // 
+            // button_productoconsultadomodificar
+            // 
+            this.button_productoconsultadomodificar.Location = new System.Drawing.Point(117, 254);
+            this.button_productoconsultadomodificar.Name = "button_productoconsultadomodificar";
+            this.button_productoconsultadomodificar.Size = new System.Drawing.Size(75, 23);
+            this.button_productoconsultadomodificar.TabIndex = 26;
+            this.button_productoconsultadomodificar.Text = "Modificar";
+            this.button_productoconsultadomodificar.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -709,6 +737,7 @@
             this.textBox_productoconsultar.Name = "textBox_productoconsultar";
             this.textBox_productoconsultar.Size = new System.Drawing.Size(197, 20);
             this.textBox_productoconsultar.TabIndex = 1;
+            
             // 
             // label_consultarproducto
             // 
@@ -718,34 +747,6 @@
             this.label_consultarproducto.Size = new System.Drawing.Size(97, 13);
             this.label_consultarproducto.TabIndex = 0;
             this.label_consultarproducto.Text = "Consultar Producto";
-            // 
-            // button_productoconsultadocancelar
-            // 
-            this.button_productoconsultadocancelar.Location = new System.Drawing.Point(306, 254);
-            this.button_productoconsultadocancelar.Name = "button_productoconsultadocancelar";
-            this.button_productoconsultadocancelar.Size = new System.Drawing.Size(75, 23);
-            this.button_productoconsultadocancelar.TabIndex = 28;
-            this.button_productoconsultadocancelar.Text = "Cancelar";
-            this.button_productoconsultadocancelar.UseVisualStyleBackColor = true;
-            this.button_productoconsultadocancelar.Click += new System.EventHandler(this.button_productoconsultadocancelar_Click);
-            // 
-            // button_productoconsultadoeliminar
-            // 
-            this.button_productoconsultadoeliminar.Location = new System.Drawing.Point(209, 254);
-            this.button_productoconsultadoeliminar.Name = "button_productoconsultadoeliminar";
-            this.button_productoconsultadoeliminar.Size = new System.Drawing.Size(75, 23);
-            this.button_productoconsultadoeliminar.TabIndex = 27;
-            this.button_productoconsultadoeliminar.Text = "Eliminar";
-            this.button_productoconsultadoeliminar.UseVisualStyleBackColor = true;
-            // 
-            // button_productoconsultadomodificar
-            // 
-            this.button_productoconsultadomodificar.Location = new System.Drawing.Point(117, 254);
-            this.button_productoconsultadomodificar.Name = "button_productoconsultadomodificar";
-            this.button_productoconsultadomodificar.Size = new System.Drawing.Size(75, 23);
-            this.button_productoconsultadomodificar.TabIndex = 26;
-            this.button_productoconsultadomodificar.Text = "Modificar";
-            this.button_productoconsultadomodificar.UseVisualStyleBackColor = true;
             // 
             // MaxiKiosko
             // 

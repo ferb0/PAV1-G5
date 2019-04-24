@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using System.Data;
 
 namespace MaxiKiosko
 {
@@ -25,7 +27,7 @@ namespace MaxiKiosko
             this.email = pemail;
         }
 
-        public int agregarCliente( Cliente cliente )
+        public void agregarCliente(  )
         {
             string SqlInsert = "";
             SqlInsert = @" INSERT INTO cliente
@@ -35,12 +37,12 @@ namespace MaxiKiosko
                             this.telefono + "', '" +
                             this.email +
                              "')";
-            MesssageBox.Show(SqlInsert);
-            this.conexion.grabar_modificar(SqlInsert);
+            MessageBox.Show(SqlInsert);
+            this._BD.grabar_modificar(SqlInsert);
         }
 
         public DataTable consultarCliente(string nombreOApellido) {
-            return this.conexion.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%' OR apellido LIKE '%{1}%'", nombreOApellido, nombreOApellido));
+            return this._BD.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%' OR apellido LIKE '%{1}%'", nombreOApellido, nombreOApellido));
         }
     }
 }

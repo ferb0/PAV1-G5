@@ -22,7 +22,7 @@ namespace MaxiKiosko
         {
             // Sesion frm_sesion = new Sesion();
             // frm_sesion.ShowDialog();
-            
+
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace MaxiKiosko
 
         private void button_clienteguardar_Click(object sender, EventArgs e)
         {
-            if ( this.textBox_apellidocliente.Text == "" )
+            if (this.textBox_apellidocliente.Text == "")
             {
                 MessageBox.Show("Apellido no ingresado.");
                 this.textBox_apellidocliente.Focus();
@@ -58,6 +58,7 @@ namespace MaxiKiosko
             }
 
             Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_emailcliente.Text);
+
 
             nuevo_cliente.agregarCliente();
             MessageBox.Show("Cliente Guardado con exito");
@@ -88,17 +89,13 @@ namespace MaxiKiosko
 
         private void button_consultarcliente_Click(object sender, EventArgs e)
         {
-            if ( this.textBox_consultarcliente.Text == "")
+            if (this.textBox_consultarcliente.Text == "")
             {
                 MessageBox.Show("No ha ingresado ningún dato.");
                 this.textBox_consultarcliente.Focus();
                 return;
             }
 
-            Conexion nueva_conexion = new Conexion();
-            nueva_conexion.abrirConexion();
-            Cliente cliente = new Cliente();
-            cliente.consultarCliente();
 
         }
 
@@ -172,5 +169,7 @@ namespace MaxiKiosko
 
             // Hacer consulta en base da datos formato datos y mostar en listbox.
         }
+
+
     }
 }

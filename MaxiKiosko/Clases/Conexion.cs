@@ -11,20 +11,18 @@ namespace MaxiKiosko
 {
     class Conexion
     {
-        OleDbConnection conexion = new OleDbConnection();
-        OleDbCommand cmd = new OleDbCommand();
-        string cadena_conexion = "Server = localhost; Port = 3306; Database = maxikiosko; Uid = username; Pwd = password;"
-        public MySqlConnection conexion { get; set; }
+        MySqlCommand cmd = new MySqlCommand();
+        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=maxikiosco;persistsecurityinfo=True; password=damian;");
+        
 
-        public void abrirConexion()
+        public void conectar()
         {
-            conexion.ConnectionString = cadena_conexion;
             conexion.Open();
             cmd.Connection = conexion;
             cmd.CommandType = CommandType.Text;
         }
 
-        public void cerrarConexion()
+        public void cerrar()
         {
             conexion.Close();
         }
@@ -33,7 +31,7 @@ namespace MaxiKiosko
             conectar();
             cmd.CommandText = comando;
             DataTable tabla = new DataTable();
-            tabla.load(cmd.ExecuterReader());
+            tabla.Load(cmd.ExecuteReader());
             cerrar();
             return tabla;
         }
