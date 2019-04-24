@@ -96,7 +96,13 @@ namespace MaxiKiosko
                 return;
             }
 
+            Cliente clie = new Cliente();
 
+            DataTable tabla = clie.consultarCliente(this.textBox_consultarcliente.Text);
+            this.listBox_consultacliente.DataSource = tabla;
+            this.listBox_consultacliente.DisplayMember = "nombre";
+            this.listBox_consultacliente.ValueMember = "idCliente";
+            
         }
 
         private void listBox_consultacliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,6 +176,9 @@ namespace MaxiKiosko
             // Hacer consulta en base da datos formato datos y mostar en listbox.
         }
 
+        private void listBox_productoconsultar_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

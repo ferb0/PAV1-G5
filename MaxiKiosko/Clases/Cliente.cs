@@ -26,6 +26,10 @@ namespace MaxiKiosko
             this.telefono = ptelefono;
             this.email = pemail;
         }
+        public Cliente()
+        {
+           
+        }
 
         public void agregarCliente(  )
         {

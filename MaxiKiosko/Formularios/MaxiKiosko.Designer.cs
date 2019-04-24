@@ -711,6 +711,7 @@
             this.listBox_productoconsultar.Name = "listBox_productoconsultar";
             this.listBox_productoconsultar.Size = new System.Drawing.Size(197, 147);
             this.listBox_productoconsultar.TabIndex = 4;
+            this.listBox_productoconsultar.SelectedIndexChanged += new System.EventHandler(this.listBox_productoconsultar_SelectedIndexChanged);
             // 
             // label_productoconsultardescripcion
             // 
@@ -737,7 +738,6 @@
             this.textBox_productoconsultar.Name = "textBox_productoconsultar";
             this.textBox_productoconsultar.Size = new System.Drawing.Size(197, 20);
             this.textBox_productoconsultar.TabIndex = 1;
-            
             // 
             // label_consultarproducto
             // 
