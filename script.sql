@@ -18,7 +18,7 @@
 --
 -- Table structure for table `cliente`
 --
-
+DROP TABLE IF EXISTS `producto`;
 DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -30,13 +30,27 @@ CREATE TABLE `cliente` (
   `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+/*!40101 SET @saved_cs_product    = @@character_set_product */;
+ SET character_set_product = utf8mb4 ;
+CREATE TABLE `producto` (
+  `idProducto` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) NOT NULL,
+  `precio` varchar(45) NOT NULL,
+  `stock` varchar(45) NOT NULL,
+  `tipo_medida` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idProducto`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*!40101 SET character_set_product = @saved_cs_product */;
 
 --
 -- Dumping data for table `cliente`
 --
 
 LOCK TABLES `cliente` WRITE;
+LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
