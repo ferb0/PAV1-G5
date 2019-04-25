@@ -49,25 +49,43 @@
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Conexion.cs" />
-    <Compile Include="Formularios\MaxiKiosko.cs">
+    <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\MaxiKiosko.Designer.cs">
-      <DependentUpon>MaxiKiosko.cs</DependentUpon>
+    <Compile Include="Formularios\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Sesion.cs">
+    <Compile Include="Formularios\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Sesion.Designer.cs">
-      <DependentUpon>Sesion.cs</DependentUpon>
+    <Compile Include="Formularios\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMaxiKiosko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMaxiKiosko.Designer.cs">
+      <DependentUpon>frmMaxiKiosko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSesion.Designer.cs">
+      <DependentUpon>frmSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\MaxiKiosko.resx">
-      <DependentUpon>MaxiKiosko.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Sesion.resx">
-      <DependentUpon>Sesion.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMaxiKiosko.resx">
+      <DependentUpon>frmMaxiKiosko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSesion.resx">
+      <DependentUpon>frmSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

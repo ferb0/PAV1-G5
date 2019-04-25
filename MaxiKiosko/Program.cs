@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaxiKiosko.Formularios;
 
 namespace MaxiKiosko
 {
@@ -16,7 +17,8 @@ namespace MaxiKiosko
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MaxiKiosko());
+            Application.Run(new frmMaxiKiosko());
+            //Application.Run(new Sesion());
         }
     }
 }
