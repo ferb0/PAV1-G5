@@ -13,7 +13,7 @@ namespace MaxiKiosko
     {
         Conexion _BD = new Conexion();
 
-        public int id_usuario { get; set; }
+        public int idCliente { get; set; }
         public string apellido { get; set; }
         public string nombre { get; set; }
         public string telefono { get; set; }
@@ -26,6 +26,8 @@ namespace MaxiKiosko
             this.telefono = ptelefono;
             this.email = pemail;
         }
+
+
         public Cliente()
         {
            
@@ -33,20 +35,42 @@ namespace MaxiKiosko
 
         public void agregarCliente(  )
         {
-            string SqlInsert = "";
-            SqlInsert = @" INSERT INTO cliente
+            string SqlInsert = @" INSERT INTO cliente
                          (apellido, nombre, telefono, email) VALUES ('" +
                             this.apellido + "', '" +
                             this.nombre + "', '" +
                             this.telefono + "', '" +
                             this.email +
                              "')";
-            MessageBox.Show(SqlInsert);
             this._BD.grabar_modificar(SqlInsert);
         }
 
-        public DataTable consultarCliente(string nombreOApellido) {
-            return this._BD.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%' OR apellido LIKE '%{1}%'", nombreOApellido, nombreOApellido));
+        public void modificarCliente()
+        {
+            string SqlUpdate = @" Update cliente
+                               SET nombre = '" + this.nombre + "'," +
+                               "apellido = '" + this.apellido + "'," +
+                               "telefono = '" + this.telefono + "'," +
+                               "email = '" + this.email + "'" +
+                               " WHERE idCliente = " + this.idCliente;
+            this._BD.grabar_modificar(SqlUpdate);
+        } 
+
+        public DataTable consultarCliente(string subString) {
+            return this._BD.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%'" +
+                " OR apellido LIKE '%{0}%'" +
+                " OR telefono LIKE '%{0}%' " +
+                " OR email LIKE '%{0}%'", subString));
+        }
+
+        public DataTable buscarTodos()
+        {
+            return this._BD.consulta("SELECT * FROM cliente");
+        }
+
+        public void borrar(int idCliente)
+        {
+            this._BD.grabar_modificar("DELETE FROM cliente WHERE idCliente = " + idCliente);
         }
     }
 }

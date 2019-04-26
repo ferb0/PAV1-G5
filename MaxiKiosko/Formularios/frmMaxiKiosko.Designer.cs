@@ -66,7 +66,6 @@
             this.menuMaxiKiosko.Size = new System.Drawing.Size(513, 24);
             this.menuMaxiKiosko.TabIndex = 0;
             this.menuMaxiKiosko.Text = "menuStrip1";
-            //this.menuMaxiKiosko.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuMaxiKiosko_ItemClicked);
             // 
             // ventasToolStripMenuItem
             // 
