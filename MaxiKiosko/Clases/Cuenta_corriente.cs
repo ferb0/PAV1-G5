@@ -35,7 +35,7 @@ namespace MaxiKiosko
 
         public void agregarCuenta_corriente(  )
         {
-            string SqlInsert = @" INSERT INTO proveedor
+            string SqlInsert = @" INSERT INTO cuenta_corriente
                          (balance, limite_credito) VALUES ('" +
                             this.balance + "', '" +
                             this.limite_credito + 
@@ -45,7 +45,7 @@ namespace MaxiKiosko
 
         public void modificarCuenta_corriente()
         {
-            string SqlUpdate = @" Update proveedor
+            string SqlUpdate = @" Update cuenta_corriente
                                SET balance = '" + this.balance + "'," +
                                "limite_credito = '" + this.limite_credito + "'" +
                                " WHERE id_cuenta = " + this.id_cuenta;
@@ -53,7 +53,7 @@ namespace MaxiKiosko
         } 
 
         public DataTable consultarCuenta_corriente(string subString) {
-            return this._BD.consulta(String.Format ("SELECT * FROM proveedor WHERE id_cuenta LIKE '%{0}%'" +
+            return this._BD.consulta(String.Format ("SELECT * FROM cuenta_corriente WHERE id_cuenta LIKE '%{0}%'" +
                 " OR balance LIKE '%{0}%'" +
                 " OR limite_credito LIKE '%{0}%' ", subString));
         }
