@@ -42,11 +42,11 @@
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.data_grip_clientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel_formulario = new System.Windows.Forms.Panel();
+            this.cmdBorrar = new System.Windows.Forms.Button();
+            this.lb_subtitle = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
-            this.panel_formulario = new System.Windows.Forms.Panel();
-            this.lb_subtitle = new System.Windows.Forms.Label();
-            this.cmdBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_grip_clientes)).BeginInit();
             this.panel_formulario.SuspendLayout();
             this.SuspendLayout();
@@ -172,26 +172,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(249, 20);
             this.txtBuscar.TabIndex = 18;
             // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.cmdBuscar.Location = new System.Drawing.Point(352, 44);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(40, 40);
-            this.cmdBuscar.TabIndex = 19;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.CmdBuscar_Click);
-            // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.Image = global::MaxiKiosko.Properties.Resources.add_file;
-            this.cmdNuevo.Location = new System.Drawing.Point(398, 44);
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(40, 40);
-            this.cmdNuevo.TabIndex = 10;
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
-            // 
             // panel_formulario
             // 
             this.panel_formulario.Controls.Add(this.cmdBorrar);
@@ -212,16 +192,6 @@
             this.panel_formulario.Size = new System.Drawing.Size(430, 285);
             this.panel_formulario.TabIndex = 20;
             // 
-            // lb_subtitle
-            // 
-            this.lb_subtitle.AutoSize = true;
-            this.lb_subtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_subtitle.Location = new System.Drawing.Point(12, 11);
-            this.lb_subtitle.Name = "lb_subtitle";
-            this.lb_subtitle.Size = new System.Drawing.Size(57, 20);
-            this.lb_subtitle.TabIndex = 17;
-            this.lb_subtitle.Text = "label2";
-            // 
             // cmdBorrar
             // 
             this.cmdBorrar.Location = new System.Drawing.Point(281, 13);
@@ -232,16 +202,46 @@
             this.cmdBorrar.UseVisualStyleBackColor = true;
             this.cmdBorrar.Click += new System.EventHandler(this.CmdBorrar_Click);
             // 
+            // lb_subtitle
+            // 
+            this.lb_subtitle.AutoSize = true;
+            this.lb_subtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_subtitle.Location = new System.Drawing.Point(12, 11);
+            this.lb_subtitle.Name = "lb_subtitle";
+            this.lb_subtitle.Size = new System.Drawing.Size(57, 20);
+            this.lb_subtitle.TabIndex = 17;
+            this.lb_subtitle.Text = "label2";
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
+            this.cmdBuscar.Location = new System.Drawing.Point(352, 44);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(40, 40);
+            this.cmdBuscar.TabIndex = 19;
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.CmdBuscar_Click);
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Image = global::MaxiKiosko.Properties.Resources.add_file;
+            this.cmdNuevo.Location = new System.Drawing.Point(398, 44);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(40, 40);
+            this.cmdNuevo.TabIndex = 10;
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 337);
-            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdNuevo);
+            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.data_grip_clientes);
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

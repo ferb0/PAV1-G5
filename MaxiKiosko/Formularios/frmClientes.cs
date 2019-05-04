@@ -74,9 +74,9 @@ namespace MaxiKiosko.Formularios
         {
             // Creamos el cliente
             Cliente cliente = new Cliente();
-            cliente.nombre = this.txtNombre.Text; 
-            cliente.apellido = this.txtApellido.Text; 
-            cliente.telefono = this.txtTelefono.Text; 
+            cliente.nombre = this.txtNombre.Text;
+            cliente.apellido = this.txtApellido.Text;
+            cliente.telefono = this.txtTelefono.Text;
             cliente.email = this.txtEmail.Text;
 
             if (lb_subtitle.Text == "Editar Cliente")
@@ -91,12 +91,14 @@ namespace MaxiKiosko.Formularios
                 cliente.modificarCliente();
 
                 MessageBox.Show("Cliente editado exitosamente");
-            } else if(lb_subtitle.Text == "Crear Cliente")
+            }
+            else if (lb_subtitle.Text == "Crear Cliente")
             {
                 cliente.agregarCliente();
 
                 MessageBox.Show("Cliente creado exitosamente");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Error inesperado (Codigo 404:Not Found)");
             }
@@ -170,5 +172,7 @@ namespace MaxiKiosko.Formularios
             this.cmdBuscar.Visible = true;
             loadAllClientes();
         }
+
+
     }
 }

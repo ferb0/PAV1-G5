@@ -155,14 +155,15 @@
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem3});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // aBMToolStripMenuItem3
             // 
             this.aBMToolStripMenuItem3.Name = "aBMToolStripMenuItem3";
-            this.aBMToolStripMenuItem3.Size = new System.Drawing.Size(100, 22);
+            this.aBMToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.aBMToolStripMenuItem3.Text = "ABM";
+            this.aBMToolStripMenuItem3.Click += new System.EventHandler(this.aBMToolStripMenuItem3_Click);
             // 
             // informesToolStripMenuItem
             // 

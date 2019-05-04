@@ -65,7 +65,7 @@ namespace MaxiKiosko
 
         public DataTable buscarTodos()
         {
-            return this._BD.consulta("SELECT * FROM producto");
+            return this._BD.consulta("SELECT id_producto,descripcion,precio,stock,tipo_medida FROM producto");
         }
 
         public void borrarProducto(int id_producto)

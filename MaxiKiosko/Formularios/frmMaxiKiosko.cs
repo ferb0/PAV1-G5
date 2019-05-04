@@ -43,5 +43,12 @@ namespace MaxiKiosko
         {
             this.Close();
         }
+
+        private void aBMToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmProducto frm = new Formularios.frmProducto();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }
