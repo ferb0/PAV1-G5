@@ -13,20 +13,20 @@ namespace MaxiKiosko
     {
         Conexion _BD = new Conexion();
 
-        public int idCliente { get; set; }
+        public int dni { get; set; }
         public string apellido { get; set; }
         public string nombre { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
 
-        public Cliente (string papellido, string pnombre, string ptelefono, string pemail )
+        public Cliente (int dni, string papellido, string pnombre, string ptelefono, string pemail )
         {
+            this.dni = dni;
             this.apellido = papellido;
             this.nombre = pnombre;
             this.telefono = ptelefono;
             this.email = pemail;
         }
-
 
         public Cliente()
         {
@@ -36,7 +36,8 @@ namespace MaxiKiosko
         public void agregarCliente(  )
         {
             string SqlInsert = @" INSERT INTO cliente
-                         (apellido, nombre, telefono, email) VALUES ('" +
+                         (dni, apellido, nombre, telefono, mail) VALUES (" +
+                            this.dni + ", '" +
                             this.apellido + "', '" +
                             this.nombre + "', '" +
                             this.telefono + "', '" +
@@ -51,26 +52,38 @@ namespace MaxiKiosko
                                SET nombre = '" + this.nombre + "'," +
                                "apellido = '" + this.apellido + "'," +
                                "telefono = '" + this.telefono + "'," +
-                               "email = '" + this.email + "'" +
-                               " WHERE idCliente = " + this.idCliente;
+                               "mail = '" + this.email + "'" +
+                               " WHERE dni = " + this.dni;
             this._BD.grabar_modificar(SqlUpdate);
         } 
 
         public DataTable consultarCliente(string subString) {
-            return this._BD.consulta(String.Format ("SELECT * FROM cliente WHERE nombre LIKE '%{0}%'" +
+            return this._BD.consulta(String.Format ("SELECT * FROM cliente WHERE dni LIKE '%{0}%' " +
+                " OR nombre LIKE '%{0}%'" +
                 " OR apellido LIKE '%{0}%'" +
                 " OR telefono LIKE '%{0}%' " +
-                " OR email LIKE '%{0}%'", subString));
+                " OR mail LIKE '%{0}%'", subString));
         }
 
         public DataTable buscarTodos()
         {
-            return this._BD.consulta("SELECT * FROM cliente");
+            return this._BD.consulta("SELECT c.apellido, c.nombre, c.dni, c.telefono, c.mail FROM cliente c;");
         }
 
-        public void borrar(int idCliente)
+        public void borrar(int dni)
         {
-            this._BD.grabar_modificar("DELETE FROM cliente WHERE idCliente = " + idCliente);
+            this._BD.grabar_modificar("DELETE FROM cliente WHERE dni = " + dni);
+        }
+
+        public bool buscarClientePorDNI(int dni)
+        {
+            if(this._BD.consulta("SELECT * FROM cliente WHERE dni =" + dni).Rows.Count > 0)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }

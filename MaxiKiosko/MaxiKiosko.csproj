@@ -47,14 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Cliente - Copia.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Cuenta_corriente.cs" />
+    <Compile Include="Clases\foma_pago.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProveedores.cs">
       <SubType>Form</SubType>
@@ -74,10 +83,25 @@
     <Compile Include="Formularios\frmSesion.Designer.cs">
       <DependentUpon>frmSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\MaxiKiosko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MaxiKiosko.Designer.cs">
+      <DependentUpon>MaxiKiosko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Sesion.Designer.cs">
+      <DependentUpon>Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
@@ -87,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSesion.resx">
       <DependentUpon>frmSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MaxiKiosko.resx">
+      <DependentUpon>MaxiKiosko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Sesion.resx">
+      <DependentUpon>Sesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

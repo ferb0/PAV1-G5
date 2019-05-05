@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
     public partial class frmClientes : Form
     {
+        private static int MAX_CHAR_VARCHAR = 100;
         public frmClientes()
         {
             InitializeComponent();
@@ -36,9 +33,9 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.DataSource = data;
 
             // Headers 
-            this.data_grip_clientes.Columns[0].Visible = false;
-            this.data_grip_clientes.Columns[1].HeaderText = "Apellido";
-            this.data_grip_clientes.Columns[2].HeaderText = "Nombre";
+            this.data_grip_clientes.Columns[0].HeaderText = "Apellido";
+            this.data_grip_clientes.Columns[1].HeaderText = "Nombre";
+            this.data_grip_clientes.Columns[2].HeaderText = "Documento";
             this.data_grip_clientes.Columns[3].HeaderText = "Telefono";
             this.data_grip_clientes.Columns[4].HeaderText = "Email";
 
@@ -49,7 +46,7 @@ namespace MaxiKiosko.Formularios
             // Deshabilitamos la grilla para evitar nuevo doble click
             this.data_grip_clientes.Enabled = false; 
             // Mostrar Formulario de edicion
-            this.txtIDCliente.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            this.txtDocumento.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
             this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
             this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
             this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -61,6 +58,7 @@ namespace MaxiKiosko.Formularios
             // Mostrar Formulario de edicion
             // TextBox
             this.lb_subtitle.Text = "Editar Cliente";
+            this.txtDocumento.Enabled = false;
             this.panel_formulario.Visible = true;
             this.cmdBorrar.Visible = true;
             // Buttons
@@ -71,6 +69,81 @@ namespace MaxiKiosko.Formularios
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if(this.txtDocumento.Text == "")
+            {
+                MessageBox.Show("El dni no puede estar vacío");
+                this.txtDocumento.Focus();
+                return;
+            }
+
+            if(this.txtDocumento.Text.Length > 8)
+            {
+                MessageBox.Show("El dni no es un dni valido");
+                this.txtDocumento.Focus();
+                return;
+            }
+
+            if(this.txtNombre.Text == "")
+            {
+                MessageBox.Show("El nombre no puede estar vacío");
+                this.txtNombre.Focus();
+                return;
+            }
+
+            if(this.txtNombre.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El nombre es demasiado largo");
+                this.txtNombre.Focus();
+                return;
+            }
+
+            if(this.txtApellido.Text == "")
+            {
+                MessageBox.Show("El apellido no puede estar vacío");
+                this.txtApellido.Focus();
+                return;
+            }
+
+            if(this.txtApellido.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El apellido es demasiado largo");
+                this.txtApellido.Focus();
+                return;
+            }
+
+            if(this.txtTelefono.Text.Length > 13)
+            {
+                MessageBox.Show("El telefono es demasiado largo");
+                this.txtTelefono.Focus();
+                return;
+            }
+
+            if(this.txtEmail.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El email es demasiado largo");
+                this.txtEmail.Focus();
+                return;
+            }
+
+            if(this.txtEmail.Text != "" && !emailIsValid(txtEmail.Text))
+            {
+                MessageBox.Show("El email ingresado no es un email valido");
+                this.txtEmail.Focus();
+                return;
+            }
+
+            if(this.txtLimiteCredito.Text != "")
+            {
+                float limiteCredito = (float.TryParse(this.txtDocumento.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out limiteCredito) ? limiteCredito : 0);
+                if(limiteCredito == 0)
+                {
+                    MessageBox.Show("El limite de crédito no es un número válido");
+                    this.txtLimiteCredito.Focus();
+                    return;
+                }
+            }
+
             // Creamos el cliente
             Cliente cliente = new Cliente();
             cliente.nombre = this.txtNombre.Text;
@@ -78,15 +151,25 @@ namespace MaxiKiosko.Formularios
             cliente.telefono = this.txtTelefono.Text;
             cliente.email = this.txtEmail.Text;
 
+            // Validar que otro cliente no tenga el mismo dni
+            int dni = (Int32.TryParse(this.txtDocumento.Text, out dni) ? dni : 0);
+            if(dni == 0)
+            {
+                MessageBox.Show("El dni no corresponde a un numero entero válido");
+                txtDocumento.Focus();
+                return;
+            }
+
+            if(cliente.buscarClientePorDNI(dni))
+            {
+                MessageBox.Show("Ya existe un cliente con ese documento");
+                txtDocumento.Focus();
+                return;
+            }
+
             if (lb_subtitle.Text == "Editar Cliente")
             {
-                int idCliente = (Int32.TryParse(this.txtIDCliente.Text, out idCliente) ? idCliente : 0);
-                if (idCliente == 0)
-                {
-                    MessageBox.Show("Hubo un error al intentar editar el cliente. Causa: No se pudo determinar que cliente es");
-                    return;
-                }
-                cliente.idCliente = idCliente;
+                cliente.dni = dni;
                 cliente.modificarCliente();
 
                 MessageBox.Show("Cliente editado exitosamente");
@@ -127,6 +210,7 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.Visible = false;
 
             // Mostrar Formulario de edicion
+            this.txtDocumento.Enabled = true;
             panel_formulario.Visible = true;
             cmdBorrar.Visible = false;
             // Buttons
@@ -137,7 +221,7 @@ namespace MaxiKiosko.Formularios
 
         private void emptyTextBoxes()
         {
-            this.txtIDCliente.Text = "";
+            this.txtDocumento.Text = "";
             this.txtApellido.Text = "";
             this.txtNombre.Text = "";
             this.txtTelefono.Text = "";
@@ -147,14 +231,14 @@ namespace MaxiKiosko.Formularios
         private void CmdBorrar_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-            int idCliente = (Int32.TryParse(this.txtIDCliente.Text, out idCliente) ? idCliente : 0);
-            if (idCliente == 0)
+            int dni = (Int32.TryParse(this.txtDocumento.Text, out dni) ? dni : 0);
+            if (dni == 0)
             {
                 MessageBox.Show("Hubo un error al intentar borrar el cliente. Causa: No se pudo determinar que cliente es");
                 return;
             }
 
-            cliente.borrar(idCliente);
+            cliente.borrar(dni);
 
             MessageBox.Show("Cliente eliminado exitosamente");
             showMain();
@@ -172,6 +256,16 @@ namespace MaxiKiosko.Formularios
             loadAllClientes();
         }
 
-
+        private bool emailIsValid(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            } catch (FormatException)
+            {
+                return false;
+            }
+        }
     }
 }
