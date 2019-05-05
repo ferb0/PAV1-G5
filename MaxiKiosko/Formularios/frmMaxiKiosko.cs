@@ -13,6 +13,9 @@ namespace MaxiKiosko
 {
     public partial class frmMaxiKiosko : Form
     {
+        public int _id_usuario = 0;
+        public string _nombre_usuario = "";
+        public string _rol = "";
         public frmMaxiKiosko()
         {
             InitializeComponent();
