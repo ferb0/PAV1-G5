@@ -8,7 +8,7 @@ namespace MaxiKiosko.Formularios
 {
     public partial class frmClientes : Form
     {
-        private static int MAX_CHAR_VARCHAR = 100;
+        const int MAX_CHAR_VARCHAR = 100;
         public frmClientes()
         {
             InitializeComponent();
@@ -38,6 +38,12 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.Columns[2].HeaderText = "Documento";
             this.data_grip_clientes.Columns[3].HeaderText = "Telefono";
             this.data_grip_clientes.Columns[4].HeaderText = "Email";
+            // Auto size
+            this.data_grip_clientes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grip_clientes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grip_clientes.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
         }
 
@@ -173,13 +179,6 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
-            if(cliente.buscarClientePorDNI(dni))
-            {
-                MessageBox.Show("Ya existe un cliente con ese documento");
-                txtDocumento.Focus();
-                return;
-            }
-
             cliente.dni = dni;
 
             if (lb_subtitle.Text == "Editar Cliente")
@@ -190,6 +189,12 @@ namespace MaxiKiosko.Formularios
             }
             else if (lb_subtitle.Text == "Crear Cliente")
             {
+                if(cliente.buscarClientePorDNI(dni))
+                {
+                    MessageBox.Show("Ya existe un cliente con ese documento");
+                    txtDocumento.Focus();
+                    return;
+                }
                 cliente.agregarCliente();
 
                 MessageBox.Show("Cliente creado exitosamente");

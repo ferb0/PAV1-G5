@@ -166,6 +166,7 @@
             this.data_grip_clientes.RowHeadersVisible = false;
             this.data_grip_clientes.Size = new System.Drawing.Size(517, 237);
             this.data_grip_clientes.TabIndex = 15;
+            this.data_grip_clientes.AllowUserToResizeRows = false;
             this.data_grip_clientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grip_clientes_CellDoubleClick);
             // 
             // txtBuscar

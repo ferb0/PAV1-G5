@@ -13,7 +13,7 @@ namespace MaxiKiosko
     {
         Conexion _BD = new Conexion();
 
-        public int cuit { get; set; }
+        public long cuit { get; set; }
         public string razon_social { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
@@ -68,9 +68,20 @@ namespace MaxiKiosko
             return this._BD.consulta("SELECT * FROM proveedor");
         }
 
-        public void borrar(int cuil)
+        public void borrar(long cuit)
         {
-            this._BD.grabar_modificar("DELETE FROM proveedor WHERE cuil = " + cuil);
+            this._BD.grabar_modificar("DELETE FROM proveedor WHERE cuit = " + cuit);
+        }
+
+        public bool buscarProveedorPorCuit(long cuit)
+        {
+            if(this._BD.consulta("SELECT * FROM proveedor WHERE cuit =" + cuit).Rows.Count > 0)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }
