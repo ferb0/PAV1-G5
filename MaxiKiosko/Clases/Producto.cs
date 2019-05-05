@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Globalization;
 
 namespace MaxiKiosko
 {
@@ -13,17 +14,16 @@ namespace MaxiKiosko
     {
         Conexion _BD = new Conexion();
 
-        public int id_producto { get; set; }
-        public float precio { get; set; }
-        public int stock { get; set; }
-        public string tipo_medida { get; set; }
+        public long id_producto { get; set; }
+        public decimal precio { get; set; }
+        public Nullable<int> stock { get; set; }
         public string descripcion { get; set; }
 
-        public Producto(float precio, int stock, string tipo_medida, string descripcion)
+        public Producto(long id_producto, decimal precio, int stock, string descripcion)
         {
+            this.id_producto = id_producto;
             this.precio = precio;
             this.stock = stock;
-            this.tipo_medida = tipo_medida;
             this.descripcion = descripcion;
         }
 
@@ -35,12 +35,14 @@ namespace MaxiKiosko
 
         public void agregarProducto(  )
         {
+            var clone = (CultureInfo)CultureInfo.InvariantCulture.Clone();
+            clone.NumberFormat.NumberDecimalSeparator = ".";
+            clone.NumberFormat.NumberGroupSeparator = ",";
             string SqlInsert = @" INSERT INTO producto
-                         (id_producto, precio, stock, tipo_medida, descripcion) VALUES ('" +
+                         (id_producto, precio, stock, descripcion) VALUES ('" +
                             this.id_producto + "', '" +
-                            this.precio + "', '" +
-                            this.stock + "', '" +
-                            this.tipo_medida + "', '" +
+                            this.precio.ToString(clone) + "', " +
+                            ((this.stock != null) ? "'" + this.stock + "'" : "NULL") + ", '" +
                             this.descripcion +
                              "')";
             this._BD.grabar_modificar(SqlInsert);
@@ -52,7 +54,6 @@ namespace MaxiKiosko
                                SET id_producto = '" + this.id_producto + "'," +
                                "precio = '" + this.precio + "'," +
                                "stock = '" + this.stock + "'," +
-                               "tipo_medida = '" + this.tipo_medida + "'," +
                                "descripcion = '" + this.descripcion + "'" +
                                " WHERE id_producto = " + this.id_producto;
             this._BD.grabar_modificar(SqlUpdate);
@@ -62,16 +63,15 @@ namespace MaxiKiosko
             return this._BD.consulta(String.Format ("SELECT * FROM producto WHERE id_producto LIKE '%{0}%'" +
                 " OR precio LIKE '%{0}%'" +
                 " OR stock LIKE '%{0}%'" +
-                " OR tipo_medida LIKE '%{0}%' " +
                 " OR descripcion LIKE '%{0}%'", subString));
         }
 
         public DataTable buscarTodos()
         {
-            return this._BD.consulta("SELECT id_producto,descripcion,precio,stock,tipo_medida FROM producto");
+            return this._BD.consulta("SELECT id_producto,descripcion,precio,stock FROM producto");
         }
 
-        public void borrarProducto(int id_producto)
+        public void borrarProducto(long id_producto)
         {
             this._BD.grabar_modificar("DELETE FROM producto WHERE id_producto = " + id_producto);
         }

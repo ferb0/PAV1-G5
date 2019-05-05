@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,11 @@ namespace MaxiKiosko.Formularios
             this.data_grid_productos.Columns[1].HeaderText = "Descripcion";
             this.data_grid_productos.Columns[2].HeaderText = "Precio";
             this.data_grid_productos.Columns[3].HeaderText = "Stock";
-            this.data_grid_productos.Columns[4].HeaderText = "Medida";
+            // Auto size
+            this.data_grid_productos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grid_productos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void data_grid_productos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -59,7 +64,6 @@ namespace MaxiKiosko.Formularios
             this.txtDescripcion.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
             this.txtPrecio.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[2].Value.ToString();
             this.txtStock.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[3].Value.ToString();
-            this.txtMedida.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             // Ocultar Data Grip View
             this.data_grid_productos.Visible = false;
@@ -79,15 +83,73 @@ namespace MaxiKiosko.Formularios
         {
             // Creamos el producto 
             Producto producto = new Producto();
-            producto.id_producto = int.Parse(this.txtCodigoProducto.Text);
+            if(txtCodigoProducto.Text == "")
+            {
+                MessageBox.Show("El código del producto no puede estar vacío");
+                txtCodigoProducto.Focus();
+                return;
+            }
+
+            if(txtDescripcion.Text == "")
+            {
+                MessageBox.Show("La descripcion del producto no puede estar vacía");
+                txtDescripcion.Focus();
+                return;
+            }
+
+            if(txtPrecio.Text == "")
+            {
+                MessageBox.Show("El precio del producto no puede estar vacío");
+                txtPrecio.Focus();
+                return;
+            }
+
+            try
+            {
+                producto.id_producto = long.Parse(this.txtCodigoProducto.Text);
+            } catch(Exception)
+            {
+                MessageBox.Show("El código del producto debe ser un número válido");
+                txtCodigoProducto.Focus();
+                return;
+            }
+
             producto.descripcion = this.txtDescripcion.Text;
-            producto.precio = int.Parse(this.txtPrecio.Text);
-            producto.stock = int.Parse(this.txtStock.Text);
-            producto.tipo_medida = this.txtMedida.Text;
+
+
+            if (txtPrecio.Text.Contains(","))
+            {
+                txtPrecio.Text.Replace(",", ".");
+            }
+            try
+            {
+                var clone = (CultureInfo)CultureInfo.InvariantCulture.Clone();
+                clone.NumberFormat.NumberDecimalSeparator = ",";
+                clone.NumberFormat.NumberGroupSeparator = ".";
+                producto.precio = decimal.Parse(this.txtPrecio.Text, clone);
+            } catch (Exception)
+            {
+                MessageBox.Show("El precio no posee un formato correcto");
+                txtPrecio.Focus();
+                return;
+            }
+
+            if(txtStock.Text != "")
+            {
+                try
+                {
+                    producto.stock = int.Parse(this.txtStock.Text);
+                } catch (Exception)
+                {
+                    MessageBox.Show("El stock debe ser un numero entero válido");
+                    txtStock.Focus();
+                    return;
+                }
+            }
 
             if (lb_subtitle.Text == "Editar Producto")
             {
-                int idProducto = int.Parse(this.txtCodigoProducto.Text);
+                long idProducto = long.Parse(this.txtCodigoProducto.Text);
                 if (idProducto == 0)
                 {
                     MessageBox.Show("Hubo un error al intentar editar el producto. Causa: No se pudo determinar que producto es");
@@ -153,13 +215,12 @@ namespace MaxiKiosko.Formularios
             this.txtDescripcion.Text = "";
             this.txtPrecio.Text = "";
             this.txtStock.Text = "";
-            this.txtMedida.Text = "";
         }
 
         private void cmdBorrar_Click(object sender, EventArgs e)
         {
             Producto producto = new Producto();
-            int idProducto = (Int32.TryParse(this.txtCodigoProducto.Text, out idProducto) ? idProducto : 0);
+            long idProducto = (Int64.TryParse(this.txtCodigoProducto.Text, out idProducto) ? idProducto : 0);
             if (idProducto == 0)
             {
                 MessageBox.Show("Hubo un error al intentar borrar el producto. Causa: No se pudo determinar que producto es");

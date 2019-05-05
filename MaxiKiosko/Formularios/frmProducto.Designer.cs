@@ -37,8 +37,6 @@
             this.cmdBorrar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
-            this.txtMedida = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -91,6 +89,9 @@
             // 
             // data_grid_productos
             // 
+            this.data_grid_productos.AllowUserToAddRows = false;
+            this.data_grid_productos.AllowUserToDeleteRows = false;
+            this.data_grid_productos.AllowUserToResizeRows = false;
             this.data_grid_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_productos.Location = new System.Drawing.Point(12, 90);
             this.data_grid_productos.Name = "data_grid_productos";
@@ -105,8 +106,6 @@
             this.panel_producto.Controls.Add(this.cmdBorrar);
             this.panel_producto.Controls.Add(this.cmdCancelar);
             this.panel_producto.Controls.Add(this.cmdGuardar);
-            this.panel_producto.Controls.Add(this.txtMedida);
-            this.panel_producto.Controls.Add(this.label7);
             this.panel_producto.Controls.Add(this.txtStock);
             this.panel_producto.Controls.Add(this.label5);
             this.panel_producto.Controls.Add(this.txtPrecio);
@@ -151,25 +150,9 @@
             this.cmdGuardar.UseVisualStyleBackColor = true;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
-            // txtMedida
-            // 
-            this.txtMedida.Location = new System.Drawing.Point(171, 202);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(260, 20);
-            this.txtMedida.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Medida";
-            // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(171, 162);
+            this.txtStock.Location = new System.Drawing.Point(174, 180);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(260, 20);
             this.txtStock.TabIndex = 8;
@@ -177,7 +160,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 165);
+            this.label5.Location = new System.Drawing.Point(126, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 7;
@@ -185,7 +168,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(171, 124);
+            this.txtPrecio.Location = new System.Drawing.Point(174, 142);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(260, 20);
             this.txtPrecio.TabIndex = 6;
@@ -193,15 +176,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 127);
+            this.label6.Location = new System.Drawing.Point(120, 145);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Precio";
+            this.label6.Text = "Precio*";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(171, 89);
+            this.txtDescripcion.Location = new System.Drawing.Point(174, 107);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(260, 20);
             this.txtDescripcion.TabIndex = 4;
@@ -209,15 +192,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 92);
+            this.label4.Location = new System.Drawing.Point(94, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Descripcion";
+            this.label4.Text = "Descripcion*";
             // 
             // txtCodigoProducto
             // 
-            this.txtCodigoProducto.Location = new System.Drawing.Point(171, 51);
+            this.txtCodigoProducto.Location = new System.Drawing.Point(174, 69);
             this.txtCodigoProducto.Name = "txtCodigoProducto";
             this.txtCodigoProducto.Size = new System.Drawing.Size(260, 20);
             this.txtCodigoProducto.TabIndex = 2;
@@ -225,11 +208,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 54);
+            this.label3.Location = new System.Drawing.Point(71, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Codigo Producto";
+            this.label3.Text = "Codigo Producto*";
             // 
             // lb_subtitle
             // 
@@ -246,11 +229,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 338);
-            this.Controls.Add(this.data_grid_productos);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.data_grid_productos);
             this.Controls.Add(this.panel_producto);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -275,8 +258,6 @@
         private System.Windows.Forms.Label lb_subtitle;
         private System.Windows.Forms.TextBox txtCodigoProducto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMedida;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecio;

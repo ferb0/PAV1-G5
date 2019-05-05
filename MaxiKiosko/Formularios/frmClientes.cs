@@ -8,7 +8,7 @@ namespace MaxiKiosko.Formularios
 {
     public partial class frmClientes : Form
     {
-        const int MAX_CHAR_VARCHAR = 100;
+        const int MAX_CHAR_VARCHAR = 45;
         public frmClientes()
         {
             InitializeComponent();

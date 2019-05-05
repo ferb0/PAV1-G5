@@ -43,7 +43,6 @@ namespace MaxiKiosko.Formularios
             this.data_grid_proveedores.Columns[2].HeaderText = "Telefono";
             this.data_grid_proveedores.Columns[3].HeaderText = "Email";
             // Auto size
-            this.data_grid_proveedores.AutoResizeColumns();
             this.data_grid_proveedores.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.data_grid_proveedores.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.data_grid_proveedores.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

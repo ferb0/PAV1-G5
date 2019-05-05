@@ -267,6 +267,5 @@
         private System.Windows.Forms.Panel panel_formulario;
         private System.Windows.Forms.Label lb_subtitle;
         private System.Windows.Forms.Button cmdBorrar;
-        private System.Windows.Forms.TextBox txtLimiteCredito;
     }
 }
