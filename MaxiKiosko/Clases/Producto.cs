@@ -36,7 +36,8 @@ namespace MaxiKiosko
         public void agregarProducto(  )
         {
             string SqlInsert = @" INSERT INTO producto
-                         (precio, stock, tipo_medida, descripcion) VALUES ('" +
+                         (id_producto, precio, stock, tipo_medida, descripcion) VALUES ('" +
+                            this.id_producto + "', '" +
                             this.precio + "', '" +
                             this.stock + "', '" +
                             this.tipo_medida + "', '" +
@@ -48,7 +49,8 @@ namespace MaxiKiosko
         public void modificarProducto()
         {
             string SqlUpdate = @" Update producto
-                               SET precio = '" + this.precio + "'," +
+                               SET id_producto = '" + this.id_producto + "'," +
+                               "precio = '" + this.precio + "'," +
                                "stock = '" + this.stock + "'," +
                                "tipo_medida = '" + this.tipo_medida + "'," +
                                "descripcion = '" + this.descripcion + "'" +
@@ -57,7 +59,8 @@ namespace MaxiKiosko
         } 
 
         public DataTable consultarProducto(string subString) {
-            return this._BD.consulta(String.Format ("SELECT * FROM producto WHERE precio LIKE '%{0}%'" +
+            return this._BD.consulta(String.Format ("SELECT * FROM producto WHERE id_producto LIKE '%{0}%'" +
+                " OR precio LIKE '%{0}%'" +
                 " OR stock LIKE '%{0}%'" +
                 " OR tipo_medida LIKE '%{0}%' " +
                 " OR descripcion LIKE '%{0}%'", subString));

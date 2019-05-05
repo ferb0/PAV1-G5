@@ -64,10 +64,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "Clientes";
             // 
@@ -167,7 +167,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(18, 55);
+            this.txtBuscar.Location = new System.Drawing.Point(6, 13);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(249, 20);
             this.txtBuscar.TabIndex = 18;
@@ -175,6 +175,7 @@
             // panel_formulario
             // 
             this.panel_formulario.Controls.Add(this.cmdBorrar);
+            this.panel_formulario.Controls.Add(this.txtBuscar);
             this.panel_formulario.Controls.Add(this.lb_subtitle);
             this.panel_formulario.Controls.Add(this.txtApellido);
             this.panel_formulario.Controls.Add(this.txtNombre);
@@ -238,7 +239,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 337);
             this.Controls.Add(this.cmdBuscar);
-            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.panel_formulario);

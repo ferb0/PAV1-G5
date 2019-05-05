@@ -47,8 +47,7 @@ namespace MaxiKiosko.Formularios
         private void data_grip_clientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Deshabilitamos la grilla para evitar nuevo doble click
-            this.data_grip_clientes.Enabled = false;
-
+            this.data_grip_clientes.Enabled = false; 
             // Mostrar Formulario de edicion
             this.txtIDCliente.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
             this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -151,7 +150,7 @@ namespace MaxiKiosko.Formularios
             int idCliente = (Int32.TryParse(this.txtIDCliente.Text, out idCliente) ? idCliente : 0);
             if (idCliente == 0)
             {
-                MessageBox.Show("Hubo un error al intentar editar el cliente. Causa: No se pudo determinar que cliente es");
+                MessageBox.Show("Hubo un error al intentar borrar el cliente. Causa: No se pudo determinar que cliente es");
                 return;
             }
 
