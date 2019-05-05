@@ -212,7 +212,7 @@
             this.txtLimiteCredito.Location = new System.Drawing.Point(161, 198);
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Size = new System.Drawing.Size(269, 20);
-            this.txtLimiteCredito.TabIndex = 21;
+            this.txtLimiteCredito.TabIndex = 10;
             // 
             // label2
             // 
@@ -271,9 +271,9 @@
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdNuevo);
-            this.Controls.Add(this.data_grip_clientes);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.panel_formulario);
+            this.Controls.Add(this.data_grip_clientes);
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

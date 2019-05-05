@@ -46,9 +46,9 @@ namespace MaxiKiosko.Formularios
             // Deshabilitamos la grilla para evitar nuevo doble click
             this.data_grip_clientes.Enabled = false; 
             // Mostrar Formulario de edicion
-            this.txtDocumento.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.txtDocumento.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
             this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
             this.txtEmail.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[4].Value.ToString();
 
@@ -133,15 +133,27 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            // Creamos la cuenta corriente
+            Cuenta_corriente cuentaCorriente = new Cuenta_corriente();
             if(this.txtLimiteCredito.Text != "")
             {
-                float limiteCredito = (float.TryParse(this.txtDocumento.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out limiteCredito) ? limiteCredito : 0);
+                float limiteCredito = (Single.TryParse(this.txtLimiteCredito.Text, out limiteCredito) ? limiteCredito : 0);
                 if(limiteCredito == 0)
                 {
                     MessageBox.Show("El limite de crédito no es un número válido");
                     this.txtLimiteCredito.Focus();
                     return;
                 }
+                cuentaCorriente.limite_credito = limiteCredito;
+            }
+            cuentaCorriente.agregarCuenta_corriente();
+
+            int lastInsertedIdCC = cuentaCorriente.lastInsertedId();
+
+            if(lastInsertedIdCC == -1)
+            {
+                MessageBox.Show("Ocurrio un error al intentar crear el cliente. Motivo: Error al vincular cuenta corriente");
+                return;
             }
 
             // Creamos el cliente
@@ -150,6 +162,7 @@ namespace MaxiKiosko.Formularios
             cliente.apellido = this.txtApellido.Text;
             cliente.telefono = this.txtTelefono.Text;
             cliente.email = this.txtEmail.Text;
+            cliente.id_cuenta_corriente = lastInsertedIdCC;
 
             // Validar que otro cliente no tenga el mismo dni
             int dni = (Int32.TryParse(this.txtDocumento.Text, out dni) ? dni : 0);
@@ -167,9 +180,10 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            cliente.dni = dni;
+
             if (lb_subtitle.Text == "Editar Cliente")
             {
-                cliente.dni = dni;
                 cliente.modificarCliente();
 
                 MessageBox.Show("Cliente editado exitosamente");
