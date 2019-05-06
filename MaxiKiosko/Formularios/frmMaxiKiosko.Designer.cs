@@ -48,9 +48,11 @@
             this.consultaDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
-            this.aBMToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +83,7 @@
             // nuevaVentaToolStripMenuItem
             // 
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             // 
             // clientesToolStripMenuItem1
@@ -89,7 +91,7 @@
             this.clientesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem});
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // aBMToolStripMenuItem
@@ -104,7 +106,7 @@
             this.cuentasCorrientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem1});
             this.cuentasCorrientesToolStripMenuItem.Name = "cuentasCorrientesToolStripMenuItem";
-            this.cuentasCorrientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuentasCorrientesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.cuentasCorrientesToolStripMenuItem.Text = "Cuentas Corrientes";
             // 
             // aBMToolStripMenuItem1
@@ -156,7 +158,7 @@
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem3});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // aBMToolStripMenuItem3
@@ -198,6 +200,7 @@
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
+            this.rolesToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -210,6 +213,13 @@
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // aBMToolStripMenuItem4
+            // 
+            this.aBMToolStripMenuItem4.Name = "aBMToolStripMenuItem4";
+            this.aBMToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.aBMToolStripMenuItem4.Text = "ABM";
+            this.aBMToolStripMenuItem4.Click += new System.EventHandler(this.aBMToolStripMenuItem4_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -228,11 +238,20 @@
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // aBMToolStripMenuItem4
+            // rolesToolStripMenuItem
             // 
-            this.aBMToolStripMenuItem4.Name = "aBMToolStripMenuItem4";
-            this.aBMToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
-            this.aBMToolStripMenuItem4.Text = "ABM";
+            this.rolesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMToolStripMenuItem5});
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rolesToolStripMenuItem.Text = "Roles";
+            // 
+            // aBMToolStripMenuItem5
+            // 
+            this.aBMToolStripMenuItem5.Name = "aBMToolStripMenuItem5";
+            this.aBMToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.aBMToolStripMenuItem5.Text = "ABM";
+            this.aBMToolStripMenuItem5.Click += new System.EventHandler(this.aBMToolStripMenuItem5_Click);
             // 
             // frmMaxiKiosko
             // 
@@ -278,6 +297,8 @@
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem5;
     }
 }
 

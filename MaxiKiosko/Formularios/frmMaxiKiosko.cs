@@ -53,5 +53,19 @@ namespace MaxiKiosko
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void aBMToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            frmRoles frm = new Formularios.frmRoles();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void aBMToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmUsuario frm = new Formularios.frmUsuario();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }

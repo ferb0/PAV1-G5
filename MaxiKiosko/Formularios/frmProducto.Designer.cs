@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cmdBuscar = new System.Windows.Forms.Button();
-            this.cmdNuevo = new System.Windows.Forms.Button();
             this.data_grid_productos = new System.Windows.Forms.DataGridView();
             this.panel_producto = new System.Windows.Forms.Panel();
             this.cmdBorrar = new System.Windows.Forms.Button();
@@ -48,6 +46,8 @@
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_subtitle = new System.Windows.Forms.Label();
+            this.cmdNuevo = new System.Windows.Forms.Button();
+            this.cmdBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_productos)).BeginInit();
             this.panel_producto.SuspendLayout();
             this.SuspendLayout();
@@ -68,26 +68,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(249, 20);
             this.txtBuscar.TabIndex = 1;
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.cmdBuscar.Location = new System.Drawing.Point(471, 44);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(40, 40);
-            this.cmdBuscar.TabIndex = 2;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
-            // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.Image = global::MaxiKiosko.Properties.Resources.add_file;
-            this.cmdNuevo.Location = new System.Drawing.Point(517, 44);
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(40, 40);
-            this.cmdNuevo.TabIndex = 3;
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
             // 
             // data_grid_productos
             // 
@@ -240,6 +220,26 @@
             this.lb_subtitle.Size = new System.Drawing.Size(57, 20);
             this.lb_subtitle.TabIndex = 0;
             this.lb_subtitle.Text = "label2";
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Image = global::MaxiKiosko.Properties.Resources.add_file;
+            this.cmdNuevo.Location = new System.Drawing.Point(517, 44);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(40, 40);
+            this.cmdNuevo.TabIndex = 3;
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
+            this.cmdBuscar.Location = new System.Drawing.Point(471, 44);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(40, 40);
+            this.cmdBuscar.TabIndex = 2;
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
             // frmProducto
             // 
