@@ -59,6 +59,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `maxikiosko`.`tipo_producto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`tipo_producto`;
+CREATE TABLE IF NOT EXISTS `maxikiosko`.`tipo_producto` (
+  `id_tipo_producto` INT UNSIGNED NOT NULL,
+  `descripcion` VARCHAR(200) NULL,
+  PRIMARY KEY (`id_tipo_producto`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `maxikiosko`.`producto`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `maxikiosko`.`producto`;
