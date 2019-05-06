@@ -70,3 +70,8 @@ C:\Users\Mariano\Documents\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.f
 C:\Users\Mariano\Documents\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmProveedores.resources
 C:\Users\Mariano\Documents\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.frmMaxiKiosko.resources
 C:\Users\Mariano\Documents\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmSesion.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmClientes.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmProducto.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmProveedores.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.frmMaxiKiosko.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmSesion.resources
