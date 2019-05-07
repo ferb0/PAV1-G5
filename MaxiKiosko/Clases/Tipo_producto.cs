@@ -13,18 +13,16 @@ namespace MaxiKiosko
     {
         Conexion _BD = new Conexion();
 
-        public string id_tipo_producto { get; set; }
+        public int id_tipo_producto { get; set; }
         public string descripcion { get; set; }
 
 
 
 
-        public Tipo_producto(string id_tipo_producto, string descripcion)
+        public Tipo_producto(int id_tipo_producto, string descripcion)
         {
             this.id_tipo_producto = id_tipo_producto;
             this.descripcion = descripcion;
-
-
         }
 
 
@@ -60,13 +58,13 @@ namespace MaxiKiosko
             return this._BD.consulta("SELECT * FROM tipo_producto");
         }
 
-        public void borrarTipo_producto(int id_forma_pago)
+        public void borrarTipo_producto(int idTipoProducto)
         {
-            this._BD.grabar_modificar("DELETE FROM tipo_producto WHERE id_tipo_producto = " + id_tipo_producto);
+            this._BD.grabar_modificar("DELETE FROM tipo_producto WHERE id_tipo_producto = " + idTipoProducto);
         }
-        public bool buscarTipo_productoPorId(long id_tipo_producto)
+        public bool buscarTipo_productoPorId(int idTipoProducto)
         {
-            if (this._BD.consulta("SELECT * FROM tipo_producto WHERE id_tipo_producto =" + id_tipo_producto).Rows.Count > 0)
+            if (this._BD.consulta("SELECT * FROM tipo_producto WHERE id_tipo_producto =" + idTipoProducto).Rows.Count > 0)
             {
                 return true;
             }

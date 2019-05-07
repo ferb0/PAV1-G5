@@ -33,6 +33,7 @@ namespace MaxiKiosko.Formularios
             DataTable tipo_prod = tipo_Producto.buscarTodos();
             cargarTipo_Producto(tipo_prod);
         }
+
         private void cargarTipo_Producto(DataTable data)
         {
             this.data_grid_tipo_producto.DataSource = data;
@@ -74,14 +75,6 @@ namespace MaxiKiosko.Formularios
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
             // Validaciones
-            if (this.txtCodigoTipoProducto.Text == "")
-            {
-                MessageBox.Show("El codigo del tipo de producto no puede estar vacío");
-                this.txtCodigoTipoProducto.Focus();
-                return;
-            }
-
-
             if (this.txtDescripcion.Text == "")
             {
                 MessageBox.Show("La descripcion no puede estar vacía");
@@ -96,18 +89,22 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
-
-            // Creamos el proveedor
+            // Creamos el tipo de producto 
             Tipo_producto tipoProducto = new Tipo_producto();
-            tipoProducto.id_tipo_producto = this.txtCodigoTipoProducto.Text;
             tipoProducto.descripcion = this.txtDescripcion.Text;
-            
 
-            // Validar que otro proveedor no tenga el mismo dni
+            // Validar que otro tipo de producto no tenga el mismo dni
             
 
             if (lb_subtitle.Text == "Editar Tipo Producto")
             {
+                int id = (Int32.TryParse(this.txtCodigoTipoProducto.Text, out id) ? id : 0);
+                if (id == 0)
+                {
+                    MessageBox.Show("Hubo un error al intentar borrar el Tipo producto. Causa: No se pudo determinar que Tipo de producto es");
+                    return;
+                }
+                tipoProducto.id_tipo_producto = id;
                 tipoProducto.modificarTipo_producto();
 
                 MessageBox.Show("Tipo Producto editado exitosamente");
@@ -142,14 +139,13 @@ namespace MaxiKiosko.Formularios
 
         private void CmdNuevo_Click(object sender, EventArgs e)
         {
-            this.lb_subtitle.Text = "Crear Tipo producto";
+            this.lb_subtitle.Text = "Crear Tipo Producto";
             // Deshabilitamos la grilla para evitar nuevo doble click
             this.data_grid_tipo_producto.Enabled = false;
             // Ocultar Data Grip View
             this.data_grid_tipo_producto.Visible = false;
 
             // Mostrar Formulario de edicion
-            this.txtCodigoTipoProducto.Enabled = true;
             panel_formulario.Visible = true;
             cmdBorrar.Visible = false;
             // Buttons
@@ -160,22 +156,21 @@ namespace MaxiKiosko.Formularios
 
         private void emptyTextBoxes()
         {
-            this.txtCodigoTipoProducto.Text = "";
             this.txtDescripcion.Text = "";
             
         }
 
         private void CmdBorrar_Click(object sender, EventArgs e)
         {
-            Proveedor proveedor = new Proveedor();
-            long id = (Int64.TryParse(this.txtCodigoTipoProducto.Text, out id) ? id : 0);
+            Tipo_producto tipoProducto = new Tipo_producto();
+            int id = (Int32.TryParse(this.txtCodigoTipoProducto.Text, out id) ? id : 0);
             if (id == 0)
             {
                 MessageBox.Show("Hubo un error al intentar borrar el Tipo producto. Causa: No se pudo determinar que Tipo de producto es");
                 return;
             }
 
-            proveedor.borrar(id);
+            tipoProducto.borrarTipo_producto(id);
 
             MessageBox.Show("Tipo producto eliminado exitosamente");
             showMain();
@@ -191,8 +186,6 @@ namespace MaxiKiosko.Formularios
             this.txtBuscar.Visible = true;
             this.cmdBuscar.Visible = true;
             loadAllTipo_producto();
-        }
-
         }
     }
 }

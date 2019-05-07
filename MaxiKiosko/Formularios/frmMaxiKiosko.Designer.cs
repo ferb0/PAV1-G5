@@ -50,6 +50,7 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
+            this.tipoProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,7 +146,8 @@
             // productosToolStripMenuItem1
             // 
             this.productosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem});
+            this.productosToolStripMenuItem,
+            this.tipoProductosToolStripMenuItem});
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem1.Text = "Productos";
@@ -205,13 +207,13 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -224,6 +226,13 @@
             this.label_maxikiosko.TabIndex = 1;
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tipoProductosToolStripMenuItem
+            // 
+            this.tipoProductosToolStripMenuItem.Name = "tipoProductosToolStripMenuItem";
+            this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoProductosToolStripMenuItem.Text = "Tipo Productos";
+            this.tipoProductosToolStripMenuItem.Click += new System.EventHandler(this.TipoProductosToolStripMenuItem_Click);
             // 
             // frmMaxiKiosko
             // 
@@ -268,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoProductosToolStripMenuItem;
     }
 }
 

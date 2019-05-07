@@ -233,8 +233,8 @@
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.data_grid_productos);
             this.Controls.Add(this.panel_producto);
+            this.Controls.Add(this.data_grid_productos);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
