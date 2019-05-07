@@ -134,7 +134,7 @@ DROP TABLE IF EXISTS `maxikiosko`.`proveedor`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`proveedor` (
   `cuit` BIGINT UNSIGNED NOT NULL,
   `razon_social` VARCHAR(45) NULL,
-  `telefono` INT NULL,
+  `telefono` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`cuit`))
 ENGINE = InnoDB;

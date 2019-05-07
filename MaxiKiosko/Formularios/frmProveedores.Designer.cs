@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.data_grid_proveedores = new System.Windows.Forms.DataGridView();
@@ -46,6 +45,7 @@
             this.lb_subtitle = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_proveedores)).BeginInit();
             this.panel_formulario.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,7 @@
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(269, 20);
             this.txtCuit.TabIndex = 3;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtRazonSocial
             // 
@@ -119,13 +120,6 @@
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(269, 20);
             this.txtRazonSocial.TabIndex = 5;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 140);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
-            this.txtTelefono.TabIndex = 7;
             // 
             // txtEmail
             // 
@@ -164,14 +158,15 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(249, 20);
             this.txtBuscar.TabIndex = 18;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // panel_formulario
             // 
+            this.panel_formulario.Controls.Add(this.txtTelefono);
             this.panel_formulario.Controls.Add(this.cmdBorrar);
             this.panel_formulario.Controls.Add(this.lb_subtitle);
             this.panel_formulario.Controls.Add(this.txtCuit);
             this.panel_formulario.Controls.Add(this.txtRazonSocial);
-            this.panel_formulario.Controls.Add(this.txtTelefono);
             this.panel_formulario.Controls.Add(this.label6);
             this.panel_formulario.Controls.Add(this.label5);
             this.panel_formulario.Controls.Add(this.label4);
@@ -224,6 +219,14 @@
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 140);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
+            this.txtTelefono.TabIndex = 7;
+            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +261,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.TextBox txtRazonSocial;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.DataGridView data_grid_proveedores;
@@ -267,5 +269,6 @@
         private System.Windows.Forms.Panel panel_formulario;
         private System.Windows.Forms.Label lb_subtitle;
         private System.Windows.Forms.Button cmdBorrar;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }

@@ -58,9 +58,9 @@ namespace MaxiKiosko
             string SqlUpdate = @" Update cliente
                                SET nombre = '" + this.nombre + "'," +
                                "apellido = '" + this.apellido + "'," +
-                               "domicilio = '" + this.domicilio + "'," +
-                               "telefono = '" + this.telefono + "'," +
-                               "mail = '" + this.email + "'" +
+                               "domicilio = " + ((this.domicilio != "") ? "'" + this.domicilio + "'" : "NULL") + "," +
+                               "telefono = " + ((this.telefono != "") ? "'" + this.telefono + "'" : "NULL") + "," +
+                               "mail = " + ((this.email != "") ? "'" + this.email + "'" : "NULL") +
                                " WHERE dni = " + this.dni;
             this._BD.grabar_modificar(SqlUpdate);
         } 
