@@ -16,16 +16,18 @@ namespace MaxiKiosko
         public int dni { get; set; }
         public string apellido { get; set; }
         public string nombre { get; set; }
+        public string domicilio { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
 
         public int id_cuenta_corriente { get; set; }
 
-        public Cliente (int dni, string papellido, string pnombre, string ptelefono, string pemail, int id_cuenta_corriente )
+        public Cliente (int dni, string papellido, string pnombre, string domicilio, string ptelefono, string pemail, int id_cuenta_corriente )
         {
             this.dni = dni;
             this.apellido = papellido;
             this.nombre = pnombre;
+            this.domicilio = domicilio;
             this.telefono = ptelefono;
             this.email = pemail;
             this.id_cuenta_corriente = id_cuenta_corriente;
@@ -43,6 +45,7 @@ namespace MaxiKiosko
                             this.dni + ", '" +
                             this.apellido + "', '" +
                             this.nombre + "', " +
+                            ((this.domicilio != "") ? "'" + this.domicilio + "'" : "NULL") + ", " +
                             ((this.telefono != "") ? "'" + this.telefono + "'" : "NULL") + ", " +
                             ((this.email != "") ? "'" + this.email + "'" : "NULL") + ", " +
                             this.id_cuenta_corriente +
@@ -55,6 +58,7 @@ namespace MaxiKiosko
             string SqlUpdate = @" Update cliente
                                SET nombre = '" + this.nombre + "'," +
                                "apellido = '" + this.apellido + "'," +
+                               "domicilio = '" + this.domicilio + "'," +
                                "telefono = '" + this.telefono + "'," +
                                "mail = '" + this.email + "'" +
                                " WHERE dni = " + this.dni;
@@ -62,16 +66,17 @@ namespace MaxiKiosko
         } 
 
         public DataTable consultarCliente(string subString) {
-            return this._BD.consulta(String.Format ("SELECT apellido, nombre, dni, telefono, mail FROM cliente c WHERE dni LIKE '%{0}%' " +
+            return this._BD.consulta(String.Format ("SELECT apellido, nombre, dni, domicilio, telefono, mail FROM cliente c WHERE dni LIKE '%{0}%' " +
                 " OR nombre LIKE '%{0}%'" +
                 " OR apellido LIKE '%{0}%'" +
+                " OR domicilio LIKE '%{0}%'" +
                 " OR telefono LIKE '%{0}%' " +
                 " OR mail LIKE '%{0}%'", subString));
         }
 
         public DataTable buscarTodos()
         {
-            return this._BD.consulta("SELECT apellido, nombre, dni, telefono, mail FROM cliente c;");
+            return this._BD.consulta("SELECT apellido, nombre, dni, domicilio, telefono, mail FROM cliente c;");
         }
 
         public void borrar(int dni)

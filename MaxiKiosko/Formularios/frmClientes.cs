@@ -36,14 +36,16 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.Columns[0].HeaderText = "Apellido";
             this.data_grip_clientes.Columns[1].HeaderText = "Nombre";
             this.data_grip_clientes.Columns[2].HeaderText = "Documento";
-            this.data_grip_clientes.Columns[3].HeaderText = "Telefono";
-            this.data_grip_clientes.Columns[4].HeaderText = "Email";
+            this.data_grip_clientes.Columns[3].HeaderText = "Domicilio";
+            this.data_grip_clientes.Columns[4].HeaderText = "Telefono";
+            this.data_grip_clientes.Columns[5].HeaderText = "Email";
             // Auto size
             this.data_grip_clientes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.data_grip_clientes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.data_grip_clientes.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.data_grip_clientes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.data_grip_clientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grip_clientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
         }
 
@@ -55,8 +57,9 @@ namespace MaxiKiosko.Formularios
             this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
             this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
             this.txtDocumento.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
-            this.txtEmail.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[4].Value.ToString();
+            this.txtDomicilio.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[4].Value.ToString();
+            this.txtEmail.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             // Ocultar Data Grip View
             this.data_grip_clientes.Visible = false;
@@ -80,14 +83,14 @@ namespace MaxiKiosko.Formularios
             // Validaciones
             if(this.txtDocumento.Text == "")
             {
-                MessageBox.Show("El dni no puede estar vacío");
+                MessageBox.Show("El documento no puede estar vacío");
                 this.txtDocumento.Focus();
                 return;
             }
 
             if(this.txtDocumento.Text.Length > 8)
             {
-                MessageBox.Show("El dni no es un dni valido");
+                MessageBox.Show("El documento no es un dni valido");
                 this.txtDocumento.Focus();
                 return;
             }
@@ -174,6 +177,7 @@ namespace MaxiKiosko.Formularios
             cliente.nombre = this.txtNombre.Text;
             cliente.apellido = this.txtApellido.Text;
             cliente.email = this.txtEmail.Text;
+            cliente.domicilio = this.txtDomicilio.Text;
             cliente.id_cuenta_corriente = lastInsertedIdCC;
 
             // Validar que otro cliente no tenga el mismo dni
@@ -322,6 +326,16 @@ namespace MaxiKiosko.Formularios
             {
                 MessageBox.Show("Solo se permiten letras");
                 e.Handled = true;
+            }
+        }
+        
+        private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e) {
+            if((int)e.KeyChar == (int)Keys.Enter)
+            {
+                // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
+                Cliente cliente = new Cliente();
+                DataTable dt = cliente.consultarCliente(txtBuscar.Text);
+                cargarClientes(dt);
             }
         }
     }

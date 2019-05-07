@@ -34,9 +34,10 @@ CREATE TABLE IF NOT EXISTS `maxikiosko`.`cliente` (
   `dni` INT UNSIGNED NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `apellido` VARCHAR(45) NULL,
-  `telefono` INT UNSIGNED NULL,
+  `telefono` VARCHAR(45) NULL,
   `mail` VARCHAR(45) NULL,
   `id_cuenta` INT UNSIGNED NOT NULL,
+  `domicilio` VARCHAR(45) NULL,
   PRIMARY KEY (`dni`, `id_cuenta`),
   INDEX `fk_cliente_cuenta_corriente_idx` (`id_cuenta` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_cuenta_corriente`
@@ -63,7 +64,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `maxikiosko`.`tipo_producto`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`tipo_producto` (
-  `id_tipo_producto` INT UNSIGNED NOT NULL,
+  `id_tipo_producto` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   PRIMARY KEY (`id_tipo_producto`))
 ENGINE = InnoDB;
