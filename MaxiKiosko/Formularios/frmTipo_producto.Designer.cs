@@ -1,6 +1,6 @@
 ﻿namespace MaxiKiosko.Formularios
 {
-    partial class Tipo_producto
+    partial class frmTipo_producto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.lblTipo_producto = new System.Windows.Forms.Label();
-            this.panel_producto = new System.Windows.Forms.Panel();
+            this.panel_formulario = new System.Windows.Forms.Panel();
             this.cmdBorrar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCodigoProducto = new System.Windows.Forms.TextBox();
+            this.txtCodigoTipoProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_subtitle = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
-            this.data_grid_productos = new System.Windows.Forms.DataGridView();
-            this.panel_producto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_productos)).BeginInit();
+            this.data_grid_tipo_producto = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel_formulario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_tipo_producto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTipo_producto
@@ -55,20 +56,20 @@
             this.lblTipo_producto.TabIndex = 1;
             this.lblTipo_producto.Text = "Tipo Productos";
             // 
-            // panel_producto
+            // panel_formulario
             // 
-            this.panel_producto.Controls.Add(this.cmdBorrar);
-            this.panel_producto.Controls.Add(this.cmdCancelar);
-            this.panel_producto.Controls.Add(this.cmdGuardar);
-            this.panel_producto.Controls.Add(this.txtDescripcion);
-            this.panel_producto.Controls.Add(this.label4);
-            this.panel_producto.Controls.Add(this.txtCodigoProducto);
-            this.panel_producto.Controls.Add(this.label3);
-            this.panel_producto.Controls.Add(this.lb_subtitle);
-            this.panel_producto.Location = new System.Drawing.Point(17, 93);
-            this.panel_producto.Name = "panel_producto";
-            this.panel_producto.Size = new System.Drawing.Size(548, 219);
-            this.panel_producto.TabIndex = 6;
+            this.panel_formulario.Controls.Add(this.cmdBorrar);
+            this.panel_formulario.Controls.Add(this.cmdCancelar);
+            this.panel_formulario.Controls.Add(this.cmdGuardar);
+            this.panel_formulario.Controls.Add(this.txtDescripcion);
+            this.panel_formulario.Controls.Add(this.label4);
+            this.panel_formulario.Controls.Add(this.txtCodigoTipoProducto);
+            this.panel_formulario.Controls.Add(this.label3);
+            this.panel_formulario.Controls.Add(this.lb_subtitle);
+            this.panel_formulario.Location = new System.Drawing.Point(14, 85);
+            this.panel_formulario.Name = "panel_formulario";
+            this.panel_formulario.Size = new System.Drawing.Size(548, 219);
+            this.panel_formulario.TabIndex = 6;
             // 
             // cmdBorrar
             // 
@@ -113,12 +114,12 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Descripcion*";
             // 
-            // txtCodigoProducto
+            // txtCodigoTipoProducto
             // 
-            this.txtCodigoProducto.Location = new System.Drawing.Point(174, 69);
-            this.txtCodigoProducto.Name = "txtCodigoProducto";
-            this.txtCodigoProducto.Size = new System.Drawing.Size(260, 20);
-            this.txtCodigoProducto.TabIndex = 2;
+            this.txtCodigoTipoProducto.Location = new System.Drawing.Point(174, 69);
+            this.txtCodigoTipoProducto.Name = "txtCodigoTipoProducto";
+            this.txtCodigoTipoProducto.Size = new System.Drawing.Size(260, 20);
+            this.txtCodigoTipoProducto.TabIndex = 2;
             // 
             // label3
             // 
@@ -157,34 +158,42 @@
             this.cmdNuevo.TabIndex = 18;
             this.cmdNuevo.UseVisualStyleBackColor = true;
             // 
-            // data_grid_productos
+            // data_grid_tipo_producto
             // 
-            this.data_grid_productos.AllowUserToAddRows = false;
-            this.data_grid_productos.AllowUserToDeleteRows = false;
-            this.data_grid_productos.AllowUserToResizeRows = false;
-            this.data_grid_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_grid_productos.Location = new System.Drawing.Point(17, 329);
-            this.data_grid_productos.Name = "data_grid_productos";
-            this.data_grid_productos.ReadOnly = true;
-            this.data_grid_productos.RowHeadersVisible = false;
-            this.data_grid_productos.Size = new System.Drawing.Size(545, 236);
-            this.data_grid_productos.TabIndex = 19;
+            this.data_grid_tipo_producto.AllowUserToAddRows = false;
+            this.data_grid_tipo_producto.AllowUserToDeleteRows = false;
+            this.data_grid_tipo_producto.AllowUserToResizeRows = false;
+            this.data_grid_tipo_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid_tipo_producto.Location = new System.Drawing.Point(14, 336);
+            this.data_grid_tipo_producto.Name = "data_grid_tipo_producto";
+            this.data_grid_tipo_producto.ReadOnly = true;
+            this.data_grid_tipo_producto.RowHeadersVisible = false;
+            this.data_grid_tipo_producto.Size = new System.Drawing.Size(545, 236);
+            this.data_grid_tipo_producto.TabIndex = 19;
             // 
-            // Tipo_producto
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(12, 59);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(243, 20);
+            this.txtBuscar.TabIndex = 19;
+            // 
+            // frmTipo_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 640);
-            this.Controls.Add(this.data_grid_productos);
+            this.Controls.Add(this.data_grid_tipo_producto);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmdNuevo);
-            this.Controls.Add(this.panel_producto);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.lblTipo_producto);
-            this.Name = "Tipo_producto";
+            this.Controls.Add(this.panel_formulario);
+            this.Name = "frmTipo_producto";
             this.Text = "Tipo Producto";
-            this.panel_producto.ResumeLayout(false);
-            this.panel_producto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_productos)).EndInit();
+            this.panel_formulario.ResumeLayout(false);
+            this.panel_formulario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_tipo_producto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,17 +202,18 @@
         #endregion
 
         private System.Windows.Forms.Label lblTipo_producto;
-        private System.Windows.Forms.Panel panel_producto;
+        private System.Windows.Forms.Panel panel_formulario;
         private System.Windows.Forms.Button cmdBorrar;
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.Button cmdGuardar;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCodigoProducto;
+        private System.Windows.Forms.TextBox txtCodigoTipoProducto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_subtitle;
         private System.Windows.Forms.Button cmdBuscar;
         private System.Windows.Forms.Button cmdNuevo;
-        private System.Windows.Forms.DataGridView data_grid_productos;
+        private System.Windows.Forms.DataGridView data_grid_tipo_producto;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

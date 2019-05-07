@@ -75,3 +75,4 @@ C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formula
 C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmProveedores.resources
 C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.frmMaxiKiosko.resources
 C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmSesion.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmTipo_producto.resources

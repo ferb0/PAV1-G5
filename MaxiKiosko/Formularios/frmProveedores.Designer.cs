@@ -148,6 +148,7 @@
             // 
             this.data_grid_proveedores.AllowUserToAddRows = false;
             this.data_grid_proveedores.AllowUserToDeleteRows = false;
+            this.data_grid_proveedores.AllowUserToResizeRows = false;
             this.data_grid_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_proveedores.Location = new System.Drawing.Point(12, 90);
             this.data_grid_proveedores.Name = "data_grid_proveedores";
@@ -155,7 +156,6 @@
             this.data_grid_proveedores.RowHeadersVisible = false;
             this.data_grid_proveedores.Size = new System.Drawing.Size(517, 237);
             this.data_grid_proveedores.TabIndex = 15;
-            this.data_grid_proveedores.AllowUserToResizeRows = false;
             this.data_grid_proveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_proveedores_CellDoubleClick);
             // 
             // txtBuscar
@@ -229,11 +229,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 337);
+            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.data_grid_proveedores);
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
