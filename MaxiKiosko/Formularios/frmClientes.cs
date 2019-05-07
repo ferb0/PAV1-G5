@@ -75,6 +75,8 @@ namespace MaxiKiosko.Formularios
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
+            Cliente cliente = new Cliente();
+
             // Validaciones
             if(this.txtDocumento.Text == "")
             {
@@ -118,11 +120,17 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
-            if(this.txtTelefono.Text.Length > 13)
+            if(!(this.txtTelefono.Text == "(   )   -") && this.txtTelefono.MaskFull)
             {
-                MessageBox.Show("El telefono es demasiado largo");
+                cliente.telefono = this.txtTelefono.Text;
+            } else if(!(this.txtTelefono.Text == "(   )   -") && !this.txtTelefono.MaskFull)
+            {
+                MessageBox.Show("El telefono está incompleto");
                 this.txtTelefono.Focus();
                 return;
+            } else
+            {
+                cliente.telefono = "";
             }
 
             if(this.txtEmail.Text.Length > MAX_CHAR_VARCHAR)
@@ -163,10 +171,8 @@ namespace MaxiKiosko.Formularios
             }
 
             // Creamos el cliente
-            Cliente cliente = new Cliente();
             cliente.nombre = this.txtNombre.Text;
             cliente.apellido = this.txtApellido.Text;
-            cliente.telefono = this.txtTelefono.Text;
             cliente.email = this.txtEmail.Text;
             cliente.id_cuenta_corriente = lastInsertedIdCC;
 
@@ -284,6 +290,38 @@ namespace MaxiKiosko.Formularios
             } catch (FormatException)
             {
                 return false;
+            }
+        }
+        
+        private void txtTelefono_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtLimiteCredito_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
             }
         }
     }

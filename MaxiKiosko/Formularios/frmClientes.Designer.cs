@@ -1,4 +1,6 @@
-﻿namespace MaxiKiosko.Formularios
+﻿using System;
+
+namespace MaxiKiosko.Formularios
 {
     partial class frmClientes
     {
@@ -37,12 +39,12 @@
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.data_grip_clientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel_formulario = new System.Windows.Forms.Panel();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtLimiteCredito = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,6 +118,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(269, 20);
             this.txtDocumento.TabIndex = 6;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtApellido
             // 
@@ -123,6 +126,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(269, 20);
             this.txtApellido.TabIndex = 3;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtNombre
             // 
@@ -130,13 +134,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(269, 20);
             this.txtNombre.TabIndex = 5;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 146);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
-            this.txtTelefono.TabIndex = 7;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtEmail
             // 
@@ -159,6 +157,7 @@
             // 
             this.data_grip_clientes.AllowUserToAddRows = false;
             this.data_grip_clientes.AllowUserToDeleteRows = false;
+            this.data_grip_clientes.AllowUserToResizeRows = false;
             this.data_grip_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grip_clientes.Location = new System.Drawing.Point(12, 90);
             this.data_grip_clientes.Name = "data_grip_clientes";
@@ -166,7 +165,6 @@
             this.data_grip_clientes.RowHeadersVisible = false;
             this.data_grip_clientes.Size = new System.Drawing.Size(517, 237);
             this.data_grip_clientes.TabIndex = 15;
-            this.data_grip_clientes.AllowUserToResizeRows = false;
             this.data_grip_clientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grip_clientes_CellDoubleClick);
             // 
             // txtBuscar
@@ -178,6 +176,7 @@
             // 
             // panel_formulario
             // 
+            this.panel_formulario.Controls.Add(this.txtTelefono);
             this.panel_formulario.Controls.Add(this.label7);
             this.panel_formulario.Controls.Add(this.txtLimiteCredito);
             this.panel_formulario.Controls.Add(this.label2);
@@ -185,7 +184,6 @@
             this.panel_formulario.Controls.Add(this.lb_subtitle);
             this.panel_formulario.Controls.Add(this.txtApellido);
             this.panel_formulario.Controls.Add(this.txtNombre);
-            this.panel_formulario.Controls.Add(this.txtTelefono);
             this.panel_formulario.Controls.Add(this.label6);
             this.panel_formulario.Controls.Add(this.label5);
             this.panel_formulario.Controls.Add(this.label4);
@@ -198,6 +196,14 @@
             this.panel_formulario.Name = "panel_formulario";
             this.panel_formulario.Size = new System.Drawing.Size(517, 285);
             this.panel_formulario.TabIndex = 20;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 146);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
+            this.txtTelefono.TabIndex = 7;
             // 
             // label7
             // 
@@ -214,6 +220,7 @@
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Size = new System.Drawing.Size(269, 20);
             this.txtLimiteCredito.TabIndex = 10;
+            this.txtLimiteCredito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLimiteCredito_KeyPress);
             // 
             // label2
             // 
@@ -299,7 +306,6 @@
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.DataGridView data_grip_clientes;
@@ -311,5 +317,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLimiteCredito;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }
