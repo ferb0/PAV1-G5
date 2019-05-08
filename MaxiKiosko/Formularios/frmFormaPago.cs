@@ -1,69 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
-    public partial class frmTipo_producto : Form
+    public partial class frmFormaPago : Form
     {
         const int MAX_CHAR_VARCHAR = 45;
-        public frmTipo_producto()
+        public frmFormaPago()
         {
             InitializeComponent();
         }
-        private void FrmTipo_producto_Load(object sender, EventArgs e)
+        private void FrmFormaPago_Load(object sender, EventArgs e)
         {
             // Cargar Data Grip View
-            loadAllTipo_producto();
+            loadAllForma_pago();
 
             // Ocultar elementos
             this.panel_formulario.Visible = false;
         }
 
-        private void loadAllTipo_producto()
+        private void loadAllForma_pago()
         {
-            Tipo_producto tipo_Producto = new Tipo_producto();
-            DataTable tipo_prod = tipo_Producto.buscarTodos();
-            cargarTipo_Producto(tipo_prod);
+            Forma_pago formaPago = new Forma_pago();
+            DataTable formasPago = formaPago.buscarTodos();
+            cargarFormaPago(formasPago);
         }
 
-        private void cargarTipo_Producto(DataTable data)
+        private void cargarFormaPago(DataTable data)
         {
-            this.data_grid_tipo_producto.DataSource = data;
+            this.data_grid_forma_pago.DataSource = data;
 
             // Headers 
-            this.data_grid_tipo_producto.Columns[0].HeaderText = "Codigo";
-            this.data_grid_tipo_producto.Columns[1].HeaderText = "Descripcion";
+            this.data_grid_forma_pago.Columns[0].HeaderText = "Codigo";
+            this.data_grid_forma_pago.Columns[1].HeaderText = "Descripcion";
         
             // Auto size
-            this.data_grid_tipo_producto.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.data_grid_tipo_producto.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grid_forma_pago.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grid_forma_pago.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
            
         }
 
-        private void data_grid_tipo_producto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void data_grid_forma_pago_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Deshabilitamos la grilla para evitar nuevo doble click
-            this.data_grid_tipo_producto.Enabled = false;
+            this.data_grid_forma_pago.Enabled = false;
             // Mostrar Formulario de edicion
-            this.txtCodigoTipoProducto.Text = this.data_grid_tipo_producto.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtDescripcion.Text = this.data_grid_tipo_producto.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.txtIdFormaPago.Text = this.data_grid_forma_pago.Rows[e.RowIndex].Cells[0].Value.ToString();
+            this.txtDescripcion.Text = this.data_grid_forma_pago.Rows[e.RowIndex].Cells[1].Value.ToString();
           
 
             // Ocultar Data Grip View
-            this.data_grid_tipo_producto.Visible = false;
+            this.data_grid_forma_pago.Visible = false;
 
             // Mostrar Formulario de edicion
             // TextBox
-            this.lb_subtitle.Text = "Editar Tipo Producto";
-            this.txtCodigoTipoProducto.Enabled = false;
+            this.lb_subtitle.Text = "Editar Forma de Pago";
+            this.txtIdFormaPago.Enabled = false;
             this.panel_formulario.Visible = true;
             this.cmdBorrar.Visible = true;
             // Buttons
@@ -90,31 +83,31 @@ namespace MaxiKiosko.Formularios
             }
 
             // Creamos el tipo de producto 
-            Tipo_producto tipoProducto = new Tipo_producto();
-            tipoProducto.descripcion = this.txtDescripcion.Text;
+            Forma_pago formaPago = new Forma_pago();
+            formaPago.descripcion = this.txtDescripcion.Text;
 
             // Validar que otro tipo de producto no tenga el mismo dni
             
 
-            if (lb_subtitle.Text == "Editar Tipo Producto")
+            if (lb_subtitle.Text == "Editar Forma de Pago")
             {
-                int id = (Int32.TryParse(this.txtCodigoTipoProducto.Text, out id) ? id : 0);
+                int id = (Int32.TryParse(this.txtIdFormaPago.Text, out id) ? id : 0);
                 if (id == 0)
                 {
-                    MessageBox.Show("Hubo un error al intentar borrar el Tipo producto. Causa: No se pudo determinar que Tipo de producto es");
+                    MessageBox.Show("Hubo un error al intentar borrar la Forma de Pago. Causa: No se pudo determinar que Forma de Pago es");
                     return;
                 }
-                tipoProducto.id_tipo_producto = id;
-                tipoProducto.modificarTipo_producto();
+                formaPago.id_forma_pago = id;
+                formaPago.modificarForma_pago();
 
-                MessageBox.Show("Tipo Producto editado exitosamente");
+                MessageBox.Show("Forma de Pago editado exitosamente");
             }
-            else if (lb_subtitle.Text == "Crear Tipo Producto")
+            else if (lb_subtitle.Text == "Crear Forma de Pago")
             {
 
-                tipoProducto.agregarTipo_producto();
+                formaPago.agregarForma_pago();
 
-                MessageBox.Show("Tipo Producto creado exitosamente");
+                MessageBox.Show("Forma de Pago creado exitosamente");
             }
             else
             {
@@ -127,9 +120,9 @@ namespace MaxiKiosko.Formularios
         private void CmdBuscar_Click(object sender, EventArgs e)
         {
             // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
-            Tipo_producto tipoProducto = new Tipo_producto();
-            DataTable dt = tipoProducto.consultarTipo_producto(txtBuscar.Text);
-            cargarTipo_Producto(dt);
+            Forma_pago formaPago = new Forma_pago();
+            DataTable dt = formaPago.consultarForma_pago(txtBuscar.Text);
+            cargarFormaPago(dt);
         }
 
         private void CmdCancelar_Click(object sender, EventArgs e)
@@ -139,11 +132,11 @@ namespace MaxiKiosko.Formularios
 
         private void CmdNuevo_Click(object sender, EventArgs e)
         {
-            this.lb_subtitle.Text = "Crear Tipo Producto";
+            this.lb_subtitle.Text = "Crear Forma de Pago";
             // Deshabilitamos la grilla para evitar nuevo doble click
-            this.data_grid_tipo_producto.Enabled = false;
+            this.data_grid_forma_pago.Enabled = false;
             // Ocultar Data Grip View
-            this.data_grid_tipo_producto.Visible = false;
+            this.data_grid_forma_pago.Visible = false;
 
             // Mostrar Formulario de edicion
             panel_formulario.Visible = true;
@@ -162,39 +155,39 @@ namespace MaxiKiosko.Formularios
 
         private void CmdBorrar_Click(object sender, EventArgs e)
         {
-            Tipo_producto tipoProducto = new Tipo_producto();
-            int id = (Int32.TryParse(this.txtCodigoTipoProducto.Text, out id) ? id : 0);
+            Forma_pago formaPago = new Forma_pago();
+            int id = (Int32.TryParse(this.txtIdFormaPago.Text, out id) ? id : 0);
             if (id == 0)
             {
-                MessageBox.Show("Hubo un error al intentar borrar el Tipo producto. Causa: No se pudo determinar que Tipo de producto es");
+                MessageBox.Show("Hubo un error al intentar borrar la Forma de Pago. Causa: No se pudo determinar que Forma de Pago es");
                 return;
             }
 
-            tipoProducto.borrarTipo_producto(id);
+            formaPago.borrarForma_pago(id);
 
-            MessageBox.Show("Tipo producto eliminado exitosamente");
+            MessageBox.Show("Forma de Pago eliminada exitosamente");
             showMain();
         }
 
         private void showMain()
         {
-            this.data_grid_tipo_producto.Enabled = true;
-            this.data_grid_tipo_producto.Visible = true;
+            this.data_grid_forma_pago.Enabled = true;
+            this.data_grid_forma_pago.Visible = true;
             emptyTextBoxes();
             panel_formulario.Visible = false;
             this.cmdNuevo.Visible = true;
             this.txtBuscar.Visible = true;
             this.cmdBuscar.Visible = true;
-            loadAllTipo_producto();
+            loadAllForma_pago();
         }
 
         private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e) {
             if((int)e.KeyChar == (int)Keys.Enter)
             {
                 // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
-                Tipo_producto tipoProducto = new Tipo_producto();
-                DataTable dt = tipoProducto.consultarTipo_producto(txtBuscar.Text);
-                cargarTipo_Producto(dt);
+                Forma_pago formaPago = new Forma_pago();
+                DataTable dt = formaPago.consultarForma_pago(txtBuscar.Text);
+                cargarFormaPago(dt);
             }
         }
     }

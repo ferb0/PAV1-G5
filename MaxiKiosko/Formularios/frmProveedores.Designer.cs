@@ -41,11 +41,11 @@
             this.data_grid_proveedores = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel_formulario = new System.Windows.Forms.Panel();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.cmdBorrar = new System.Windows.Forms.Button();
             this.lb_subtitle = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_proveedores)).BeginInit();
             this.panel_formulario.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +179,14 @@
             this.panel_formulario.Size = new System.Drawing.Size(517, 285);
             this.panel_formulario.TabIndex = 20;
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 140);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
+            this.txtTelefono.TabIndex = 7;
+            // 
             // cmdBorrar
             // 
             this.cmdBorrar.Location = new System.Drawing.Point(382, 11);
@@ -219,14 +227,6 @@
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 140);
-            this.txtTelefono.Mask = "(999)000-0000";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(269, 20);
-            this.txtTelefono.TabIndex = 7;
-            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +240,7 @@
             this.Controls.Add(this.data_grid_proveedores);
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
+            this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_proveedores)).EndInit();
             this.panel_formulario.ResumeLayout(false);

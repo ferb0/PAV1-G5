@@ -53,7 +53,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `maxikiosko`.`forma_pago`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`forma_pago` (
-  `id_forma_pago` INT UNSIGNED NOT NULL,
+  `id_forma_pago` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   PRIMARY KEY (`id_forma_pago`))
 ENGINE = InnoDB;

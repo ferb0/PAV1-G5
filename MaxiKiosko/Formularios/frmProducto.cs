@@ -149,7 +149,7 @@ namespace MaxiKiosko.Formularios
 
             if (lb_subtitle.Text == "Editar Producto")
             {
-                long idProducto = long.Parse(this.txtCodigoProducto.Text);
+                long idProducto = (Int64.TryParse(this.txtCodigoProducto.Text, out idProducto) ? idProducto : 0);
                 if (idProducto == 0)
                 {
                     MessageBox.Show("Hubo un error al intentar editar el producto. Causa: No se pudo determinar que producto es");
@@ -236,6 +236,61 @@ namespace MaxiKiosko.Formularios
         private void cmdCancelar_Click_1(object sender, EventArgs e)
         {
             showMain();
+        }
+
+        private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
+                Producto producto = new Producto();
+                DataTable dt = producto.consultarProducto(txtBuscar.Text);
+                cargarProducto(dt);
+            }
+        }
+
+        private void txtCodigoProducto_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtStock_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) &&
+                !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.') &&
+                (e.KeyChar != ','))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+
+            // Aceptar solo un . o una ,
+            if((e.KeyChar  == '.') &&
+                (((sender as TextBox).Text.IndexOf('.') > -1) ||
+                ((sender as TextBox).Text.IndexOf(',') > -1)))
+            {
+                MessageBox.Show("Solo se permite un solo (.) o (,)");
+                e.Handled = true;
+            }
+            
+            if((e.KeyChar  == ',') &&
+                (((sender as TextBox).Text.IndexOf('.') > -1) ||
+                ((sender as TextBox).Text.IndexOf(',') > -1)))
+            {
+                MessageBox.Show("Solo se permite un solo (.) o (,)");
+                e.Handled = true;
+            }
         }
     }
 }
