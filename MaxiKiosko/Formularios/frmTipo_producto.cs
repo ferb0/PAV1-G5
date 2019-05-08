@@ -170,7 +170,14 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
-            tipoProducto.borrarTipo_producto(id);
+            try
+            {
+                tipoProducto.borrarTipo_producto(id);
+            } catch (Exception)
+            {
+                MessageBox.Show("No se pudo eliminar el tipo de producto debido a que hay productos vinculados al mismo");
+                return;
+            }
 
             MessageBox.Show("Tipo producto eliminado exitosamente");
             showMain();
