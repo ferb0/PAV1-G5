@@ -39,14 +39,16 @@ namespace MaxiKiosko.Formularios
 
             // Headers 
             this.data_grid_productos.Columns[0].HeaderText = "Codigo";
-            this.data_grid_productos.Columns[1].HeaderText = "Descripcion";
-            this.data_grid_productos.Columns[2].HeaderText = "Precio";
-            this.data_grid_productos.Columns[3].HeaderText = "Stock";
+            this.data_grid_productos.Columns[1].HeaderText = "Tipo";
+            this.data_grid_productos.Columns[2].HeaderText = "Descripcion";
+            this.data_grid_productos.Columns[3].HeaderText = "Precio";
+            this.data_grid_productos.Columns[4].HeaderText = "Stock";
             // Auto size
             this.data_grid_productos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            this.data_grid_productos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.data_grid_productos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.data_grid_productos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void data_grid_productos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -61,9 +63,12 @@ namespace MaxiKiosko.Formularios
                 return;
             }
             this.txtCodigoProducto.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtDescripcion.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.txtPrecio.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtStock.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtDescripcion.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.txtPrecio.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtStock.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            fillProductTypes();
+            cmbTipoProducto.SelectedIndex = cmbTipoProducto.FindStringExact(this.data_grid_productos.Rows[e.RowIndex].Cells[1].Value.ToString());
 
             // Ocultar Data Grip View
             this.data_grid_productos.Visible = false;
@@ -114,7 +119,14 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            if(cmbTipoProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione un tipo de producto");
+                return;
+            }
+
             producto.descripcion = this.txtDescripcion.Text;
+            producto.tipo_producto = (int)cmbTipoProducto.SelectedValue;
 
 
             if (txtPrecio.Text.Contains(","))
@@ -195,6 +207,18 @@ namespace MaxiKiosko.Formularios
             this.cmdNuevo.Visible = false;
             this.txtBuscar.Visible = false;
             this.cmdBuscar.Visible = false;
+            fillProductTypes();
+        }
+
+        private void fillProductTypes()
+        {
+            Tipo_producto tipo = new Tipo_producto();
+            DataTable tiposProducto = tipo.buscarTodos();
+
+            this.cmbTipoProducto.Text = "Seleccione";
+            this.cmbTipoProducto.DataSource = tiposProducto;
+            this.cmbTipoProducto.DisplayMember = "descripcion";
+            this.cmbTipoProducto.ValueMember = "id_tipo_producto";
         }
 
         private void showMain()

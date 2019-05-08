@@ -75,10 +75,17 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `maxikiosko`.`producto`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`producto` (
   `id_producto` BIGINT NOT NULL,
+  `tipo_producto` INT UNSIGNED NOT NULL,
   `precio` FLOAT NULL,
   `stock` INT NULL DEFAULT 0,
   `descripcion` VARCHAR(200) NULL,
-  PRIMARY KEY (`id_producto`))
+  PRIMARY KEY (`id_producto`),
+  INDEX `fk_producto_tipo_producto_idx` (`tipo_producto` ASC) VISIBLE,
+  CONSTRAINT `fk_producto_tipo_producto`
+    FOREIGN KEY (`tipo_producto`)
+    REFERENCES `maxikiosko`.`tipo_producto` (`id_tipo_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
