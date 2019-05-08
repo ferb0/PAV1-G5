@@ -31,6 +31,7 @@ namespace MaxiKiosko.Formularios
             this.dg_roles.Columns[0].Visible = false;
             this.dg_roles.Columns[1].HeaderText = "Nombre";
             this.dg_roles.Columns[2].HeaderText = "Descripción";
+            this.dg_roles.Columns[2].Width = 200;
         }
 
         private void frmRoles_Load(object sender, EventArgs e)
@@ -77,12 +78,12 @@ namespace MaxiKiosko.Formularios
             {
                 rol.id_rol = int.Parse(dg_roles.CurrentRow.Cells[0].Value.ToString());
                 rol.actualizar_Rol();
-                MessageBox.Show("El usuario se actualizo exitosamente");
+                MessageBox.Show("El Rol se actualizo exitosamente");
             }
             else if (lblSubtitulo.Text == "Crear Rol")
             {
                 rol.guardar_rol();
-                MessageBox.Show("El usuario se guardo exitosamente");
+                MessageBox.Show("El Rol se guardo exitosamente");
             }
             else
             {

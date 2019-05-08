@@ -16,7 +16,7 @@ namespace MaxiKiosko.Clases
         string _nombre_usuario;
         string _apellido;
         string _nombre;
-        string _rol;
+        int _rol;
         string _password;
 
         public string nombre_usuario
@@ -44,7 +44,7 @@ namespace MaxiKiosko.Clases
             get { return this._nombre; }
             set { this._nombre = value; }
         }
-        public string rol
+        public int rol
         {
             get { return this._rol; }
             set { this._rol = value; }
@@ -68,8 +68,8 @@ namespace MaxiKiosko.Clases
                          rol, password) VALUES ('" +
                          this._nombre_usuario + "', '" +
                          this._apellido + "', '" +
-                         this._nombre + "', '" +
-                         this._rol + "', '" +
+                         this._nombre + "', " +
+                         this._rol + ", '" +
                          this._password + "')";
             //MessageBox.Show(SqlInsert);
             this._BD.grabar_modificar(SqlInsert);
@@ -82,8 +82,8 @@ namespace MaxiKiosko.Clases
                         SET nombre_usuario = '" +
                         this._nombre_usuario + "', apellido = '" + 
                         this._apellido + "', nombre = '" + 
-                        this._nombre + "', rol = '" + 
-                        this._rol + "', password = '" + 
+                        this._nombre + "', rol = " + 
+                        this._rol + ", password = '" + 
                         this._password + "' WHERE id_usuario = " + this._id_usuario;
             //MessageBox.Show(sqlUpdate);
             this._BD.grabar_modificar(sqlUpdate);                     
@@ -101,21 +101,23 @@ namespace MaxiKiosko.Clases
         public DataTable mostrarTodosUsuarios()
         {
             string sqlConsulta = "";
-            sqlConsulta = @"SELECT * FROM usuario";
+            //sqlConsulta = @"SELECT u.id_usuario, u.nombre_usuario, u.apellido, u.nombre, u.password, r.nombre FROM usuario u, rol r WHERE u.rol=r.id_rol";
+            sqlConsulta = @"SELECT u.id_usuario, u.nombre_usuario, u.apellido, u.nombre, u.password, r.nombre FROM usuario u INNER JOIN rol r ON u.rol=r.id_rol";
+
             return _BD.consulta(sqlConsulta);
         }
 
         public DataTable buscarUsuario(string usuario)
         {
             string sqlBuscar = "";
-            //sqlBuscar = @" SELECT * FROM usuario WHERE nombre_usuario LIKE CONCAT('%'," +
-            //            usuario + ",'%')";
-            sqlBuscar = @" SELECT * FROM usuario WHERE nombre_usuario LIKE '%" +
-                        usuario + "%'";
-
+            //sqlBuscar = @" SELECT * FROM usuario WHERE nombre_usuario LIKE '%" +
+            //            usuario + "%'";
+            sqlBuscar = @"SELECT u.id_usuario, u.nombre_usuario, u.apellido, u.nombre, u.password, r.nombre FROM usuario u INNER JOIN rol r ON (u.nombre_usuario LIKE '%" +
+                        usuario + "%' OR u.apellido LIKE '%" +
+                        usuario + "%' OR u.nombre LIKE '%" +
+                        usuario + "%') AND u.rol=r.id_rol";
             //MessageBox.Show(sqlBuscar);
             return _BD.consulta(sqlBuscar);
         }
-        
     }
 }

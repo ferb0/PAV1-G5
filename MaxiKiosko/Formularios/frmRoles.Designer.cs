@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_formulario = new System.Windows.Forms.Panel();
-            this.dg_roles = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblSubtitulo = new System.Windows.Forms.Label();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -38,10 +37,11 @@
             this.cmdBorrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.dg_roles = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblSubtitulo = new System.Windows.Forms.Label();
             this.panel_formulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_roles)).BeginInit();
             this.SuspendLayout();
@@ -61,23 +61,15 @@
             this.panel_formulario.Size = new System.Drawing.Size(434, 239);
             this.panel_formulario.TabIndex = 0;
             // 
-            // dg_roles
+            // lblSubtitulo
             // 
-            this.dg_roles.AllowUserToAddRows = false;
-            this.dg_roles.AllowUserToDeleteRows = false;
-            this.dg_roles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_roles.Location = new System.Drawing.Point(23, 106);
-            this.dg_roles.Name = "dg_roles";
-            this.dg_roles.Size = new System.Drawing.Size(434, 170);
-            this.dg_roles.TabIndex = 2;
-            this.dg_roles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_roles_CellDoubleClick);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(50, 63);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(259, 20);
-            this.txtBuscar.TabIndex = 1;
+            this.lblSubtitulo.AutoSize = true;
+            this.lblSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitulo.Location = new System.Drawing.Point(12, 6);
+            this.lblSubtitulo.Name = "lblSubtitulo";
+            this.lblSubtitulo.Size = new System.Drawing.Size(96, 20);
+            this.lblSubtitulo.TabIndex = 3;
+            this.lblSubtitulo.Text = "lblsubtitulo";
             // 
             // cmdCancelar
             // 
@@ -141,6 +133,25 @@
             this.txtDescripcion.Size = new System.Drawing.Size(282, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
+            // dg_roles
+            // 
+            this.dg_roles.AllowUserToAddRows = false;
+            this.dg_roles.AllowUserToDeleteRows = false;
+            this.dg_roles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_roles.Location = new System.Drawing.Point(23, 106);
+            this.dg_roles.Name = "dg_roles";
+            this.dg_roles.ReadOnly = true;
+            this.dg_roles.Size = new System.Drawing.Size(434, 170);
+            this.dg_roles.TabIndex = 2;
+            this.dg_roles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_roles_CellDoubleClick);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(50, 63);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(259, 20);
+            this.txtBuscar.TabIndex = 1;
+            // 
             // cmdNuevo
             // 
             this.cmdNuevo.Image = global::MaxiKiosko.Properties.Resources.add_file;
@@ -171,16 +182,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Roles";
             // 
-            // lblSubtitulo
-            // 
-            this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitulo.Location = new System.Drawing.Point(12, 6);
-            this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(96, 20);
-            this.lblSubtitulo.TabIndex = 3;
-            this.lblSubtitulo.Text = "lblsubtitulo";
-            // 
             // frmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,8 +191,8 @@
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.dg_roles);
+            this.Controls.Add(this.panel_formulario);
             this.Name = "frmRoles";
             this.Text = "frmRoles";
             this.Load += new System.EventHandler(this.frmRoles_Load);
