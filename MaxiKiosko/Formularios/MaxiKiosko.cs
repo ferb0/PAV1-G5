@@ -34,6 +34,50 @@ namespace MaxiKiosko
             panel_clientenuevo.Visible = true;
         }
 
+        private void button_clienteguardar_Click(object sender, EventArgs e)
+        {
+            if (this.textBox_apellidocliente.Text == "")
+            {
+                MessageBox.Show("Apellido no ingresado.");
+                this.textBox_apellidocliente.Focus();
+                return;
+            }
+
+            if (this.textBox_nombrecliente.Text == "")
+            {
+                MessageBox.Show("Nombre no ingresado.");
+                this.textBox_nombrecliente.Focus();
+                return;
+            }
+
+            if (this.textBox_telefonocliente.Text == "")
+            {
+                MessageBox.Show("Teléfono no ingresado.");
+                this.textBox_telefonocliente.Focus();
+                return;
+            }
+
+            Cliente nuevo_cliente = new Cliente(this.textBox_apellidocliente.Text, this.textBox_nombrecliente.Text, this.textBox_telefonocliente.Text, this.textBox_emailcliente.Text);
+
+
+            nuevo_cliente.agregarCliente();
+            MessageBox.Show("Cliente Guardado con exito");
+
+            this.textBox_apellidocliente.Clear();
+            this.textBox_nombrecliente.Clear();
+            this.textBox_telefonocliente.Clear();
+            this.textBox_emailcliente.Clear();
+        }
+
+        private void button_clientecancelar_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+        }
+
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel_productoconsultado.Visible = false;
@@ -41,6 +85,54 @@ namespace MaxiKiosko
             panel_productonuevo.Visible = false;
             panel_clientenuevo.Visible = false;
             panel_clienteconsultar.Visible = true;
+        }
+
+        private void button_consultarcliente_Click(object sender, EventArgs e)
+        {
+            if (this.textBox_consultarcliente.Text == "")
+            {
+                MessageBox.Show("No ha ingresado ningún dato.");
+                this.textBox_consultarcliente.Focus();
+                return;
+            }
+
+            Cliente clie = new Cliente();
+
+            DataTable tabla = clie.consultarCliente(this.textBox_consultarcliente.Text);
+            this.listBox_consultacliente.DataSource = tabla;
+            this.listBox_consultacliente.DisplayMember = "nombre";
+            this.listBox_consultacliente.ValueMember = "idCliente";
+            
+        }
+
+        private void listBox_consultacliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = true;
+        }
+
+        private void button_clienteconsultadocancelar_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_productonuevo.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+        }
+
+        private void button_productonuevocancelar_Click(object sender, EventArgs e)
+        {
+            panel_productoconsultado.Visible = false;
+            panel_productoconsultar.Visible = false;
+            panel_clientenuevo.Visible = false;
+            panel_clienteconsultar.Visible = false;
+            panel_clienteconsultado.Visible = false;
+            panel_productonuevo.Visible = false;
         }
 
         private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)

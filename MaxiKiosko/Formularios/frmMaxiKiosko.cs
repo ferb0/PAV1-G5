@@ -13,6 +13,9 @@ namespace MaxiKiosko
 {
     public partial class frmMaxiKiosko : Form
     {
+        public int _id_usuario = 0;
+        public string _nombre_usuario = "";
+        public string _rol = "";
         public frmMaxiKiosko()
         {
             InitializeComponent();
@@ -61,6 +64,20 @@ namespace MaxiKiosko
         private void ClientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmClientes frm = new Formularios.frmClientes();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void aBMToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            frmRoles frm = new Formularios.frmRoles();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void aBMToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmUsuario frm = new Formularios.frmUsuario();
             frm.ShowDialog();
             frm.Dispose();
         }

@@ -201,6 +201,7 @@
             this.button_clientecancelar.TabIndex = 14;
             this.button_clientecancelar.Text = "Cancelar";
             this.button_clientecancelar.UseVisualStyleBackColor = true;
+            this.button_clientecancelar.Click += new System.EventHandler(this.button_clientecancelar_Click);
             // 
             // button_clienteguardar
             // 
@@ -210,6 +211,7 @@
             this.button_clienteguardar.TabIndex = 13;
             this.button_clienteguardar.Text = "Guardar";
             this.button_clienteguardar.UseVisualStyleBackColor = true;
+            this.button_clienteguardar.Click += new System.EventHandler(this.button_clienteguardar_Click);
             // 
             // textBox_emailcliente
             // 
@@ -305,6 +307,7 @@
             this.listBox_consultacliente.Name = "listBox_consultacliente";
             this.listBox_consultacliente.Size = new System.Drawing.Size(197, 147);
             this.listBox_consultacliente.TabIndex = 4;
+            this.listBox_consultacliente.SelectedIndexChanged += new System.EventHandler(this.listBox_consultacliente_SelectedIndexChanged);
             // 
             // label_consultarclientedescripcion
             // 
@@ -323,6 +326,7 @@
             this.button_consultarcliente.TabIndex = 2;
             this.button_consultarcliente.Text = "Consultar";
             this.button_consultarcliente.UseVisualStyleBackColor = true;
+            this.button_consultarcliente.Click += new System.EventHandler(this.button_consultarcliente_Click);
             // 
             // textBox_consultarcliente
             // 
@@ -368,6 +372,7 @@
             this.button_clienteconsultadocancelar.TabIndex = 25;
             this.button_clienteconsultadocancelar.Text = "Cancelar";
             this.button_clienteconsultadocancelar.UseVisualStyleBackColor = true;
+            this.button_clienteconsultadocancelar.Click += new System.EventHandler(this.button_clienteconsultadocancelar_Click);
             // 
             // button_clienteconsultadoeliminar
             // 
@@ -488,6 +493,7 @@
             this.button_productonuevocancelar.TabIndex = 24;
             this.button_productonuevocancelar.Text = "Cancelar";
             this.button_productonuevocancelar.UseVisualStyleBackColor = true;
+            this.button_productonuevocancelar.Click += new System.EventHandler(this.button_productonuevocancelar_Click);
             // 
             // button_productonuevoguardar
             // 
