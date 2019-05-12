@@ -68,9 +68,9 @@ namespace MaxiKiosko
                                      " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto" +
                                      " WHERE id_producto LIKE '%{0}%'" +
                                      " OR precio LIKE '%{0}%'" +
-                                     " OR tipo LIKE '%{0}%'" +
+                                     //" OR tipo LIKE '%{0}%'" +
                                      " OR stock LIKE '%{0}%'" +
-                                     " OR descripcion LIKE '%{0}%'", subString));
+                                     " OR p.descripcion LIKE '%{0}%'", subString));
         }
 
         public DataTable buscarTodos()
