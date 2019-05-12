@@ -47,15 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Rol.cs" />
+    <Compile Include="Clases\Seguridad.cs" />
+    <Compile Include="Clases\Tipo_producto.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Cuenta_corriente.cs" />
     <Compile Include="Clases\foma_pago.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
-    <Compile Include="Clases\Rol.cs" />
-    <Compile Include="Clases\Seguridad.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\frmFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFormaPago.Designer.cs">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTipo_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTipo_producto.Designer.cs">
+      <DependentUpon>frmTipo_producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmFormaPago.resx">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTipo_producto.resx">
+      <DependentUpon>frmTipo_producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>

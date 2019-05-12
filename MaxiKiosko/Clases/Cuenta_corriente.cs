@@ -52,6 +52,13 @@ namespace MaxiKiosko
             this._BD.grabar_modificar(SqlUpdate);
         } 
 
+        public int lastInsertedId()
+        {
+            const string Comando = "SELECT id_cuenta FROM cuenta_corriente ORDER BY id_cuenta DESC LIMIT 1";
+            string resultado = _BD.consulta(Comando).Rows[0][0].ToString();
+            return int.TryParse(resultado, out int id) ? id : -1;
+        }
+
         public DataTable consultarCuenta_corriente(string subString) {
             return this._BD.consulta(String.Format ("SELECT * FROM cuenta_corriente WHERE id_cuenta LIKE '%{0}%'" +
                 " OR balance LIKE '%{0}%'" +

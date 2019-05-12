@@ -28,28 +28,42 @@ namespace MaxiKiosko
 
         }
 
-        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmClientes frm = new Formularios.frmClientes();
+            this.Close();
+        }
+
+        private void TipoProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipo_producto frm = new Formularios.frmTipo_producto();
             frm.ShowDialog();
             frm.Dispose();
         }
 
-        private void aBMToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void FormaDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFormaPago frm = new Formularios.frmFormaPago();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto frm = new Formularios.frmProducto();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProveedores frm = new Formularios.frmProveedores();
             frm.ShowDialog();
             frm.Dispose();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void aBMToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            frmProducto frm = new Formularios.frmProducto();
+            frmClientes frm = new Formularios.frmClientes();
             frm.ShowDialog();
             frm.Dispose();
         }

@@ -17,6 +17,7 @@ USE `maxikiosko` ;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`cuenta_corriente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`cuenta_corriente`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`cuenta_corriente` (
   `id_cuenta` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `balance` FLOAT NULL,
@@ -28,13 +29,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`cliente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`cliente`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`cliente` (
   `dni` INT UNSIGNED NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `apellido` VARCHAR(45) NULL,
-  `telefono` INT UNSIGNED NULL,
+  `telefono` VARCHAR(45) NULL,
   `mail` VARCHAR(45) NULL,
   `id_cuenta` INT UNSIGNED NOT NULL,
+  `domicilio` VARCHAR(45) NULL,
   PRIMARY KEY (`dni`, `id_cuenta`),
   INDEX `fk_cliente_cuenta_corriente_idx` (`id_cuenta` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_cuenta_corriente`
@@ -48,34 +51,53 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`forma_pago`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`forma_pago`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`forma_pago` (
-  `id_forma_pago` INT UNSIGNED NOT NULL,
+  `id_forma_pago` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   PRIMARY KEY (`id_forma_pago`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `maxikiosko`.`tipo_producto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`tipo_producto`;
+CREATE TABLE IF NOT EXISTS `maxikiosko`.`tipo_producto` (
+  `id_tipo_producto` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(200) NULL,
+  PRIMARY KEY (`id_tipo_producto`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `maxikiosko`.`producto`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`producto`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`producto` (
-  `id_producto` INT NOT NULL,
+  `id_producto` BIGINT NOT NULL,
+  `tipo_producto` INT UNSIGNED NOT NULL,
   `precio` FLOAT NULL,
-  `stock` INT NULL,
-  `tipo_medida` VARCHAR(45) NULL,
+  `stock` INT NULL DEFAULT 0,
   `descripcion` VARCHAR(200) NULL,
-  PRIMARY KEY (`id_producto`))
+  PRIMARY KEY (`id_producto`),
+  INDEX `fk_producto_tipo_producto_idx` (`tipo_producto` ASC) VISIBLE,
+  CONSTRAINT `fk_producto_tipo_producto`
+    FOREIGN KEY (`tipo_producto`)
+    REFERENCES `maxikiosko`.`tipo_producto` (`id_tipo_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`detalle_venta`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`detalle_venta`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`detalle_venta` (
   `id_detalle_venta` INT NOT NULL,
   `cantidad` INT UNSIGNED NULL,
   `precio_historico` FLOAT NULL,
-  `id_producto` INT NOT NULL,
+  `id_producto` BIGINT NOT NULL,
   PRIMARY KEY (`id_detalle_venta`, `id_producto`),
   INDEX `fk_detalle_venta_producto1_idx` (`id_producto` ASC) VISIBLE,
   CONSTRAINT `fk_detalle_venta_producto1`
@@ -89,6 +111,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`venta`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`venta`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`venta` (
   `nro_ticket` INT UNSIGNED NOT NULL,
   `fecha_hora` DATE NULL,
@@ -114,10 +137,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`proveedor`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`proveedor`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`proveedor` (
-  `cuit` INT UNSIGNED NOT NULL,
+  `cuit` BIGINT UNSIGNED NOT NULL,
   `razon_social` VARCHAR(45) NULL,
-  `telefono` INT NULL,
+  `telefono` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`cuit`))
 ENGINE = InnoDB;
@@ -126,6 +150,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`rol`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`rol`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`rol` (
   `id_rol` INT NOT NULL,
   `descripcion` VARCHAR(200) NULL,
@@ -136,6 +161,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`usuario`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`usuario`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`usuario` (
   `id_usuario` INT NOT NULL,
   `nombre_usuario` VARCHAR(45) NULL,
@@ -155,15 +181,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`detalle_compra`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`detalle_compra`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`detalle_compra` (
   `id_detalle_compra` INT NOT NULL,
   `detalle_compracol` VARCHAR(45) NULL,
-  `id_producto` INT NOT NULL,
-  `cuit` INT UNSIGNED NOT NULL,
+  `id_producto` BIGINT NOT NULL,
+  `cuit` BIGINT UNSIGNED NOT NULL,
   `cantidad` INT NULL,
   `costo` INT NULL,
   `porc_iva` FLOAT NULL,
-  PRIMARY KEY (`id_detalle_compra`, `id_producto`, `cuit`),
+  PRIMARY KEY (`id_detalle_compra`, `id_producto`),
   INDEX `fk_detalle_compra_producto1_idx` (`id_producto` ASC) VISIBLE,
   INDEX `fk_detalle_compra_proveedor1_idx` (`cuit` ASC) VISIBLE,
   CONSTRAINT `fk_detalle_compra_producto1`
@@ -182,10 +209,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`compra`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`compra`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`compra` (
   `id_compra` INT UNSIGNED NOT NULL,
   `fecha_hora` DATE NULL,
-  `proveedor_cuit` INT UNSIGNED NOT NULL,
+  `proveedor_cuit` BIGINT UNSIGNED NOT NULL,
   `id_usuario` INT NOT NULL,
   `id_detalle_compra` INT NOT NULL,
   PRIMARY KEY (`id_compra`, `proveedor_cuit`, `id_usuario`, `id_detalle_compra`),
@@ -213,6 +241,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `maxikiosko`.`movimiento_cuenta_corriente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `maxikiosko`.`movimiento_cuenta_corriente`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`movimiento_cuenta_corriente` (
   `id_movimiento` INT NOT NULL,
   `fecha_hora` DATE NULL,

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
     public partial class frmClientes : Form
     {
+        const int MAX_CHAR_VARCHAR = 45;
         public frmClientes()
         {
             InitializeComponent();
@@ -36,11 +33,19 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.DataSource = data;
 
             // Headers 
-            this.data_grip_clientes.Columns[0].Visible = false;
-            this.data_grip_clientes.Columns[1].HeaderText = "Apellido";
-            this.data_grip_clientes.Columns[2].HeaderText = "Nombre";
-            this.data_grip_clientes.Columns[3].HeaderText = "Telefono";
-            this.data_grip_clientes.Columns[4].HeaderText = "Email";
+            this.data_grip_clientes.Columns[0].HeaderText = "Apellido";
+            this.data_grip_clientes.Columns[1].HeaderText = "Nombre";
+            this.data_grip_clientes.Columns[2].HeaderText = "Documento";
+            this.data_grip_clientes.Columns[3].HeaderText = "Domicilio";
+            this.data_grip_clientes.Columns[4].HeaderText = "Telefono";
+            this.data_grip_clientes.Columns[5].HeaderText = "Email";
+            // Auto size
+            this.data_grip_clientes.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grip_clientes.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grip_clientes.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.data_grip_clientes.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
         }
 
@@ -49,11 +54,12 @@ namespace MaxiKiosko.Formularios
             // Deshabilitamos la grilla para evitar nuevo doble click
             this.data_grip_clientes.Enabled = false; 
             // Mostrar Formulario de edicion
-            this.txtIDCliente.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
-            this.txtEmail.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[4].Value.ToString();
+            this.txtApellido.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            this.txtNombre.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.txtDocumento.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.txtDomicilio.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtTelefono.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[4].Value.ToString();
+            this.txtEmail.Text = this.data_grip_clientes.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             // Ocultar Data Grip View
             this.data_grip_clientes.Visible = false;
@@ -61,6 +67,7 @@ namespace MaxiKiosko.Formularios
             // Mostrar Formulario de edicion
             // TextBox
             this.lb_subtitle.Text = "Editar Cliente";
+            this.txtDocumento.Enabled = false;
             this.panel_formulario.Visible = true;
             this.cmdBorrar.Visible = true;
             // Buttons
@@ -71,28 +78,133 @@ namespace MaxiKiosko.Formularios
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
-            // Creamos el cliente
             Cliente cliente = new Cliente();
+
+            // Validaciones
+            if(this.txtDocumento.Text == "")
+            {
+                MessageBox.Show("El documento no puede estar vacío");
+                this.txtDocumento.Focus();
+                return;
+            }
+
+            if(this.txtDocumento.Text.Length > 8)
+            {
+                MessageBox.Show("El documento no es un dni valido");
+                this.txtDocumento.Focus();
+                return;
+            }
+
+            if(this.txtNombre.Text == "")
+            {
+                MessageBox.Show("El nombre no puede estar vacío");
+                this.txtNombre.Focus();
+                return;
+            }
+
+            if(this.txtNombre.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El nombre es demasiado largo");
+                this.txtNombre.Focus();
+                return;
+            }
+
+            if(this.txtApellido.Text == "")
+            {
+                MessageBox.Show("El apellido no puede estar vacío");
+                this.txtApellido.Focus();
+                return;
+            }
+
+            if(this.txtApellido.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El apellido es demasiado largo");
+                this.txtApellido.Focus();
+                return;
+            }
+
+            if(!(this.txtTelefono.Text == "(   )   -") && this.txtTelefono.MaskFull)
+            {
+                cliente.telefono = this.txtTelefono.Text;
+            } else if(!(this.txtTelefono.Text == "(   )   -") && !this.txtTelefono.MaskFull)
+            {
+                MessageBox.Show("El telefono está incompleto");
+                this.txtTelefono.Focus();
+                return;
+            } else
+            {
+                cliente.telefono = "";
+            }
+
+            if(this.txtEmail.Text.Length > MAX_CHAR_VARCHAR)
+            {
+                MessageBox.Show("El email es demasiado largo");
+                this.txtEmail.Focus();
+                return;
+            }
+
+            if(this.txtEmail.Text != "" && !emailIsValid(txtEmail.Text))
+            {
+                MessageBox.Show("El email ingresado no es un email valido");
+                this.txtEmail.Focus();
+                return;
+            }
+
+            // Creamos la cuenta corriente
+            Cuenta_corriente cuentaCorriente = new Cuenta_corriente();
+            if(this.txtLimiteCredito.Text != "")
+            {
+                float limiteCredito = (Single.TryParse(this.txtLimiteCredito.Text, out limiteCredito) ? limiteCredito : 0);
+                if(limiteCredito == 0)
+                {
+                    MessageBox.Show("El limite de crédito no es un número válido");
+                    this.txtLimiteCredito.Focus();
+                    return;
+                }
+                cuentaCorriente.limite_credito = limiteCredito;
+            }
+            cuentaCorriente.agregarCuenta_corriente();
+
+            int lastInsertedIdCC = cuentaCorriente.lastInsertedId();
+
+            if(lastInsertedIdCC == -1)
+            {
+                MessageBox.Show("Ocurrio un error al intentar crear el cliente. Motivo: Error al vincular cuenta corriente");
+                return;
+            }
+
+            // Creamos el cliente
             cliente.nombre = this.txtNombre.Text;
             cliente.apellido = this.txtApellido.Text;
-            cliente.telefono = this.txtTelefono.Text;
             cliente.email = this.txtEmail.Text;
+            cliente.domicilio = this.txtDomicilio.Text;
+            cliente.id_cuenta_corriente = lastInsertedIdCC;
+
+            // Validar que otro cliente no tenga el mismo dni
+            int dni = (Int32.TryParse(this.txtDocumento.Text, out dni) ? dni : 0);
+            if(dni == 0)
+            {
+                MessageBox.Show("El dni no corresponde a un numero entero válido");
+                txtDocumento.Focus();
+                return;
+            }
+
+            cliente.dni = dni;
 
             if (lb_subtitle.Text == "Editar Cliente")
             {
-                int idCliente = (Int32.TryParse(this.txtIDCliente.Text, out idCliente) ? idCliente : 0);
-                if (idCliente == 0)
-                {
-                    MessageBox.Show("Hubo un error al intentar editar el cliente. Causa: No se pudo determinar que cliente es");
-                    return;
-                }
-                cliente.idCliente = idCliente;
                 cliente.modificarCliente();
 
                 MessageBox.Show("Cliente editado exitosamente");
             }
             else if (lb_subtitle.Text == "Crear Cliente")
             {
+                if(cliente.buscarClientePorDNI(dni))
+                {
+                    MessageBox.Show("Ya existe un cliente con ese documento");
+                    txtDocumento.Focus();
+                    return;
+                }
                 cliente.agregarCliente();
 
                 MessageBox.Show("Cliente creado exitosamente");
@@ -127,6 +239,7 @@ namespace MaxiKiosko.Formularios
             this.data_grip_clientes.Visible = false;
 
             // Mostrar Formulario de edicion
+            this.txtDocumento.Enabled = true;
             panel_formulario.Visible = true;
             cmdBorrar.Visible = false;
             // Buttons
@@ -137,7 +250,7 @@ namespace MaxiKiosko.Formularios
 
         private void emptyTextBoxes()
         {
-            this.txtIDCliente.Text = "";
+            this.txtDocumento.Text = "";
             this.txtApellido.Text = "";
             this.txtNombre.Text = "";
             this.txtTelefono.Text = "";
@@ -147,14 +260,14 @@ namespace MaxiKiosko.Formularios
         private void CmdBorrar_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-            int idCliente = (Int32.TryParse(this.txtIDCliente.Text, out idCliente) ? idCliente : 0);
-            if (idCliente == 0)
+            int dni = (Int32.TryParse(this.txtDocumento.Text, out dni) ? dni : 0);
+            if (dni == 0)
             {
                 MessageBox.Show("Hubo un error al intentar borrar el cliente. Causa: No se pudo determinar que cliente es");
                 return;
             }
 
-            cliente.borrar(idCliente);
+            cliente.borrar(dni);
 
             MessageBox.Show("Cliente eliminado exitosamente");
             showMain();
@@ -172,6 +285,58 @@ namespace MaxiKiosko.Formularios
             loadAllClientes();
         }
 
+        private bool emailIsValid(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            } catch (FormatException)
+            {
+                return false;
+            }
+        }
+        
+        private void txtTelefono_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
 
+        private void txtLimiteCredito_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
+            }
+        }
+        
+        private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e) {
+            if((int)e.KeyChar == (int)Keys.Enter)
+            {
+                // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
+                Cliente cliente = new Cliente();
+                DataTable dt = cliente.consultarCliente(txtBuscar.Text);
+                cargarClientes(dt);
+            }
+        }
     }
 }
