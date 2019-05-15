@@ -18,6 +18,7 @@ namespace MaxiKiosko.Formularios
 
             // Ocultar elementos
             this.panel_formulario.Visible = false;
+            this.txtBuscar.Focus();
         }
 
         private void loadAllForma_pago()
@@ -123,11 +124,13 @@ namespace MaxiKiosko.Formularios
             Forma_pago formaPago = new Forma_pago();
             DataTable dt = formaPago.consultarForma_pago(txtBuscar.Text);
             cargarFormaPago(dt);
+            this.txtBuscar.Focus();
         }
 
         private void CmdCancelar_Click(object sender, EventArgs e)
         {
             showMain();
+            this.txtBuscar.Focus();
         }
 
         private void CmdNuevo_Click(object sender, EventArgs e)

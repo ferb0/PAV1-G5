@@ -25,6 +25,7 @@ namespace MaxiKiosko.Formularios
 
             // Ocultar elementos
             this.panel_formulario.Visible = false;
+            this.txtBuscar.Focus();
         }
 
         private void loadAllTipo_producto()
@@ -130,11 +131,13 @@ namespace MaxiKiosko.Formularios
             Tipo_producto tipoProducto = new Tipo_producto();
             DataTable dt = tipoProducto.consultarTipo_producto(txtBuscar.Text);
             cargarTipo_Producto(dt);
+            this.txtBuscar.Focus();
         }
 
         private void CmdCancelar_Click(object sender, EventArgs e)
         {
             showMain();
+            this.txtBuscar.Focus();
         }
 
         private void CmdNuevo_Click(object sender, EventArgs e)

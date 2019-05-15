@@ -191,8 +191,8 @@
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.dg_roles);
             this.Controls.Add(this.panel_formulario);
+            this.Controls.Add(this.dg_roles);
             this.Name = "frmRoles";
             this.Text = "frmRoles";
             this.Load += new System.EventHandler(this.frmRoles_Load);

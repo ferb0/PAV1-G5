@@ -232,11 +232,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 337);
-            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.panel_formulario);
             this.Controls.Add(this.data_grid_proveedores);
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

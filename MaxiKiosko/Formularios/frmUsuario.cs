@@ -22,6 +22,7 @@ namespace MaxiKiosko.Formularios
         {
             loadAllUsuarios();
             this.panel_formulario.Visible = false;
+            this.txtBuscar.Focus();
         }
         private void loadAllUsuarios()
         {
@@ -152,6 +153,7 @@ namespace MaxiKiosko.Formularios
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
             showMain();
+            this.txtBuscar.Focus();
         }
 
         private void cmdNuevo_Click(object sender, EventArgs e)
@@ -218,6 +220,7 @@ namespace MaxiKiosko.Formularios
             Usuario usuario = new Usuario();
             DataTable tabla_usuario = usuario.buscarUsuario(txtBuscar.Text.ToString());
             cargarUsuarios(tabla_usuario);
+            this.txtBuscar.Focus();
         }
 
         private void cmdBorrar_Click(object sender, EventArgs e)
@@ -238,6 +241,26 @@ namespace MaxiKiosko.Formularios
             else
             {
                 this.txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        // validacion tipos.
+
+        private void txtApellido_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten letras");
+                e.Handled = true;
             }
         }
     }
