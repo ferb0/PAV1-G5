@@ -76,6 +76,7 @@ namespace MaxiKiosko.Formularios
 
         private void CmdGuardar_Click(object sender, EventArgs e)
         {
+            Proveedor proveedor = new Proveedor();
             // Validaciones
             if(this.txtCuit.Text == "")
             {
@@ -105,11 +106,17 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
-            if(this.txtTelefono.Text.Length > 13)
+            if(!(this.txtTelefono.Text == "(   )   -") && this.txtTelefono.MaskFull)
             {
-                MessageBox.Show("El telefono es demasiado largo");
+                proveedor.telefono = this.txtTelefono.Text;
+            } else if(!(this.txtTelefono.Text == "(   )   -") && !this.txtTelefono.MaskFull)
+            {
+                MessageBox.Show("El telefono está incompleto");
                 this.txtTelefono.Focus();
                 return;
+            } else
+            {
+                proveedor.telefono = "";
             }
 
             if(this.txtEmail.Text.Length > MAX_CHAR_VARCHAR)
@@ -127,9 +134,7 @@ namespace MaxiKiosko.Formularios
             }
 
             // Creamos el proveedor
-            Proveedor proveedor = new Proveedor();
             proveedor.razon_social = this.txtRazonSocial.Text;
-            proveedor.telefono = this.txtTelefono.Text;
             proveedor.email = this.txtEmail.Text;
 
             // Validar que otro proveedor no tenga el mismo dni
@@ -245,6 +250,24 @@ namespace MaxiKiosko.Formularios
             } catch (FormatException)
             {
                 return false;
+            }
+        }
+
+        private void txtCuit_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e) {
+            if((int)e.KeyChar == (int)Keys.Enter)
+            {
+                // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
+                Proveedor proveedor = new Proveedor();
+                DataTable dt = proveedor.consultarProveedor(txtBuscar.Text);
+                cargarProveedores(dt);
             }
         }
     }

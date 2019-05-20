@@ -50,7 +50,7 @@ namespace MaxiKiosko
             string SqlUpdate = @" Update proveedor
                                SET cuit = '" + this.cuit + "'," +
                                "razon_social = '" + this.razon_social + "'," +
-                               "telefono = '" + this.telefono + "'," +
+                               "telefono = " + ((this.telefono != "") ? "'" + this.telefono + "'" : "NULL") + "," +
                                "email = '" + this.email + "'" +
                                " WHERE cuit = " + this.cuit;
             this._BD.grabar_modificar(SqlUpdate);

@@ -54,6 +54,12 @@
     <Compile Include="Clases\foma_pago.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Formularios\frmFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFormaPago.Designer.cs">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmTipo_producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,10 +90,16 @@
     <Compile Include="Formularios\frmMaxiKiosko.Designer.cs">
       <DependentUpon>frmMaxiKiosko.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmSesion.Designer.cs">
+    <Compile Include="Formularios\frmSesion.designer.cs">
       <DependentUpon>frmSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MaxiKiosko.cs">
@@ -104,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmFormaPago.resx">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmTipo_producto.resx">
       <DependentUpon>frmTipo_producto.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMaxiKiosko.resx">
       <DependentUpon>frmMaxiKiosko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSesion.resx">
       <DependentUpon>frmSesion.cs</DependentUpon>
@@ -152,13 +170,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add-file.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\lock-64.png" />
+    <Content Include="Resources\user-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

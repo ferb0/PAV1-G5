@@ -1,6 +1,6 @@
 ﻿namespace MaxiKiosko.Formularios
 {
-    partial class frmTipo_producto
+    partial class frmFormaPago
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTipo_producto = new System.Windows.Forms.Label();
+            this.lblForma_pago = new System.Windows.Forms.Label();
             this.panel_formulario = new System.Windows.Forms.Panel();
             this.cmdBorrar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
@@ -38,22 +38,22 @@
             this.lb_subtitle = new System.Windows.Forms.Label();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
-            this.data_grid_tipo_producto = new System.Windows.Forms.DataGridView();
+            this.data_grid_forma_pago = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.txtCodigoTipoProducto = new System.Windows.Forms.TextBox();
+            this.txtIdFormaPago = new System.Windows.Forms.TextBox();
             this.panel_formulario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_tipo_producto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_forma_pago)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTipo_producto
+            // lblForma_pago
             // 
-            this.lblTipo_producto.AutoSize = true;
-            this.lblTipo_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo_producto.Location = new System.Drawing.Point(12, 9);
-            this.lblTipo_producto.Name = "lblTipo_producto";
-            this.lblTipo_producto.Size = new System.Drawing.Size(204, 25);
-            this.lblTipo_producto.TabIndex = 1;
-            this.lblTipo_producto.Text = "Tipos de Producto";
+            this.lblForma_pago.AutoSize = true;
+            this.lblForma_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForma_pago.Location = new System.Drawing.Point(12, 9);
+            this.lblForma_pago.Name = "lblForma_pago";
+            this.lblForma_pago.Size = new System.Drawing.Size(184, 25);
+            this.lblForma_pago.TabIndex = 1;
+            this.lblForma_pago.Text = "Formas de Pago";
             // 
             // panel_formulario
             // 
@@ -144,19 +144,19 @@
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.CmdNuevo_Click);
             // 
-            // data_grid_tipo_producto
+            // data_grid_forma_pago
             // 
-            this.data_grid_tipo_producto.AllowUserToAddRows = false;
-            this.data_grid_tipo_producto.AllowUserToDeleteRows = false;
-            this.data_grid_tipo_producto.AllowUserToResizeRows = false;
-            this.data_grid_tipo_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_grid_tipo_producto.Location = new System.Drawing.Point(14, 94);
-            this.data_grid_tipo_producto.Name = "data_grid_tipo_producto";
-            this.data_grid_tipo_producto.ReadOnly = true;
-            this.data_grid_tipo_producto.RowHeadersVisible = false;
-            this.data_grid_tipo_producto.Size = new System.Drawing.Size(545, 169);
-            this.data_grid_tipo_producto.TabIndex = 19;
-            this.data_grid_tipo_producto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_tipo_producto_CellDoubleClick);
+            this.data_grid_forma_pago.AllowUserToAddRows = false;
+            this.data_grid_forma_pago.AllowUserToDeleteRows = false;
+            this.data_grid_forma_pago.AllowUserToResizeRows = false;
+            this.data_grid_forma_pago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid_forma_pago.Location = new System.Drawing.Point(14, 94);
+            this.data_grid_forma_pago.Name = "data_grid_forma_pago";
+            this.data_grid_forma_pago.ReadOnly = true;
+            this.data_grid_forma_pago.RowHeadersVisible = false;
+            this.data_grid_forma_pago.Size = new System.Drawing.Size(545, 169);
+            this.data_grid_forma_pago.TabIndex = 19;
+            this.data_grid_forma_pago.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_forma_pago_CellDoubleClick);
             // 
             // txtBuscar
             // 
@@ -166,33 +166,33 @@
             this.txtBuscar.TabIndex = 19;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
-            // txtCodigoTipoProducto
+            // txtIdFormaPago
             // 
-            this.txtCodigoTipoProducto.Location = new System.Drawing.Point(462, 12);
-            this.txtCodigoTipoProducto.Name = "txtCodigoTipoProducto";
-            this.txtCodigoTipoProducto.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoTipoProducto.TabIndex = 20;
-            this.txtCodigoTipoProducto.Visible = false;
+            this.txtIdFormaPago.Location = new System.Drawing.Point(462, 12);
+            this.txtIdFormaPago.Name = "txtIdFormaPago";
+            this.txtIdFormaPago.Size = new System.Drawing.Size(100, 20);
+            this.txtIdFormaPago.TabIndex = 20;
+            this.txtIdFormaPago.Visible = false;
             // 
-            // frmTipo_producto
+            // frmFormaPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 278);
-            this.Controls.Add(this.txtCodigoTipoProducto);
-            this.Controls.Add(this.lblTipo_producto);
+            this.Controls.Add(this.txtIdFormaPago);
+            this.Controls.Add(this.lblForma_pago);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.panel_formulario);
-            this.Controls.Add(this.data_grid_tipo_producto);
-            this.Name = "frmTipo_producto";
+            this.Controls.Add(this.data_grid_forma_pago);
+            this.Name = "frmFormaPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tipo de Producto";
-            this.Load += new System.EventHandler(this.FrmTipo_producto_Load);
+            this.Text = "Forma de Pago";
+            this.Load += new System.EventHandler(this.FrmFormaPago_Load);
             this.panel_formulario.ResumeLayout(false);
             this.panel_formulario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_tipo_producto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_forma_pago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +200,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTipo_producto;
+        private System.Windows.Forms.Label lblForma_pago;
         private System.Windows.Forms.Panel panel_formulario;
         private System.Windows.Forms.Button cmdBorrar;
         private System.Windows.Forms.Button cmdCancelar;
@@ -210,8 +210,8 @@
         private System.Windows.Forms.Label lb_subtitle;
         private System.Windows.Forms.Button cmdBuscar;
         private System.Windows.Forms.Button cmdNuevo;
-        private System.Windows.Forms.DataGridView data_grid_tipo_producto;
+        private System.Windows.Forms.DataGridView data_grid_forma_pago;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.TextBox txtCodigoTipoProducto;
+        private System.Windows.Forms.TextBox txtIdFormaPago;
     }
 }

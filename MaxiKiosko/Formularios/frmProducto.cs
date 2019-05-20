@@ -39,14 +39,16 @@ namespace MaxiKiosko.Formularios
 
             // Headers 
             this.data_grid_productos.Columns[0].HeaderText = "Codigo";
-            this.data_grid_productos.Columns[1].HeaderText = "Descripcion";
-            this.data_grid_productos.Columns[2].HeaderText = "Precio";
-            this.data_grid_productos.Columns[3].HeaderText = "Stock";
+            this.data_grid_productos.Columns[1].HeaderText = "Tipo";
+            this.data_grid_productos.Columns[2].HeaderText = "Descripcion";
+            this.data_grid_productos.Columns[3].HeaderText = "Precio";
+            this.data_grid_productos.Columns[4].HeaderText = "Stock";
             // Auto size
             this.data_grid_productos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            this.data_grid_productos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.data_grid_productos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.data_grid_productos.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.data_grid_productos.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void data_grid_productos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -61,9 +63,12 @@ namespace MaxiKiosko.Formularios
                 return;
             }
             this.txtCodigoProducto.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            this.txtDescripcion.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            this.txtPrecio.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[2].Value.ToString();
-            this.txtStock.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtDescripcion.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.txtPrecio.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            this.txtStock.Text = this.data_grid_productos.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            fillProductTypes();
+            cmbTipoProducto.SelectedIndex = cmbTipoProducto.FindStringExact(this.data_grid_productos.Rows[e.RowIndex].Cells[1].Value.ToString());
 
             // Ocultar Data Grip View
             this.data_grid_productos.Visible = false;
@@ -114,7 +119,14 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            if(cmbTipoProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione un tipo de producto");
+                return;
+            }
+
             producto.descripcion = this.txtDescripcion.Text;
+            producto.tipo_producto = (int)cmbTipoProducto.SelectedValue;
 
 
             if (txtPrecio.Text.Contains(","))
@@ -149,7 +161,7 @@ namespace MaxiKiosko.Formularios
 
             if (lb_subtitle.Text == "Editar Producto")
             {
-                long idProducto = long.Parse(this.txtCodigoProducto.Text);
+                long idProducto = (Int64.TryParse(this.txtCodigoProducto.Text, out idProducto) ? idProducto : 0);
                 if (idProducto == 0)
                 {
                     MessageBox.Show("Hubo un error al intentar editar el producto. Causa: No se pudo determinar que producto es");
@@ -195,6 +207,18 @@ namespace MaxiKiosko.Formularios
             this.cmdNuevo.Visible = false;
             this.txtBuscar.Visible = false;
             this.cmdBuscar.Visible = false;
+            fillProductTypes();
+        }
+
+        private void fillProductTypes()
+        {
+            Tipo_producto tipo = new Tipo_producto();
+            DataTable tiposProducto = tipo.buscarTodos();
+
+            this.cmbTipoProducto.Text = "Seleccione";
+            this.cmbTipoProducto.DataSource = tiposProducto;
+            this.cmbTipoProducto.DisplayMember = "descripcion";
+            this.cmbTipoProducto.ValueMember = "id_tipo_producto";
         }
 
         private void showMain()
@@ -236,6 +260,61 @@ namespace MaxiKiosko.Formularios
         private void cmdCancelar_Click_1(object sender, EventArgs e)
         {
             showMain();
+        }
+
+        private void txtBuscar_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                // No se valida porque si no hay nada deberia devolver toda la grilla de nuevo
+                Producto producto = new Producto();
+                DataTable dt = producto.consultarProducto(txtBuscar.Text);
+                cargarProducto(dt);
+            }
+        }
+
+        private void txtCodigoProducto_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtStock_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyPress(Object sender, KeyPressEventArgs e) {
+            if(!char.IsControl(e.KeyChar) &&
+                !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.') &&
+                (e.KeyChar != ','))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+
+            // Aceptar solo un . o una ,
+            if((e.KeyChar  == '.') &&
+                (((sender as TextBox).Text.IndexOf('.') > -1) ||
+                ((sender as TextBox).Text.IndexOf(',') > -1)))
+            {
+                MessageBox.Show("Solo se permite un solo (.) o (,)");
+                e.Handled = true;
+            }
+            
+            if((e.KeyChar  == ',') &&
+                (((sender as TextBox).Text.IndexOf('.') > -1) ||
+                ((sender as TextBox).Text.IndexOf(',') > -1)))
+            {
+                MessageBox.Show("Solo se permite un solo (.) o (,)");
+                e.Handled = true;
+            }
         }
     }
 }

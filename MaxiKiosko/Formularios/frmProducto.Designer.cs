@@ -46,6 +46,8 @@
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_subtitle = new System.Windows.Forms.Label();
+            this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_productos)).BeginInit();
             this.panel_producto.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +68,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(249, 20);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // cmdBuscar
             // 
@@ -103,6 +106,8 @@
             // 
             // panel_producto
             // 
+            this.panel_producto.Controls.Add(this.label2);
+            this.panel_producto.Controls.Add(this.cmbTipoProducto);
             this.panel_producto.Controls.Add(this.cmdBorrar);
             this.panel_producto.Controls.Add(this.cmdCancelar);
             this.panel_producto.Controls.Add(this.cmdGuardar);
@@ -142,7 +147,7 @@
             // 
             // cmdGuardar
             // 
-            this.cmdGuardar.Location = new System.Drawing.Point(71, 243);
+            this.cmdGuardar.Location = new System.Drawing.Point(97, 242);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(126, 23);
             this.cmdGuardar.TabIndex = 15;
@@ -152,15 +157,16 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(174, 180);
+            this.txtStock.Location = new System.Drawing.Point(174, 174);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(260, 20);
             this.txtStock.TabIndex = 8;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(126, 183);
+            this.label5.Location = new System.Drawing.Point(126, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 7;
@@ -168,15 +174,16 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(174, 142);
+            this.txtPrecio.Location = new System.Drawing.Point(174, 148);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(260, 20);
             this.txtPrecio.TabIndex = 6;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(120, 145);
+            this.label6.Location = new System.Drawing.Point(120, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 5;
@@ -184,7 +191,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(174, 107);
+            this.txtDescripcion.Location = new System.Drawing.Point(174, 122);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(260, 20);
             this.txtDescripcion.TabIndex = 4;
@@ -192,7 +199,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 110);
+            this.label4.Location = new System.Drawing.Point(94, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 3;
@@ -204,6 +211,7 @@
             this.txtCodigoProducto.Name = "txtCodigoProducto";
             this.txtCodigoProducto.Size = new System.Drawing.Size(260, 20);
             this.txtCodigoProducto.TabIndex = 2;
+            this.txtCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoProducto_KeyPress);
             // 
             // label3
             // 
@@ -224,6 +232,24 @@
             this.lb_subtitle.TabIndex = 0;
             this.lb_subtitle.Text = "label2";
             // 
+            // cmbTipoProducto
+            // 
+            this.cmbTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoProducto.FormattingEnabled = true;
+            this.cmbTipoProducto.Location = new System.Drawing.Point(174, 95);
+            this.cmbTipoProducto.Name = "cmbTipoProducto";
+            this.cmbTipoProducto.Size = new System.Drawing.Size(260, 21);
+            this.cmbTipoProducto.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(68, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Tipo de Producto*";
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,8 +259,8 @@
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.data_grid_productos);
             this.Controls.Add(this.panel_producto);
+            this.Controls.Add(this.data_grid_productos);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
@@ -267,5 +293,7 @@
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.Button cmdGuardar;
         private System.Windows.Forms.Button cmdBorrar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbTipoProducto;
     }
 }

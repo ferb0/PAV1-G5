@@ -34,9 +34,10 @@ CREATE TABLE IF NOT EXISTS `maxikiosko`.`cliente` (
   `dni` INT UNSIGNED NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `apellido` VARCHAR(45) NULL,
-  `telefono` INT UNSIGNED NULL,
+  `telefono` VARCHAR(45) NULL,
   `mail` VARCHAR(45) NULL,
   `id_cuenta` INT UNSIGNED NOT NULL,
+  `domicilio` VARCHAR(45) NULL,
   PRIMARY KEY (`dni`, `id_cuenta`),
   INDEX `fk_cliente_cuenta_corriente_idx` (`id_cuenta` ASC) VISIBLE,
   CONSTRAINT `fk_cliente_cuenta_corriente`
@@ -52,7 +53,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `maxikiosko`.`forma_pago`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`forma_pago` (
-  `id_forma_pago` INT UNSIGNED NOT NULL,
+  `id_forma_pago` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   PRIMARY KEY (`id_forma_pago`))
 ENGINE = InnoDB;
@@ -63,7 +64,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `maxikiosko`.`tipo_producto`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`tipo_producto` (
-  `id_tipo_producto` INT UNSIGNED NOT NULL,
+  `id_tipo_producto` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   PRIMARY KEY (`id_tipo_producto`))
 ENGINE = InnoDB;
@@ -74,10 +75,17 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `maxikiosko`.`producto`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`producto` (
   `id_producto` BIGINT NOT NULL,
+  `tipo_producto` INT UNSIGNED NOT NULL,
   `precio` FLOAT NULL,
   `stock` INT NULL DEFAULT 0,
   `descripcion` VARCHAR(200) NULL,
-  PRIMARY KEY (`id_producto`))
+  PRIMARY KEY (`id_producto`),
+  INDEX `fk_producto_tipo_producto_idx` (`tipo_producto` ASC) VISIBLE,
+  CONSTRAINT `fk_producto_tipo_producto`
+    FOREIGN KEY (`tipo_producto`)
+    REFERENCES `maxikiosko`.`tipo_producto` (`id_tipo_producto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -133,7 +141,7 @@ DROP TABLE IF EXISTS `maxikiosko`.`proveedor`;
 CREATE TABLE IF NOT EXISTS `maxikiosko`.`proveedor` (
   `cuit` BIGINT UNSIGNED NOT NULL,
   `razon_social` VARCHAR(45) NULL,
-  `telefono` INT NULL,
+  `telefono` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`cuit`))
 ENGINE = InnoDB;
