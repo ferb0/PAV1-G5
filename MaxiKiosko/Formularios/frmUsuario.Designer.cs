@@ -177,6 +177,7 @@
             // 
             // cboRol
             // 
+            this.cboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRol.FormattingEnabled = true;
             this.cboRol.Location = new System.Drawing.Point(163, 151);
             this.cboRol.Name = "cboRol";
@@ -206,6 +207,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(293, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label5
             // 
@@ -222,6 +224,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(293, 20);
             this.txtApellido.TabIndex = 1;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label4
             // 
@@ -262,12 +265,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 370);
-            this.Controls.Add(this.dg_usuarios);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel_formulario);
+            this.Controls.Add(this.dg_usuarios);
             this.Name = "frmUsuario";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuario__Load);

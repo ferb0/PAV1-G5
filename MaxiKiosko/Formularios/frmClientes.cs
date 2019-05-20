@@ -20,6 +20,7 @@ namespace MaxiKiosko.Formularios
 
             // Ocultar elementos
             this.panel_formulario.Visible = false;
+            this.txtBuscar.Focus();
         }
 
         private void loadAllClientes()
@@ -223,11 +224,13 @@ namespace MaxiKiosko.Formularios
             Cliente cliente = new Cliente();
             DataTable dt = cliente.consultarCliente(txtBuscar.Text);
             cargarClientes(dt);
+            this.txtBuscar.Focus();
         }
 
         private void CmdCancelar_Click(object sender, EventArgs e)
         {
             showMain();
+            this.txtBuscar.Focus();
         }
 
         private void CmdNuevo_Click(object sender, EventArgs e)

@@ -40,6 +40,7 @@ namespace MaxiKiosko.Formularios
 
             // Ocultar elementos
             this.panel_formulario.Visible = false;
+            this.txtBuscar.Focus();
         }
 
         private void dg_roles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -142,11 +143,13 @@ namespace MaxiKiosko.Formularios
             Rol rol = new Rol();
             DataTable tabla_rol = rol.buscar_rol(txtBuscar.Text.ToString());
             cargarRoles(tabla_rol);
+            this.txtBuscar.Focus();
         }
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
             showMain();
+            this.txtBuscar.Focus();
         }
     }
 }

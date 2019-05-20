@@ -86,6 +86,7 @@ namespace MaxiKiosko.Formularios
         private void Sesion_Load(object sender, EventArgs e)
         {
             this.txt_usuario.Focus();
+            this.txt_contraseña.UseSystemPasswordChar = true;
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -111,6 +112,18 @@ namespace MaxiKiosko.Formularios
             if (e.KeyCode == Keys.Enter)
             {
                 btn_ingresar.PerformClick();
+            }
+        }
+
+        private void cbPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPassword.Checked)
+            {
+                this.txt_contraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                this.txt_contraseña.UseSystemPasswordChar = true;
             }
         }
     }

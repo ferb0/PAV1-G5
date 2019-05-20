@@ -41,7 +41,7 @@ namespace MaxiKiosko
         public void agregarCliente(  )
         {
             string SqlInsert = @" INSERT INTO cliente
-                         (dni, apellido, nombre, telefono, mail, id_cuenta) VALUES (" +
+                         (dni, apellido, nombre, domicilio, telefono, mail, id_cuenta) VALUES (" +
                             this.dni + ", '" +
                             this.apellido + "', '" +
                             this.nombre + "', " +

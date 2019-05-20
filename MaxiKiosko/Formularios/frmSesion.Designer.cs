@@ -33,9 +33,10 @@
             this.btn_ingresar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbPassword = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,11 +63,9 @@
             this.txt_contraseña.BackColor = System.Drawing.SystemColors.Window;
             this.txt_contraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_contraseña.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contraseña.HideSelection = false;
             this.txt_contraseña.Location = new System.Drawing.Point(48, 79);
             this.txt_contraseña.MaxLength = 32;
             this.txt_contraseña.Name = "txt_contraseña";
-            this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(197, 26);
             this.txt_contraseña.TabIndex = 1;
             this.txt_contraseña.WordWrap = false;
@@ -101,6 +100,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbPassword);
             this.panel2.Controls.Add(this.txt_usuario);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.txt_contraseña);
@@ -108,19 +108,8 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Location = new System.Drawing.Point(22, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 132);
+            this.panel2.Size = new System.Drawing.Size(274, 149);
             this.panel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(29, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 32);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Acceso al Sistema";
             // 
             // pictureBox2
             // 
@@ -143,6 +132,28 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(29, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(256, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Acceso al Sistema";
+            // 
+            // cbPassword
+            // 
+            this.cbPassword.AutoSize = true;
+            this.cbPassword.Location = new System.Drawing.Point(135, 111);
+            this.cbPassword.Name = "cbPassword";
+            this.cbPassword.Size = new System.Drawing.Size(110, 17);
+            this.cbPassword.TabIndex = 7;
+            this.cbPassword.Text = "Mostrar Password";
+            this.cbPassword.UseVisualStyleBackColor = true;
+            this.cbPassword.CheckedChanged += new System.EventHandler(this.cbPassword_CheckedChanged);
             // 
             // frmSesion
             // 
@@ -176,5 +187,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox cbPassword;
     }
 }

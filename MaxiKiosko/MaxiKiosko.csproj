@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Rol.cs" />
+    <Compile Include="Clases\Seguridad.cs" />
     <Compile Include="Clases\Tipo_producto.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Conexion.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="Clases\foma_pago.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Formularios\frmFormaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +105,12 @@
     <Compile Include="Formularios\frmSesion.designer.cs">
       <DependentUpon>frmSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\MaxiKiosko.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,11 +149,8 @@
     <EmbeddedResource Include="Formularios\frmSesion.resx">
       <DependentUpon>frmSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MaxiKiosko.resx">
-      <DependentUpon>MaxiKiosko.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Sesion.resx">
-      <DependentUpon>Sesion.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
