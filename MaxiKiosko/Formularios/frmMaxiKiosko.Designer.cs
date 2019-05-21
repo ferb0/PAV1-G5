@@ -47,10 +47,10 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label_maxikiosko = new System.Windows.Forms.Label();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label_maxikiosko = new System.Windows.Forms.Label();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,7 @@
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
             this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
+            this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem1
             // 
@@ -194,20 +195,35 @@
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aBMToolStripMenuItem4});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // aBMToolStripMenuItem4
             // 
             this.aBMToolStripMenuItem4.Name = "aBMToolStripMenuItem4";
-            this.aBMToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.aBMToolStripMenuItem4.Size = new System.Drawing.Size(100, 22);
             this.aBMToolStripMenuItem4.Text = "ABM";
             this.aBMToolStripMenuItem4.Click += new System.EventHandler(this.aBMToolStripMenuItem4_Click);
+            // 
+            // rolesToolStripMenuItem
+            // 
+            this.rolesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aBMToolStripMenuItem5});
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.rolesToolStripMenuItem.Text = "Roles";
+            // 
+            // aBMToolStripMenuItem5
+            // 
+            this.aBMToolStripMenuItem5.Name = "aBMToolStripMenuItem5";
+            this.aBMToolStripMenuItem5.Size = new System.Drawing.Size(100, 22);
+            this.aBMToolStripMenuItem5.Text = "ABM";
+            this.aBMToolStripMenuItem5.Click += new System.EventHandler(this.aBMToolStripMenuItem5_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -220,21 +236,6 @@
             this.label_maxikiosko.TabIndex = 1;
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rolesToolStripMenuItem
-            // 
-            this.rolesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aBMToolStripMenuItem5});
-            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rolesToolStripMenuItem.Text = "Roles";
-            // 
-            // aBMToolStripMenuItem5
-            // 
-            this.aBMToolStripMenuItem5.Name = "aBMToolStripMenuItem5";
-            this.aBMToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
-            this.aBMToolStripMenuItem5.Text = "ABM";
-            this.aBMToolStripMenuItem5.Click += new System.EventHandler(this.aBMToolStripMenuItem5_Click);
             // 
             // frmMaxiKiosko
             // 

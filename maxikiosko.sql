@@ -271,6 +271,21 @@ CREATE TABLE IF NOT EXISTS `maxikiosko`.`movimiento_cuenta_corriente` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+--
+-- Dumping data for table `rol`
+--
+
+LOCK TABLES `rol` WRITE;
+/*!40000 ALTER TABLE `rol` DISABLE KEYS */;
+INSERT INTO `rol` VALUES (1,'Admin','Rol de Administrador'),(2,'Usuario','Perfil de Usuario');
+/*!40000 ALTER TABLE `rol` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'admin','admin','admin','u0IbCWAhxd82qmbzotME3w==',1),(16,'test2','test2','test2','0aUSfU/bVpb1Fku+vAgu1A==',2),(21,'test2','test','test','0aUSfU/bVpb1Fku+vAgu1A==',2);
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

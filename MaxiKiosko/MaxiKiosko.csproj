@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DetalleVenta.cs" />
+    <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\Seguridad.cs" />
     <Compile Include="Clases\Tipo_producto.cs" />
@@ -57,6 +59,12 @@
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmFormaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,20 +119,11 @@
     <Compile Include="Formularios\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MaxiKiosko.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\MaxiKiosko.Designer.cs">
-      <DependentUpon>MaxiKiosko.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Sesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Sesion.Designer.cs">
-      <DependentUpon>Sesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmFormaPago.resx">
       <DependentUpon>frmFormaPago.cs</DependentUpon>
     </EmbeddedResource>

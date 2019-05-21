@@ -97,5 +97,10 @@ namespace MaxiKiosko
                 return false;
             }
         }
+
+        public DataTable buscarTodosTypeahead()
+        {
+            return this._BD.consulta("SELECT concat(c.apellido, ', ' ,c.nombre, ' - ', c.dni) FROM maxikiosko.cliente c;");
+        }
     }
 }
