@@ -78,6 +78,7 @@
             this.datagrid_venta.Name = "datagrid_venta";
             this.datagrid_venta.Size = new System.Drawing.Size(772, 363);
             this.datagrid_venta.TabIndex = 3;
+            this.datagrid_venta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellEndEdit);
             // 
             // lbFecha
             // 

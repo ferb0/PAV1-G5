@@ -46,5 +46,11 @@ namespace MaxiKiosko.Formularios
             venta.idCliente = dni;
             venta.guardarVenta();
         }
+
+        private void datagrid_venta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Producto producto = new Producto();
+            producto.buscarPorCodigo();
+        }
     }
 }

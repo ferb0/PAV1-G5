@@ -79,6 +79,13 @@ namespace MaxiKiosko
                                      " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto; ");
         }
 
+        public void buscarPorCodigo()
+        {
+            DataTable dt = this._BD.consulta("SELECT id_producto, descripcion FROM producto");
+            this.id_producto = Int64.Parse(dt.Rows[0][0].ToString());
+            this.descripcion = dt.Rows[0][1].ToString();
+        }
+
         public void borrarProducto(long id_producto)
         {
             this._BD.grabar_modificar("DELETE FROM producto WHERE id_producto = " + id_producto);
