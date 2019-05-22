@@ -49,7 +49,6 @@
             this.txtProductoCantidad = new System.Windows.Forms.TextBox();
             this.txtProductoCodigo = new System.Windows.Forms.TextBox();
             this.lbProductoCantidad = new System.Windows.Forms.Label();
-            this.cmdAgregarProducto = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_venta)).BeginInit();

@@ -192,13 +192,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Formularios\frmClienteBusqueda.cs" />
+    <Compile Include="Formularios\frmClienteBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmClienteBusqueda.Designer.cs" />
     <EmbeddedResource Include="Formularios\frmClienteBusqueda.resx" />
-    <Compile Include="Formularios\frmProductoBusqueda.cs" />
+    <Compile Include="Formularios\frmProductoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Formularios\frmProductoBusqueda.resx" />
     <Compile Include="Formularios\frmProductoBusqueda.Designer.cs" />
-    <Compile Include="Formularios\frmVentaConsulta.cs" />
+    <Compile Include="Formularios\frmVentaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmVentaConsulta.Designer.cs" />
     <None Include="Formularios\frmVentaConsulta.resx" />
   </ItemGroup>
