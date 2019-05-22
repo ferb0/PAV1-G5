@@ -50,6 +50,7 @@
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaVentaToolStripMenuItem,
+            this.ventasConsultaToolStripMenuItem,
             this.clientesToolStripMenuItem1});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
@@ -84,6 +86,13 @@
             this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
+            // 
+            // nuevaVentaToolStripMenuItem
+            // 
+            this.ventasConsultaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
+            this.ventasConsultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ventasConsultaToolStripMenuItem.Text = "Ventas Realizadas";
+            this.ventasConsultaToolStripMenuItem.Click += new System.EventHandler(this.ventasConsultaToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem1
             // 
@@ -281,6 +290,7 @@
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem ventasConsultaToolStripMenuItem;
     }
 }
 

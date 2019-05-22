@@ -222,16 +222,28 @@ namespace MaxiKiosko.Formularios
             Venta venta = new Venta();
             venta.detalle = detalles;
             venta.fecha = DateTime.Now;
-	    venta.formaPago = (int)this.cmbFormaPago.SelectedValue;
+	        venta.formaPago = (int)this.cmbFormaPago.SelectedValue;
             if(txtClienteDni.Text != "")
             {
                 venta.idCliente = int.Parse(txtClienteDni.Text);
             }
+            else
+            {
+                venta.idCliente = 0;
+            }
+
+            decimal total = 0;
+            foreach(var d in detalles)
+            {
+                total += d.precioHistorico * d.cantidad;
+            }
+            venta.total = total;
 
             try
             {
                 venta.guardarVenta();
                 MessageBox.Show("Venta guardada exitosamente");
+                this.Close();
             } catch(Exception)
             {
                 MessageBox.Show("Hubo un error al intentar guardar venta");
