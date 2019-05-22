@@ -30,8 +30,7 @@ CREATE TABLE `cliente` (
   `mail` varchar(45) DEFAULT NULL,
   `id_cuenta` int(10) unsigned NOT NULL,
   `domicilio` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`dni`,`id_cuenta`),
-  KEY `fk_cliente_cuenta_corriente_idx` (`id_cuenta`),
+  PRIMARY KEY (`dni`),
   CONSTRAINT `fk_cliente_cuenta_corriente` FOREIGN KEY (`id_cuenta`) REFERENCES `cuenta_corriente` (`id_cuenta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -397,3 +396,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-05-15 11:49:47
+
+
+
