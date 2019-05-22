@@ -49,6 +49,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Compra.cs" />
+    <Compile Include="Clases\DetalleCompra.cs" />
     <Compile Include="Clases\DetalleVenta.cs" />
     <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\Rol.cs" />
@@ -61,6 +63,18 @@
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\frmProveedoresBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProveedoresBusqueda.Designer.cs">
+      <DependentUpon>frmProveedoresBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +137,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmProveedoresBusqueda.resx">
+      <DependentUpon>frmProveedoresBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
     </EmbeddedResource>

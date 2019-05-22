@@ -239,5 +239,10 @@ namespace MaxiKiosko.Formularios
                 MessageBox.Show("Hubo un error al intentar guardar venta");
             }
         }
+
+        private void frmVenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
