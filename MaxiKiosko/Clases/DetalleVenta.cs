@@ -8,15 +8,15 @@ namespace MaxiKiosko.Clases
 {
     class DetalleVenta
     {
-        private int idDetalleVenta { get; set; }
-        private Producto producto { get; set; }
-        private int cantidad { get; set; }
-        private decimal precioHistorico { get; set; }
+        public int idDetalleVenta { get; set; }
+        public long idProducto { get; set; }
+        public int cantidad { get; set; }
+        public decimal precioHistorico { get; set; }
 
-        public DetalleVenta(int idDetalleVenta, Producto producto, int cantidad, decimal precioHistorico)
+        public DetalleVenta(int idDetalleVenta, long idProducto, int cantidad, decimal precioHistorico)
         {
             this.idDetalleVenta = idDetalleVenta;
-            this.producto = producto;
+            this.idProducto = idProducto;
             this.cantidad = cantidad;
             this.precioHistorico = precioHistorico;
         }

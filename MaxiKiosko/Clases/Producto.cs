@@ -66,11 +66,11 @@ namespace MaxiKiosko
         public DataTable consultarProducto(string subString) {
             return this._BD.consulta(String.Format ("SELECT p.id_producto, tp.descripcion 'tipo', p.descripcion, p.precio, p.stock FROM producto p" +
                                      " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto" +
-                                     " WHERE id_producto LIKE '%{0}%'" +
-                                     " OR precio LIKE '%{0}%'" +
-                                     " OR tipo LIKE '%{0}%'" +
-                                     " OR stock LIKE '%{0}%'" +
-                                     " OR descripcion LIKE '%{0}%'", subString));
+                                     " WHERE p.id_producto LIKE '%{0}%'" +
+                                     " OR p.precio LIKE '%{0}%'" +
+                                     " OR tp.descripcion LIKE '%{0}%'" +
+                                     " OR p.stock LIKE '%{0}%'" +
+                                     " OR p.descripcion LIKE '%{0}%'", subString));
         }
 
         public DataTable buscarTodos()
@@ -84,6 +84,13 @@ namespace MaxiKiosko
             DataTable dt = this._BD.consulta("SELECT id_producto, descripcion FROM producto");
             this.id_producto = Int64.Parse(dt.Rows[0][0].ToString());
             this.descripcion = dt.Rows[0][1].ToString();
+        }
+
+        public void buscarPorCodigoUnico()
+        {
+            DataTable dt = this._BD.consulta("SELECT id_producto, descripcion, precio FROM producto WHERE id_producto = " + this.id_producto);
+            this.descripcion = dt.Rows[0][1].ToString();
+            this.precio = decimal.Parse(dt.Rows[0][2].ToString());
         }
 
         public void borrarProducto(long id_producto)

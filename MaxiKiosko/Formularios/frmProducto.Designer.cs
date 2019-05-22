@@ -1,4 +1,4 @@
-﻿namespace MaxiKiosko.Formularios
+namespace MaxiKiosko.Formularios
 {
     partial class frmProducto
     {
