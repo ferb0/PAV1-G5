@@ -229,7 +229,15 @@ namespace MaxiKiosko.Formularios
             {
                 venta.idCliente = int.Parse(txtClienteDni.Text);
             }
-            venta.guardarVenta();
+
+            try
+            {
+                venta.guardarVenta();
+                MessageBox.Show("Venta guardada exitosamente");
+            } catch(Exception)
+            {
+                MessageBox.Show("Hubo un error al intentar guardar venta");
+            }
         }
     }
 }
