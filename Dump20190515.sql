@@ -42,7 +42,8 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (10666555,'Luis','Damiano','(351)123-4567','luis.damiano@net.com',6,'maestro Lopez s/n'),(12345678,'Perez','Juan','(351)123-4567','juan.perez@net.com',5,'Colon 123'),(25896574,'Alguno','Alguien','(351)886-9555','alguno@alguien.com',8,'Calle 45');
+INSERT INTO `cliente` VALUES (1,'CONSUMIDOR','FINAL','-','-',6,'maestro Lopez s/n'),(10666555,'Luis','Damiano','(351)123-4567','luis.damiano@net.com',6,'maestro Lopez s/n'),(12345678,'Perez','Juan','(351)123-4567','juan.perez@net.com',5,'Colon 123'),(25896574,'Alguno','Alguien','(351)886-9555','alguno@alguien.com',8,'Calle 45');
+
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +55,7 @@ DROP TABLE IF EXISTS `compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `compra` (
-  `id_compra` int(10) unsigned NOT NULL,
+  `id_compra` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fecha_hora` date DEFAULT NULL,
   `proveedor_cuit` bigint(20) unsigned NOT NULL,
   `id_usuario` int(11) NOT NULL,
@@ -111,7 +112,7 @@ DROP TABLE IF EXISTS `detalle_compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `detalle_compra` (
-  `id_detalle_compra` int(11) NOT NULL,
+  `id_detalle_compra` int(11) NOT NULL AUTO_INCREMENT,
   `detalle_compracol` varchar(45) DEFAULT NULL,
   `id_producto` bigint(20) NOT NULL,
   `cuit` bigint(20) unsigned NOT NULL,
@@ -143,7 +144,7 @@ DROP TABLE IF EXISTS `detalle_venta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `detalle_venta` (
-  `id_detalle_venta` int(11) NOT NULL,
+  `id_detalle_venta` int(11) NOT NULL AUTO_INCREMENT,
   `cantidad` int(10) unsigned DEFAULT NULL,
   `precio_historico` float DEFAULT NULL,
   `id_producto` bigint(20) NOT NULL,
@@ -362,9 +363,10 @@ DROP TABLE IF EXISTS `venta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `venta` (
-  `nro_ticket` int(10) unsigned NOT NULL,
+  `nro_ticket` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fecha_hora` date DEFAULT NULL,
   `total` float DEFAULT NULL,
+  `dni` int DEFAULT NULL,
   `id_forma_pago` int(10) unsigned NOT NULL,
   `id_detalle_venta` int(11) NOT NULL,
   PRIMARY KEY (`nro_ticket`,`id_forma_pago`,`id_detalle_venta`),
@@ -372,6 +374,7 @@ CREATE TABLE `venta` (
   KEY `fk_venta_detalle_venta1_idx` (`id_detalle_venta`),
   CONSTRAINT `fk_venta_detalle_venta1` FOREIGN KEY (`id_detalle_venta`) REFERENCES `detalle_venta` (`id_detalle_venta`),
   CONSTRAINT `fk_venta_forma_pago1` FOREIGN KEY (`id_forma_pago`) REFERENCES `forma_pago` (`id_forma_pago`)
+  CONSTRAINT `fk_cliente` FOREIGN KEY (`dni`) REFERENCES `cliente` (`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
