@@ -67,5 +67,10 @@ namespace MaxiKiosko.Clases
             this._BD.grabar_modificar(SqlInsert);
 
         }
+        public void consultarTodos() {
+            return this._BD.consulta("SELECT vent.nro_ticket,vent.fecha_hora,vent.total,cli.nombre,cli.apellido,cli.dni,fp.descripcion FROM venta AS vent" +
+                                     " LEFT JOIN cliente AS cli ON vent.dni = cli.dni"+
+                                     "LEFT JOIN forma_pago AS fp ON vent.id_forma_pago = fp.id_forma_pago");
+        }
     }
 }
