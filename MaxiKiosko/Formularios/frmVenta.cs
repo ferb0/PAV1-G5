@@ -13,6 +13,7 @@ namespace MaxiKiosko.Formularios
         {
             InitializeComponent();
             // Colocamos la fecha en txtFecha
+	    fillFormaPago();
             lbDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             DataTable dt = new DataTable();
             dt.Columns.Add("Codigo");
@@ -221,11 +222,8 @@ namespace MaxiKiosko.Formularios
             Venta venta = new Venta();
             venta.detalle = detalles;
             venta.fecha = DateTime.Now;
-            if(txtClienteDni.Text == "")
-            {
-                venta.idCliente = 1;
-            }
-            else
+	    venta.formaPago = (int)this.cmbFormaPago.SelectedValue;
+            if(txtClienteDni.Text != "")
             {
                 venta.idCliente = int.Parse(txtClienteDni.Text);
             }
@@ -239,5 +237,14 @@ namespace MaxiKiosko.Formularios
                 MessageBox.Show("Hubo un error al intentar guardar venta");
             }
         }
+
+	private void fillFormaPago()
+       	{
+		Forma_pago formaPago = new Forma_pago();
+		DataTable dt = formaPago.buscarTodos();
+		this.cmbFormaPago.DataSource = dt;
+		this.cmbFormaPago.DisplayMember = "descripcion";
+		this.cmbFormaPago.ValueMember = "id_forma_pago";
+	}
     }
 }

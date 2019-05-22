@@ -15,10 +15,10 @@ namespace MaxiKiosko.Clases
         public int idCliente { get; set; }
         public List<DetalleVenta> detalle { get; set; }
         public DateTime fecha { get; set; }
-        public Forma_pago formaPago { get; set; }
+        public int formaPago { get; set; }
         public decimal total { get; set; }
 
-        public Venta(int nroTicket, Cliente cliente, List<DetalleVenta> detalle, DateTime fecha, Forma_pago formaPago)
+        public Venta(int nroTicket, Cliente cliente, List<DetalleVenta> detalle, DateTime fecha, int formaPago)
         {
             this.nroTicket = nroTicket;
             this.idCliente = idCliente;
@@ -60,7 +60,7 @@ namespace MaxiKiosko.Clases
                          (fecha_hora, total, id_forma_pago, id_detalle_venta) VALUES ('" +
                             this.fecha.ToString("yyyy/MM/dd HH:ss") + "', '" +
                             this.total + "', '" +
-                            1 + "', '" +
+                            this.formaPago + "', '" +
                             last_id_detalle +
                              "')";
             this._BD.grabar_modificar(SqlInsert);

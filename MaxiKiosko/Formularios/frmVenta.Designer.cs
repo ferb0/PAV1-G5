@@ -32,6 +32,8 @@
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.datagrid_venta = new System.Windows.Forms.DataGridView();
             this.lbFecha = new System.Windows.Forms.Label();
+            this.lbFormaPago = new System.Windows.Forms.Label();
+	    this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.lbClienteDni = new System.Windows.Forms.Label();
             this.lbClienteObservacion = new System.Windows.Forms.Label();
@@ -59,7 +61,7 @@
             // 
             // cmdGuardar
             // 
-            this.cmdGuardar.Location = new System.Drawing.Point(200, 515);
+            this.cmdGuardar.Location = new System.Drawing.Point(200, 590);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(100, 23);
             this.cmdGuardar.TabIndex = 2;
@@ -232,11 +234,28 @@
             this.lbProductoCantidad.Size = new System.Drawing.Size(40, 15);
             this.lbProductoCantidad.Text = "Cantidad:";
             // 
+            // lbFormaPago
+            // 
+            this.lbFormaPago.AutoSize = true;
+            this.lbFormaPago.Location = new System.Drawing.Point(15, 540);
+            this.lbFormaPago.Name = "lbFormaPago";
+            this.lbFormaPago.Size = new System.Drawing.Size(40, 15);
+            this.lbFormaPago.Text = "Forma de Pago:";
+	    //
+	    // cmbFormaPago
+	    //
+	    this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+	    this.cmbFormaPago.FormattingEnabled = true;
+	    this.cmbFormaPago.Location = new System.Drawing.Point(15, 570);
+	    this.cmbFormaPago.Name = "cmbFormaPago";
+	    this.cmbFormaPago.Size = new System.Drawing.Size(260, 20);
+	    this.cmbFormaPago.TabIndex = 6;
+            // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 550);
+            this.ClientSize = new System.Drawing.Size(530, 610);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.lbDateTime);
             this.Controls.Add(this.datagrid_venta);
@@ -244,6 +263,8 @@
             this.Controls.Add(this.groupBoxProducto);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cmdGuardar);
+	    this.Controls.Add(this.cmbFormaPago);
+	    this.Controls.Add(this.lbFormaPago);
             this.Name = "frmVenta";
             this.Text = "Nueva Venta";
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -279,5 +300,7 @@
         private System.Windows.Forms.Label lbProductoCantidad;
         private System.Windows.Forms.Button cmdAgregarProducto;
         private System.Windows.Forms.Label lbTotal;
+	private System.Windows.Forms.ComboBox cmbFormaPago;
+	private System.Windwos.Forms.Label lbFormaPago;
     }
 }
