@@ -57,10 +57,11 @@ namespace MaxiKiosko.Clases
             }
 
             SqlInsert = @" INSERT INTO venta
-                         (fecha_hora, total, id_forma_pago, id_detalle_venta) VALUES ('" +
+                         (fecha_hora, total, id_forma_pago, id_cliente, id_detalle_venta) VALUES ('" +
                             this.fecha.ToString("yyyy/MM/dd HH:ss") + "', '" +
                             this.total + "', '" +
-                            this.formaPago + "', '" +
+                            this.formaPago + "', " +
+			    (this.id_cliente == null) ? "NULL" : this.id_cliente + ", '"
                             last_id_detalle +
                              "')";
             this._BD.grabar_modificar(SqlInsert);
