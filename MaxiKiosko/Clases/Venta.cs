@@ -15,10 +15,10 @@ namespace MaxiKiosko.Clases
         public int idCliente { get; set; }
         public List<DetalleVenta> detalle { get; set; }
         public DateTime fecha { get; set; }
-        public Forma_pago formaPago { get; set; }
+        public int formaPago { get; set; }
         public decimal total { get; set; }
 
-        public Venta(int nroTicket, Cliente cliente, List<DetalleVenta> detalle, DateTime fecha, Forma_pago formaPago)
+        public Venta(int nroTicket, int cliente, List<DetalleVenta> detalle, DateTime fecha, int formaPago)
         {
             this.nroTicket = nroTicket;
             this.idCliente = idCliente;
@@ -57,14 +57,20 @@ namespace MaxiKiosko.Clases
             }
 
             SqlInsert = @" INSERT INTO venta
-                         (fecha_hora, total, id_forma_pago, id_detalle_venta) VALUES ('" +
+                         (fecha_hora, total, id_forma_pago, dni, id_detalle_venta) VALUES ('" +
                             this.fecha.ToString("yyyy/MM/dd HH:ss") + "', '" +
                             this.total + "', '" +
-                            1 + "', '" +
+                            this.formaPago + "', " +
+			                ((this.idCliente == 0) ? "NULL" : this.idCliente.ToString()) + ", '" +
                             last_id_detalle +
                              "')";
             this._BD.grabar_modificar(SqlInsert);
 
+        }
+        public DataTable consultarTodos() {
+            return this._BD.consulta("SELECT vent.nro_ticket,vent.fecha_hora,vent.total,cli.nombre,cli.apellido,cli.dni,fp.descripcion FROM venta AS vent" +
+                                     " LEFT JOIN cliente AS cli ON vent.dni = cli.dni"+
+                                     " LEFT JOIN forma_pago AS fp ON vent.id_forma_pago = fp.id_forma_pago");
         }
     }
 }

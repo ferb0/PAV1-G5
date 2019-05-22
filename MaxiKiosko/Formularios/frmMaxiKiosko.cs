@@ -89,6 +89,13 @@ namespace MaxiKiosko
             frm.Dispose();
         }
 
+        private void ventasConsultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentaConsulta frm = new Formularios.frmVentaConsulta();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
         private void ingresoDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCompras frm = new Formularios.frmCompras();

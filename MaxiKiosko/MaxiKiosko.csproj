@@ -198,6 +198,9 @@
     <Compile Include="Formularios\frmProductoBusqueda.cs" />
     <EmbeddedResource Include="Formularios\frmProductoBusqueda.resx" />
     <Compile Include="Formularios\frmProductoBusqueda.Designer.cs" />
+    <Compile Include="Formularios\frmVentaConsulta.cs" />
+    <Compile Include="Formularios\frmVentaConsulta.Designer.cs" />
+    <None Include="Formularios\frmVentaConsulta.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
