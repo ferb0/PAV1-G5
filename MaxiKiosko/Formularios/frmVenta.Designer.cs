@@ -59,19 +59,20 @@
             // 
             // cmdGuardar
             // 
-            this.cmdGuardar.Location = new System.Drawing.Point(16, 415);
+            this.cmdGuardar.Location = new System.Drawing.Point(200, 515);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(112, 23);
+            this.cmdGuardar.Size = new System.Drawing.Size(100, 23);
             this.cmdGuardar.TabIndex = 2;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // cmdAgregarProducto
             // 
             this.cmdAgregarProducto.Location = new System.Drawing.Point(360, 13);
             this.cmdAgregarProducto.Name = "cmdAgregarProducto";
             this.cmdAgregarProducto.Size = new System.Drawing.Size(120, 23);
-            this.cmdAgregarProducto.TabIndex = 2;
+            this.cmdAgregarProducto.TabIndex = 3;
             this.cmdAgregarProducto.Text = "Agregar Producto";
             this.cmdAgregarProducto.Click += new System.EventHandler(this.cmdAgregarProducto_Click);
             // 
@@ -80,7 +81,7 @@
             this.cmdBuscarProducto.Location = new System.Drawing.Point(15, 50);
             this.cmdBuscarProducto.Name = "cmdBuscarProducto";
             this.cmdBuscarProducto.Size = new System.Drawing.Size(120, 23);
-            this.cmdBuscarProducto.TabIndex = 2;
+            this.cmdBuscarProducto.TabIndex = 4;
             this.cmdBuscarProducto.Text = "Buscar Producto";
             this.cmdBuscarProducto.Click += new System.EventHandler(this.cmdBuscarProducto_Click);
             // 
@@ -97,6 +98,7 @@
             this.datagrid_venta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellEndEdit);
             this.datagrid_venta.ReadOnly = true;
             this.datagrid_venta.RowHeadersVisible = false;
+            this.datagrid_venta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellDoubleClick);
             //
             // groupboxCliente
             //
@@ -203,6 +205,8 @@
             this.txtProductoCodigo.Location = new System.Drawing.Point(65, 15);
             this.txtProductoCodigo.Name = "txtProductoCodigo";
             this.txtProductoCodigo.Size = new System.Drawing.Size(150, 20);
+            this.txtProductoCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCodigo_KeyPress);
+            this.txtProductoCodigo.TabIndex = 1;
             // 
             // lbProductoCodigo
             // 
@@ -217,6 +221,8 @@
             this.txtProductoCantidad.Location = new System.Drawing.Point(290, 15);
             this.txtProductoCantidad.Name = "txtProductoCantidad";
             this.txtProductoCantidad.Size = new System.Drawing.Size(50, 20);
+            this.txtProductoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCantidad_KeyPress);
+            this.txtProductoCantidad.TabIndex = 2;
             // 
             // lbProductoCantidad
             // 
@@ -230,13 +236,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 800);
+            this.ClientSize = new System.Drawing.Size(530, 550);
             this.Controls.Add(this.lbFecha);
             this.Controls.Add(this.lbDateTime);
             this.Controls.Add(this.datagrid_venta);
             this.Controls.Add(this.groupBoxCliente);
             this.Controls.Add(this.groupBoxProducto);
             this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.cmdGuardar);
             this.Name = "frmVenta";
             this.Text = "Nueva Venta";
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

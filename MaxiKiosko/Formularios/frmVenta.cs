@@ -112,6 +112,12 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            if(!validarNuevoProducto(detalle))
+            {
+                MessageBox.Show("El producto que intenta agregar ya fue ingresado");
+                return;
+            }
+
             DataTable data = (DataTable) datagrid_venta.DataSource;
             DataRow newRow = data.NewRow();
             newRow[0] = detalle.idProducto;
@@ -124,17 +130,106 @@ namespace MaxiKiosko.Formularios
 
             detalles.Add(detalle);
 
-            decimal total = 0;
-            foreach (var d in detalles)
-            {
-                total += d.precioHistorico * d.cantidad;
-            }
-
-            this.lbTotal.Text = "Total: $ " + total;
-            this.lbTotal.Visible = true;
+            calcularTotal();
 
             txtProductoCodigo.Text = "";
             txtProductoCantidad.Text = "";
+        }
+
+        private Boolean validarNuevoProducto(DetalleVenta detalle)
+        {
+            foreach(var d in detalles)
+            {
+                if(d.idProducto == detalle.idProducto)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void calcularTotal()
+        {
+            if(detalles.Count > 0)
+            {
+                decimal total = 0;
+                foreach (var d in detalles)
+                {
+                    total += d.precioHistorico * d.cantidad;
+                }
+                lbTotal.Text = "Total: $" + total;
+                lbTotal.Visible = true;
+            }
+            else
+            {
+                lbTotal.Visible = false;
+            }
+        }
+
+        private void datagrid_venta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (datagrid_venta.Rows[e.RowIndex].Cells[0].Value == null)
+            {
+                MessageBox.Show("No selecciono un producto valido");
+                return;
+            }
+
+            long codigoProducto = long.Parse(this.datagrid_venta.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            DetalleVenta detalle = null;
+            foreach (var d in detalles)
+            {
+                if(d.idProducto == codigoProducto)
+                {
+                    detalle = d;
+                }
+            }
+
+            if(detalle != null)
+            {
+                detalles.Remove(detalle);
+            }
+
+            calcularTotal();
+
+            DataTable dt = (DataTable)datagrid_venta.DataSource;
+            dt.Rows.Remove(dt.Rows[e.RowIndex]);
+            dt.AcceptChanges();
+        }
+
+        private void txtProductoCantidad_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void txtProductoCodigo_KeyPress(Object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo se permiten números");
+                e.Handled = true;
+            }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            Venta venta = new Venta();
+            venta.detalle = detalles;
+            venta.fecha = DateTime.Now;
+            if(txtClienteDni.Text == "")
+            {
+                venta.idCliente = 1;
+            }
+            else
+            {
+                venta.idCliente = int.Parse(txtClienteDni.Text);
+            }
+            venta.guardarVenta();
         }
     }
 }
