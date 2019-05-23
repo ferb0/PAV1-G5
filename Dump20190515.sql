@@ -46,6 +46,8 @@ INSERT INTO `cliente` VALUES (1,'CONSUMIDOR','FINAL','-','-',6,'maestro Lopez s/
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+
 --
 -- Table structure for table `compra`
 --
@@ -55,28 +57,29 @@ DROP TABLE IF EXISTS `compra`;
  SET character_set_client = utf8 ;
 CREATE TABLE `compra` (
   `id_compra` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `fecha_hora` date DEFAULT NULL,
+  `fecha_hora` datetime DEFAULT NULL,
   `proveedor_cuit` bigint(20) unsigned NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `id_detalle_compra` int(11) NOT NULL,
-  PRIMARY KEY (`id_compra`,`proveedor_cuit`,`id_usuario`,`id_detalle_compra`),
+  `id_usuario` int(11) DEFAULT NULL,
+  `numero_comprobante` int(11) DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  PRIMARY KEY (`id_compra`,`proveedor_cuit`),
   KEY `fk_compra_proveedor1_idx` (`proveedor_cuit`),
   KEY `fk_compra_usuario1_idx` (`id_usuario`),
-  KEY `fk_compra_detalle_compra1_idx` (`id_detalle_compra`),
-  CONSTRAINT `fk_compra_detalle_compra1` FOREIGN KEY (`id_detalle_compra`) REFERENCES `detalle_compra` (`id_detalle_compra`),
   CONSTRAINT `fk_compra_proveedor1` FOREIGN KEY (`proveedor_cuit`) REFERENCES `proveedor` (`cuit`),
   CONSTRAINT `fk_compra_usuario1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `compra`
---
-
 LOCK TABLES `compra` WRITE;
 /*!40000 ALTER TABLE `compra` DISABLE KEYS */;
 /*!40000 ALTER TABLE `compra` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+--
+-- Dumping data for table `compra`
+--
+--
 
 --
 -- Table structure for table `cuenta_corriente`
@@ -102,33 +105,26 @@ LOCK TABLES `cuenta_corriente` WRITE;
 INSERT INTO `cuenta_corriente` VALUES (1,0,1000),(2,0,1000),(3,0,1000),(4,0,1000),(5,0,1000),(6,0,100),(7,0,100),(8,0,10000),(9,0,10000);
 /*!40000 ALTER TABLE `cuenta_corriente` ENABLE KEYS */;
 UNLOCK TABLES;
-
 --
 -- Table structure for table `detalle_compra`
 --
 
 DROP TABLE IF EXISTS `detalle_compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8 ;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `detalle_compra` (
   `id_detalle_compra` int(11) NOT NULL AUTO_INCREMENT,
-  `detalle_compracol` varchar(45) DEFAULT NULL,
   `id_producto` bigint(20) NOT NULL,
-  `cuit` bigint(20) unsigned NOT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `costo` int(11) DEFAULT NULL,
+  `costo` float DEFAULT NULL,
   `porc_iva` float DEFAULT NULL,
-  PRIMARY KEY (`id_detalle_compra`,`id_producto`),
+  `id_compra` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id_detalle_compra`,`id_producto`,`id_compra`),
   KEY `fk_detalle_compra_producto1_idx` (`id_producto`),
-  KEY `fk_detalle_compra_proveedor1_idx` (`cuit`),
-  CONSTRAINT `fk_detalle_compra_producto1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
-  CONSTRAINT `fk_detalle_compra_proveedor1` FOREIGN KEY (`cuit`) REFERENCES `proveedor` (`cuit`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  KEY `fk_id_compra_idx` (`id_compra`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `detalle_compra`
---
 
 LOCK TABLES `detalle_compra` WRITE;
 /*!40000 ALTER TABLE `detalle_compra` DISABLE KEYS */;
@@ -396,5 +392,44 @@ UNLOCK TABLES;
 
 -- Dump completed on 2019-05-15 11:49:47
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+LOCK TABLES `compra` WRITE;
+/*!40000 ALTER TABLE `compra` DISABLE KEYS */;
+INSERT INTO `compra` VALUES (6,'2019-05-22 19:22:00',1234567,1,4321,20),(7,'2019-05-22 19:23:00',1234567,1,1222,46),(8,'2019-05-22 19:37:00',1234567,1,123,1),(9,'2019-05-22 20:59:00',1234567,1,3456789,50);
+/*!40000 ALTER TABLE `compra` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Dumping data for table `detalle_compra`
+--
+
+LOCK TABLES `detalle_compra` WRITE;
+/*!40000 ALTER TABLE `detalle_compra` DISABLE KEYS */;
+INSERT INTO `detalle_compra` VALUES (6,1,23,2,1,7),(7,1,1,1,1,8),(8,1,1,50,5,9);
+/*!40000 ALTER TABLE `detalle_compra` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-05-22 20:27:53
 
 

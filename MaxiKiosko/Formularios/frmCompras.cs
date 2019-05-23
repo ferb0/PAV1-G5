@@ -279,13 +279,11 @@ namespace MaxiKiosko.Formularios
             {
                 compra.guardarCompra();
                 MessageBox.Show("Ingreso de Compra guardada exitosamente");
-                this.txtCUIT.Text = "";
-                this.txtRazonSocial.Text = "";
-                this.txtComprobante.Text = "";
+                this.Close();
             }
                 catch (Exception)
             {
-            MessageBox.Show("Hubo un error al intentar guardar el ingreso de compra");
+                MessageBox.Show("Hubo un error al intentar guardar el ingreso de compra");
             }
             
 

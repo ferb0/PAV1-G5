@@ -35,6 +35,12 @@ namespace MaxiKiosko.Clases
         {
         }
 
+        public DataTable consultarTodos()
+        {
+            return this._BD.consulta("SELECT c.id_compra, c.fecha_hora, p.razon_social, c.numero_comprobante, c.total " +
+                " FROM compra c LEFT JOIN proveedor p ON p.cuit = c.proveedor_cuit");
+        }
+
         public void guardarCompra()
         {
             string sqlLastId = @" SELECT id_compra FROM compra ORDER BY id_compra DESC LIMIT 1";
@@ -71,12 +77,16 @@ namespace MaxiKiosko.Clases
                             d.porc_iva +
                             ")";
                 this._BD.grabar_modificar(SqlInsert);
+
+                SqlInsert = @" UPDATE producto SET stock = stock + " + d.cantidad.ToString() + " WHERE id_producto = " + d.id_producto.ToString();
+                this._BD.grabar_modificar(SqlInsert);
+
                 //MessageBox.Show(SqlInsert);
             }
 
 
-            
-            
+
+
 
             //string sqlLastId = @" SELECT id_detalle_compra FROM detalle_compra ORDER BY id_detalle_compra DESC LIMIT 1";
             //DataTable dt = this._BD.consulta(sqlLastId);

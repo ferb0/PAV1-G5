@@ -54,6 +54,9 @@ namespace MaxiKiosko.Clases
                             d.idProducto +
                             "')";
                 this._BD.grabar_modificar(SqlInsert);
+
+                SqlInsert = @" UPDATE producto SET stock = stock - " + d.cantidad.ToString() + " WHERE id_producto = " + d.idProducto.ToString();
+                this._BD.grabar_modificar(SqlInsert);
             }
 
             SqlInsert = @" INSERT INTO venta

@@ -97,5 +97,17 @@ namespace MaxiKiosko
         {
             this._BD.grabar_modificar("DELETE FROM producto WHERE id_producto = " + id_producto);
         }
+
+        public Boolean hayStock(int cantidad)
+        {
+            DataTable dt = this._BD.consulta("SELECT stock FROM producto WHERE id_producto = " + id_producto);
+            int cantidadStock = int.Parse(dt.Rows[0][0].ToString());
+
+            if(cantidadStock-cantidad >= 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -63,6 +63,12 @@
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Formularios\frmCompraConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCompraConsulta.Designer.cs">
+      <DependentUpon>frmCompraConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProveedoresBusqueda.cs">
       <SubType>Form</SubType>
     </Compile>

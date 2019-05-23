@@ -101,6 +101,12 @@ namespace MaxiKiosko.Formularios
                 return;
             }
 
+            if(!producto.hayStock(int.Parse(txtProductoCantidad.Text)))
+            {
+                MessageBox.Show("No hay suficiente stock");
+                return;
+            }
+
             DetalleVenta detalle = new DetalleVenta();
             detalle.idProducto = producto.id_producto;
             detalle.precioHistorico = producto.precio;

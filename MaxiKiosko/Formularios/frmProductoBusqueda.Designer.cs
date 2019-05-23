@@ -39,7 +39,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(15, 15);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Text = "Buscar Cliente";
+            this.lbTitle.Text = "Buscar Producto";
             // 
             // cmdBuscar
             // 
@@ -83,7 +83,7 @@
             this.Controls.Add(this.dataGridProductos);
             this.Name = "frmClienteBusqueda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Cliente";
+            this.Text = "Buscar Producto";
             this.ResumeLayout(false);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

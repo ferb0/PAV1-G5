@@ -31,6 +31,7 @@
             this.menuMaxiKiosko = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +51,8 @@
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
+            this.comprasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,13 +84,13 @@
             // nuevaVentaToolStripMenuItem
             // 
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
-            // nuevaVentaToolStripMenuItem
+            // ventasConsultaToolStripMenuItem
             // 
-            this.ventasConsultaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
+            this.ventasConsultaToolStripMenuItem.Name = "ventasConsultaToolStripMenuItem";
             this.ventasConsultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ventasConsultaToolStripMenuItem.Text = "Ventas Realizadas";
             this.ventasConsultaToolStripMenuItem.Click += new System.EventHandler(this.ventasConsultaToolStripMenuItem_Click);
@@ -97,7 +98,7 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.ClientesToolStripMenuItem1_Click);
             // 
@@ -105,6 +106,7 @@
             // 
             this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoDeComprasToolStripMenuItem,
+            this.comprasRealizadasToolStripMenuItem,
             this.proveedoresToolStripMenuItem});
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
@@ -247,6 +249,13 @@
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comprasRealizadasToolStripMenuItem
+            // 
+            this.comprasRealizadasToolStripMenuItem.Name = "comprasRealizadasToolStripMenuItem";
+            this.comprasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comprasRealizadasToolStripMenuItem.Text = "Compras Realizadas";
+            this.comprasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.comprasRealizadasToolStripMenuItem_Click);
+            // 
             // frmMaxiKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +301,7 @@
         private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem ventasConsultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasRealizadasToolStripMenuItem;
     }
 }
 
