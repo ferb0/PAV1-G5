@@ -36,6 +36,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.RptViewerProveedores = new Microsoft.Reporting.WinForms.ReportViewer();
             this.proveedorTableAdapter = new MaxiKiosko.DataSet.DataSet1TableAdapters.proveedorTableAdapter();
+            this.proveedorTableAdapter1 = new MaxiKiosko.DataSet.DataSet1TableAdapters.proveedorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,10 @@
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
+            // proveedorTableAdapter1
+            // 
+            this.proveedorTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmListadoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,5 +114,6 @@
         private System.Windows.Forms.BindingSource proveedorBindingSource;
         private DataSet.DataSet1 DataSet1;
         private DataSet.DataSet1TableAdapters.proveedorTableAdapter proveedorTableAdapter;
+        private DataSet.DataSet1TableAdapters.proveedorTableAdapter proveedorTableAdapter1;
     }
 }

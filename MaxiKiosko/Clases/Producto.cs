@@ -64,7 +64,7 @@ namespace MaxiKiosko
         } 
 
         public DataTable consultarProducto(string subString) {
-            return this._BD.consulta(String.Format ("SELECT p.id_producto, tp.descripcion 'tipo', p.descripcion, p.precio, p.stock FROM producto p" +
+            return this._BD.consulta(String.Format ("SELECT p.id_producto, p.descripcion, tp.descripcion 'tipo',p.precio, p.stock FROM producto p" +
                                      " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto" +
                                      " WHERE p.id_producto LIKE '%{0}%'" +
                                      " OR p.precio LIKE '%{0}%'" +

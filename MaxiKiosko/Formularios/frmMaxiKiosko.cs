@@ -109,5 +109,12 @@ namespace MaxiKiosko
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void informeDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos frm = new Formularios.frmListadoProductos();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }

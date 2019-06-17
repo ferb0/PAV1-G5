@@ -9,7 +9,9 @@
 
 namespace MaxiKiosko.DataSet.DataSet1TableAdapters
 {
-
+    partial class productoTableAdapter
+    {
+    }
 
     public partial class proveedorTableAdapter
     {
