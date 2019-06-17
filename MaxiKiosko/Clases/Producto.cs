@@ -73,6 +73,14 @@ namespace MaxiKiosko
                                      " OR p.descripcion LIKE '%{0}%'", subString));
         }
 
+
+        public DataTable consultarProductoStock(string subString)
+        {
+            return this._BD.consulta("SELECT p.id_producto, p.descripcion, tp.descripcion 'tipo',p.precio, p.stock FROM producto p" +
+                                     " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto" +
+                                     " WHERE p.stock < " + subString);
+        }
+
         public DataTable buscarTodos()
         {
             return this._BD.consulta("SELECT p.id_producto, tp.descripcion 'tipo', p.descripcion, p.precio, p.stock FROM producto p" +

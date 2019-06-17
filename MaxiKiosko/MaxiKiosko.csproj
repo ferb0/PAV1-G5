@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSReportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListadoProductosStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListadoProductosStock.Designer.cs">
+      <DependentUpon>frmListadoProductosStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="Formularios\frmListadoProductos.resx">
       <DependentUpon>frmListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListadoProductosStock.resx">
+      <DependentUpon>frmListadoProductosStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmListadoProveedores.resx">
       <DependentUpon>frmListadoProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +236,7 @@
     <EmbeddedResource Include="Formularios\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProductosStock.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProveedores.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">

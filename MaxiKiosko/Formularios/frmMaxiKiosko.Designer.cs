@@ -54,6 +54,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.informeDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosConStockFaltanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,7 +164,8 @@
             this.informeDeVentasToolStripMenuItem,
             this.informeDeComprasToolStripMenuItem,
             this.consultaDeStockToolStripMenuItem,
-            this.informeDeProductosToolStripMenuItem});
+            this.informeDeProductosToolStripMenuItem,
+            this.productosConStockFaltanteToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -265,6 +267,13 @@
             this.informeDeProductosToolStripMenuItem.Text = "Informe de Productos";
             this.informeDeProductosToolStripMenuItem.Click += new System.EventHandler(this.informeDeProductosToolStripMenuItem_Click);
             // 
+            // productosConStockFaltanteToolStripMenuItem
+            // 
+            this.productosConStockFaltanteToolStripMenuItem.Name = "productosConStockFaltanteToolStripMenuItem";
+            this.productosConStockFaltanteToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.productosConStockFaltanteToolStripMenuItem.Text = "Productos con Stock Faltante";
+            this.productosConStockFaltanteToolStripMenuItem.Click += new System.EventHandler(this.productosConStockFaltanteToolStripMenuItem_Click);
+            // 
             // frmMaxiKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +321,7 @@
         private System.Windows.Forms.ToolStripMenuItem ventasConsultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosConStockFaltanteToolStripMenuItem;
     }
 }
 
