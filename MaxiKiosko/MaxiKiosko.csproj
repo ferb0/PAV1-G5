@@ -277,7 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\lock-64.png" />
-    <Content Include="Resources\MaxikioskoFelixTransparente.png" />
+    <Content Include="Resources\MaxikioskoFelixLogo.png" />
     <Content Include="Resources\user-64.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
