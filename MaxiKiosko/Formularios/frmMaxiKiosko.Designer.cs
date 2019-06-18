@@ -44,6 +44,8 @@
             this.informeDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosConStockFaltanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +55,7 @@
             this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
-            this.informeDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosConStockFaltanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,14 +148,14 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.ProductosToolStripMenuItem_Click);
             // 
             // tipoProductosToolStripMenuItem
             // 
             this.tipoProductosToolStripMenuItem.Name = "tipoProductosToolStripMenuItem";
-            this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.tipoProductosToolStripMenuItem.Text = "Tipo Productos";
             this.tipoProductosToolStripMenuItem.Click += new System.EventHandler(this.TipoProductosToolStripMenuItem_Click);
             // 
@@ -165,7 +166,8 @@
             this.informeDeComprasToolStripMenuItem,
             this.consultaDeStockToolStripMenuItem,
             this.informeDeProductosToolStripMenuItem,
-            this.productosConStockFaltanteToolStripMenuItem});
+            this.productosConStockFaltanteToolStripMenuItem,
+            this.listadoDeClientesToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -173,20 +175,34 @@
             // informeDeVentasToolStripMenuItem
             // 
             this.informeDeVentasToolStripMenuItem.Name = "informeDeVentasToolStripMenuItem";
-            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.informeDeVentasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.informeDeVentasToolStripMenuItem.Text = "Informe de Ventas";
             // 
             // informeDeComprasToolStripMenuItem
             // 
             this.informeDeComprasToolStripMenuItem.Name = "informeDeComprasToolStripMenuItem";
-            this.informeDeComprasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.informeDeComprasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.informeDeComprasToolStripMenuItem.Text = "Informe de Compras";
             // 
             // consultaDeStockToolStripMenuItem
             // 
             this.consultaDeStockToolStripMenuItem.Name = "consultaDeStockToolStripMenuItem";
-            this.consultaDeStockToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.consultaDeStockToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.consultaDeStockToolStripMenuItem.Text = "Consulta de Stock";
+            // 
+            // informeDeProductosToolStripMenuItem
+            // 
+            this.informeDeProductosToolStripMenuItem.Name = "informeDeProductosToolStripMenuItem";
+            this.informeDeProductosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.informeDeProductosToolStripMenuItem.Text = "Informe de Productos";
+            this.informeDeProductosToolStripMenuItem.Click += new System.EventHandler(this.informeDeProductosToolStripMenuItem_Click);
+            // 
+            // productosConStockFaltanteToolStripMenuItem
+            // 
+            this.productosConStockFaltanteToolStripMenuItem.Name = "productosConStockFaltanteToolStripMenuItem";
+            this.productosConStockFaltanteToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.productosConStockFaltanteToolStripMenuItem.Text = "Productos con Stock Faltante";
+            this.productosConStockFaltanteToolStripMenuItem.Click += new System.EventHandler(this.productosConStockFaltanteToolStripMenuItem_Click);
             // 
             // configuracionToolStripMenuItem
             // 
@@ -260,19 +276,12 @@
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // informeDeProductosToolStripMenuItem
+            // listadoDeClientesToolStripMenuItem
             // 
-            this.informeDeProductosToolStripMenuItem.Name = "informeDeProductosToolStripMenuItem";
-            this.informeDeProductosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.informeDeProductosToolStripMenuItem.Text = "Informe de Productos";
-            this.informeDeProductosToolStripMenuItem.Click += new System.EventHandler(this.informeDeProductosToolStripMenuItem_Click);
-            // 
-            // productosConStockFaltanteToolStripMenuItem
-            // 
-            this.productosConStockFaltanteToolStripMenuItem.Name = "productosConStockFaltanteToolStripMenuItem";
-            this.productosConStockFaltanteToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.productosConStockFaltanteToolStripMenuItem.Text = "Productos con Stock Faltante";
-            this.productosConStockFaltanteToolStripMenuItem.Click += new System.EventHandler(this.productosConStockFaltanteToolStripMenuItem_Click);
+            this.listadoDeClientesToolStripMenuItem.Name = "listadoDeClientesToolStripMenuItem";
+            this.listadoDeClientesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.listadoDeClientesToolStripMenuItem.Text = "Listado de Clientes";
+            this.listadoDeClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesToolStripMenuItem_Click);
             // 
             // frmMaxiKiosko
             // 
@@ -322,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem comprasRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosConStockFaltanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
     }
 }
 
