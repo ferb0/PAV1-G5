@@ -52,17 +52,19 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(52, 29);
+            this.txtBuscar.Location = new System.Drawing.Point(69, 36);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(196, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(260, 22);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(272, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(363, 15);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 40);
+            this.btnBuscar.Size = new System.Drawing.Size(53, 49);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -73,10 +75,11 @@
             reportDataSource1.Value = this.proveedorBindingSource;
             this.RptViewerProveedores.LocalReport.DataSources.Add(reportDataSource1);
             this.RptViewerProveedores.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.rptProveedores.rdlc";
-            this.RptViewerProveedores.Location = new System.Drawing.Point(1, 70);
+            this.RptViewerProveedores.Location = new System.Drawing.Point(1, 86);
+            this.RptViewerProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RptViewerProveedores.Name = "RptViewerProveedores";
             this.RptViewerProveedores.ServerReport.BearerToken = null;
-            this.RptViewerProveedores.Size = new System.Drawing.Size(797, 377);
+            this.RptViewerProveedores.Size = new System.Drawing.Size(1062, 464);
             this.RptViewerProveedores.TabIndex = 2;
             // 
             // proveedorTableAdapter
@@ -85,12 +88,13 @@
             // 
             // frmListadoProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.RptViewerProveedores);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmListadoProveedores";
             this.Text = "Listado de Proveedores";
             this.Load += new System.EventHandler(this.frmListadoProveedores_Load);

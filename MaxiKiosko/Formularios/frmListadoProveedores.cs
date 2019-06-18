@@ -31,7 +31,7 @@ namespace MaxiKiosko.Formularios
         {
             Proveedor proveedor = new Proveedor();
             DataTable dt = proveedor.consultarProveedor(txtBuscar.Text);
-            proveedorBindingSource .DataSource = dt;
+            proveedorBindingSource.DataSource = dt;
             RptViewerProveedores.RefreshReport();
         }
     }

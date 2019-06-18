@@ -12,7 +12,7 @@ namespace MaxiKiosko
     class Conexion
     {
         MySqlCommand cmd = new MySqlCommand();
-        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=maxiKiosko;allowuservariables=True; password=root;");
+        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=alejandro;database=maxiKiosko;allowuservariables=True; password=123qwe;");
         
 
         public void conectar()

@@ -14,4 +14,8 @@ namespace MaxiKiosko.DataSet.DataSet1TableAdapters
     public partial class proveedorTableAdapter
     {
     }
+
+    public partial class compraTableAdapter
+    {
+    }
 }

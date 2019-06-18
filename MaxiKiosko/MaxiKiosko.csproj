@@ -92,6 +92,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSReportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListadoCompraPorProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListadoCompraPorProveedor.Designer.cs">
+      <DependentUpon>frmListadoCompraPorProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListadoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListadoCompra.Designer.cs">
+      <DependentUpon>frmListadoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCompraConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Formularios\frmListadoCompraPorProveedor.resx">
+      <DependentUpon>frmListadoCompraPorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListadoCompra.resx">
+      <DependentUpon>frmListadoCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmListadoProveedores.resx">
       <DependentUpon>frmListadoProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +236,7 @@
     <EmbeddedResource Include="Formularios\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptComprasPorProveedor.rdlc" />
     <EmbeddedResource Include="Reportes\rptProveedores.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
