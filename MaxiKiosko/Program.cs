@@ -17,7 +17,7 @@ namespace MaxiKiosko
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListadoCliente());
+            Application.Run(new frmListadoUsuarios());
             //Application.Run(new frmUsuario());
         }
     }

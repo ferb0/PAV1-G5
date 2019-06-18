@@ -312,3 +312,4 @@ C:\Users\Damian\Documents\GitHub\PAV1-G5\PAV1-G5\MaxiKiosko\bin\Debug\MaxiKiosko
 C:\Users\Damian\Documents\GitHub\PAV1-G5\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmListadoProductos.resources
 C:\Users\Damian\Documents\GitHub\PAV1-G5\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmListadoProductosStock.resources
 C:\Users\Damian\Documents\GitHub\PAV1-G5\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmListadoCliente.resources
+C:\Users\Damian\Documents\GitHub\PAV1-G5\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmListadoUsuarios.resources

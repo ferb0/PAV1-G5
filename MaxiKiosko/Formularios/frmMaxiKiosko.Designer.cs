@@ -56,6 +56,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +168,8 @@
             this.consultaDeStockToolStripMenuItem,
             this.informeDeProductosToolStripMenuItem,
             this.productosConStockFaltanteToolStripMenuItem,
-            this.listadoDeClientesToolStripMenuItem});
+            this.listadoDeClientesToolStripMenuItem,
+            this.listadoDeUsuariosToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -283,6 +285,13 @@
             this.listadoDeClientesToolStripMenuItem.Text = "Listado de Clientes";
             this.listadoDeClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesToolStripMenuItem_Click);
             // 
+            // listadoDeUsuariosToolStripMenuItem
+            // 
+            this.listadoDeUsuariosToolStripMenuItem.Name = "listadoDeUsuariosToolStripMenuItem";
+            this.listadoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.listadoDeUsuariosToolStripMenuItem.Text = "Listado de Usuarios";
+            this.listadoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeUsuariosToolStripMenuItem_Click);
+            // 
             // frmMaxiKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +341,7 @@
         private System.Windows.Forms.ToolStripMenuItem informeDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosConStockFaltanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeUsuariosToolStripMenuItem;
     }
 }
 
