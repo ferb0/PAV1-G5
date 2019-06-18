@@ -26,8 +26,8 @@ namespace MaxiKiosko.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=alejandro;persistsecurityinfo=True;database=maxikiosko;p" +
-            "assword=123qwe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=maxikiosko;passwo" +
+            "rd=damian")]
         public string maxikioskoConnectionString {
             get {
                 return ((string)(this["maxikioskoConnectionString"]));
@@ -37,21 +37,10 @@ namespace MaxiKiosko.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=alejandro;database=maxikiosko")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=maxikiosko")]
         public string maxikioskoConnectionString1 {
             get {
                 return ((string)(this["maxikioskoConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=alejandro;password=123qwe;persistsecurityinfo=True;datab" +
-            "ase=maxikiosko")]
-        public string maxikioskoConnectionString2 {
-            get {
-                return ((string)(this["maxikioskoConnectionString2"]));
             }
         }
     }

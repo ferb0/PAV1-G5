@@ -19,6 +19,12 @@ namespace MaxiKiosko.Clases
         int _rol;
         string _password;
 
+
+        public Usuario()
+        {
+
+        }
+
         public string nombre_usuario
         {
             get { return this._nombre_usuario; }
@@ -112,7 +118,8 @@ namespace MaxiKiosko.Clases
             string sqlBuscar = "";
             //sqlBuscar = @" SELECT * FROM usuario WHERE nombre_usuario LIKE '%" +
             //            usuario + "%'";
-            sqlBuscar = @"SELECT u.id_usuario, u.nombre_usuario, u.apellido, u.nombre, u.password, r.nombre FROM usuario u INNER JOIN rol r ON (u.nombre_usuario LIKE '%" +
+            sqlBuscar = @"SELECT u.id_usuario, u.nombre_usuario, u.apellido, u.nombre, u.password, r.nombre as rol FROM usuario u INNER JOIN rol r ON (u.nombre_usuario LIKE '%" +
+                        usuario + "%' OR u.id_usuario LIKE '%" +
                         usuario + "%' OR u.apellido LIKE '%" +
                         usuario + "%' OR u.nombre LIKE '%" +
                         usuario + "%') AND u.rol=r.id_rol";

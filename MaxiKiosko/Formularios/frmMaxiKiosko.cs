@@ -110,6 +110,34 @@ namespace MaxiKiosko
             frm.Dispose();
         }
 
+        private void informeDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos frm = new Formularios.frmListadoProductos();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void productosConStockFaltanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProductosStock frm = new Formularios.frmListadoProductosStock();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoCliente frm = new Formularios.frmListadoCliente();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void listadoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoUsuarios frm = new Formularios.frmListadoUsuarios();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
         private void InformeDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListadoCompra frm = new Formularios.frmListadoCompra();

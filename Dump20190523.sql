@@ -120,7 +120,7 @@ CREATE TABLE `detalle_compra` (
   PRIMARY KEY (`id_detalle_compra`,`id_producto`,`id_compra`),
   KEY `fk_detalle_compra_producto1_idx` (`id_producto`),
   KEY `fk_id_compra_idx` (`id_compra`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
