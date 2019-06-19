@@ -217,6 +217,31 @@ FROM            usuario u LEFT OUTER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spRptVentasTableAdapter" GeneratorDataComponentClassName="spRptVentasTableAdapter" Name="spRptVentas" UserDataComponentName="spRptVentasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="maxikioskoConnectionString (Settings)" DbObjectName="`maxikiosko`.`spRptVentas`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`maxikiosko`.`spRptVentas`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nro_ticket" DataSetColumn="nro_ticket" />
+              <Mapping SourceColumn="fecha_hora" DataSetColumn="fecha_hora" />
+              <Mapping SourceColumn="dni" DataSetColumn="dni" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="id_detalle_venta" DataSetColumn="id_detalle_venta" />
+              <Mapping SourceColumn="forma_pago" DataSetColumn="forma_pago" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="producto" DataSetColumn="producto" />
+              <Mapping SourceColumn="precio_historico" DataSetColumn="precio_historico" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -398,6 +423,46 @@ FROM            usuario u LEFT OUTER JOIN
             <xs:sequence>
               <xs:element name="descriptor" msprop:Generator_ColumnVarNameInTable="columndescriptor" msprop:Generator_ColumnPropNameInRow="descriptor" msprop:Generator_ColumnPropNameInTable="descriptorColumn" msprop:Generator_UserColumnName="descriptor" type="xs:string" minOccurs="0" />
               <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="spRptVentas" msprop:Generator_TableClassName="spRptVentasDataTable" msprop:Generator_TableVarName="tablespRptVentas" msprop:Generator_TablePropName="spRptVentas" msprop:Generator_RowDeletingName="spRptVentasRowDeleting" msprop:Generator_RowChangingName="spRptVentasRowChanging" msprop:Generator_RowEvHandlerName="spRptVentasRowChangeEventHandler" msprop:Generator_RowDeletedName="spRptVentasRowDeleted" msprop:Generator_UserTableName="spRptVentas" msprop:Generator_RowChangedName="spRptVentasRowChanged" msprop:Generator_RowEvArgName="spRptVentasRowChangeEvent" msprop:Generator_RowClassName="spRptVentasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nro_ticket" msprop:Generator_ColumnVarNameInTable="columnnro_ticket" msprop:Generator_ColumnPropNameInRow="nro_ticket" msprop:Generator_ColumnPropNameInTable="nro_ticketColumn" msprop:Generator_UserColumnName="nro_ticket" type="xs:unsignedInt" />
+              <xs:element name="fecha_hora" msprop:Generator_ColumnVarNameInTable="columnfecha_hora" msprop:Generator_ColumnPropNameInRow="fecha_hora" msprop:Generator_ColumnPropNameInTable="fecha_horaColumn" msprop:Generator_UserColumnName="fecha_hora" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dni" msprop:Generator_ColumnVarNameInTable="columndni" msprop:Generator_ColumnPropNameInRow="dni" msprop:Generator_ColumnPropNameInTable="dniColumn" msprop:Generator_UserColumnName="dni" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_detalle_venta" msprop:Generator_ColumnVarNameInTable="columnid_detalle_venta" msprop:Generator_ColumnPropNameInRow="id_detalle_venta" msprop:Generator_ColumnPropNameInTable="id_detalle_ventaColumn" msprop:Generator_UserColumnName="id_detalle_venta" type="xs:int" />
+              <xs:element name="forma_pago" msprop:Generator_ColumnVarNameInTable="columnforma_pago" msprop:Generator_ColumnPropNameInRow="forma_pago" msprop:Generator_ColumnPropNameInTable="forma_pagoColumn" msprop:Generator_UserColumnName="forma_pago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_historico" msprop:Generator_ColumnVarNameInTable="columnprecio_historico" msprop:Generator_ColumnPropNameInRow="precio_historico" msprop:Generator_ColumnPropNameInTable="precio_historicoColumn" msprop:Generator_UserColumnName="precio_historico" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

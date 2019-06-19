@@ -164,6 +164,12 @@
     <Compile Include="Formularios\frmListadoProveedores.Designer.cs">
       <DependentUpon>frmListadoProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListadoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListadoVentas.designer.cs">
+      <DependentUpon>frmListadoVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProveedoresBusqueda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     <EmbeddedResource Include="Formularios\frmListadoProveedores.resx">
       <DependentUpon>frmListadoProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListadoVentas.resx">
+      <DependentUpon>frmListadoVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProveedoresBusqueda.resx">
       <DependentUpon>frmProveedoresBusqueda.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +335,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rptVentas.rdlc" />
     <None Include="DataSet\DSReportes.xsc">
       <DependentUpon>DSReportes.xsd</DependentUpon>
     </None>
