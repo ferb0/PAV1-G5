@@ -84,7 +84,7 @@ namespace MaxiKiosko
 
         private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVenta frm = new Formularios.frmVenta();
+            frmVenta frm = new Formularios.frmVenta(_id_usuario);
             frm.ShowDialog();
             frm.Dispose();
         }

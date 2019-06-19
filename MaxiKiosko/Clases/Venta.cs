@@ -18,13 +18,16 @@ namespace MaxiKiosko.Clases
         public int formaPago { get; set; }
         public decimal total { get; set; }
 
-        public Venta(int nroTicket, int cliente, List<DetalleVenta> detalle, DateTime fecha, int formaPago)
+        public int idUsuario { get; set; }
+
+        public Venta(int nroTicket, int cliente, List<DetalleVenta> detalle, DateTime fecha, int formaPago, int idUsuario)
         {
             this.nroTicket = nroTicket;
             this.idCliente = idCliente;
             this.detalle = detalle;
             this.fecha = fecha;
             this.formaPago = formaPago;
+            this.idUsuario = idUsuario;
         }
 
         public Venta()
@@ -60,13 +63,14 @@ namespace MaxiKiosko.Clases
             }
 
             SqlInsert = @" INSERT INTO venta
-                         (fecha_hora, total, id_forma_pago, dni, id_detalle_venta) VALUES ('" +
+                         (fecha_hora, total, id_forma_pago, dni, id_detalle_venta, id_usuario) VALUES ('" +
                             this.fecha.ToString("yyyy/MM/dd HH:ss") + "', '" +
                             this.total + "', '" +
                             this.formaPago + "', " +
 			                ((this.idCliente == 0) ? "NULL" : this.idCliente.ToString()) + ", '" +
-                            last_id_detalle +
-                             "')";
+                            last_id_detalle + "', " +
+                            this.idUsuario +
+                             ")";
             this._BD.grabar_modificar(SqlInsert);
 
         }

@@ -367,11 +367,14 @@ CREATE TABLE `venta` (
   `dni` int(10) DEFAULT NULL,
   `id_forma_pago` int(10) unsigned NOT NULL,
   `id_detalle_venta` int(11) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
   PRIMARY KEY (`nro_ticket`,`id_forma_pago`,`id_detalle_venta`),
   KEY `fk_venta_forma_pago1_idx` (`id_forma_pago`),
   KEY `fk_venta_detalle_venta1_idx` (`id_detalle_venta`),
+  KEY `fk_venta_usuario1_idx` (`id_usuario`),
   CONSTRAINT `fk_venta_detalle_venta1` FOREIGN KEY (`id_detalle_venta`) REFERENCES `detalle_venta` (`id_detalle_venta`),
-  CONSTRAINT `fk_venta_forma_pago1` FOREIGN KEY (`id_forma_pago`) REFERENCES `forma_pago` (`id_forma_pago`)
+  CONSTRAINT `fk_venta_forma_pago1` FOREIGN KEY (`id_forma_pago`) REFERENCES `forma_pago` (`id_forma_pago`),
+  CONSTRAINT `fk_venta_usuario1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -381,7 +384,7 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
-INSERT INTO `venta` VALUES (1,'2019-05-22',180,NULL,1,1),(2,'2019-05-22',225,NULL,1,2),(3,'2019-05-22',225,NULL,1,3),(4,'2019-05-22',1045,NULL,1,4),(5,'2019-05-22',380,NULL,2,5);
+INSERT INTO `venta` VALUES (1,'2019-05-22',180,NULL,1,1,1),(2,'2019-05-22',225,NULL,1,2,1),(3,'2019-05-22',225,NULL,1,3,1),(4,'2019-05-22',1045,NULL,1,4,1),(5,'2019-05-22',380,NULL,2,5,1);
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

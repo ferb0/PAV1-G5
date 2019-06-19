@@ -8,11 +8,13 @@ namespace MaxiKiosko.Formularios
 {
     public partial class frmVenta : Form
     {
+        private int _idUsuario;
         List<DetalleVenta> detalles = new System.Collections.Generic.List<DetalleVenta>();
-        public frmVenta()
+        public frmVenta(int idUsuario)
         {
             InitializeComponent();
             // Colocamos la fecha en txtFecha
+            _idUsuario = idUsuario;
 	    fillFormaPago();
             lbDateTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             DataTable dt = new DataTable();
@@ -229,6 +231,7 @@ namespace MaxiKiosko.Formularios
             venta.detalle = detalles;
             venta.fecha = DateTime.Now;
 	        venta.formaPago = (int)this.cmbFormaPago.SelectedValue;
+            venta.idUsuario = _idUsuario;
             if(txtClienteDni.Text != "")
             {
                 venta.idCliente = int.Parse(txtClienteDni.Text);

@@ -37,8 +37,8 @@ namespace MaxiKiosko.Formularios
                             FROM
                             (SELECT CONCAT(day(fecha_hora), ' - ' , MONTH(fecha_hora)) as fecha
                             FROM venta
-                            WHERE fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "'" +
-                            ") as tb " +
+                            WHERE fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "' AND id_usuario = " + cmbUsuario.SelectedValue +
+                            " ) as tb " +
                             "GROUP BY tb.fecha;";
 
             DataTable dt = conexion.consulta(sql);
