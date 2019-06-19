@@ -61,6 +61,7 @@
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.estadisticaVentasPorUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticaVentasPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,7 +242,8 @@
             this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estadisticaVentasPorDíaToolStripMenuItem,
             this.estadisticaVentasPorUsuarioToolStripMenuItem,
-            this.estadisticaVentasPorClienteToolStripMenuItem});
+            this.estadisticaVentasPorClienteToolStripMenuItem,
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem});
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
             this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
@@ -340,6 +342,13 @@
             this.estadisticaVentasPorClienteToolStripMenuItem.Text = "Estadistica ventas por cliente";
             this.estadisticaVentasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorClienteToolStripMenuItem_Click);
             // 
+            // estadisticaTipoDeProductosVendidosToolStripMenuItem
+            // 
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem.Name = "estadisticaTipoDeProductosVendidosToolStripMenuItem";
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem.Text = "Estadistica tipo de productos vendidos";
+            this.estadisticaTipoDeProductosVendidosToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaTipoDeProductosVendidosToolStripMenuItem_Click);
+            // 
             // frmMaxiKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +405,7 @@
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorDíaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaTipoDeProductosVendidosToolStripMenuItem;
     }
 }
 

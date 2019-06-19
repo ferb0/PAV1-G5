@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSReportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEstadisticaTipoProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEstadisticaTipoProductosVendidos.Designer.cs">
+      <DependentUpon>frmEstadisticaTipoProductosVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmEstadisticaVentaPorDiaPorCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Formularios\frmEstadisticaTipoProductosVendidos.resx">
+      <DependentUpon>frmEstadisticaTipoProductosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEstadisticaVentaPorDiaPorCliente.resx">
       <DependentUpon>frmEstadisticaVentaPorDiaPorCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +309,7 @@
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\estVentaPorDia.rdlc" />
+    <EmbeddedResource Include="Reportes\estTipoProductosVendidos.rdlc" />
     <EmbeddedResource Include="Reportes\rptUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\rptClientes.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductosStock.rdlc" />

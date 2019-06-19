@@ -95,3 +95,4 @@ C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaVenta
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csprojAssemblyReference.cache
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaVentaPorDiaPorUsuario.resources
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaVentaPorDiaPorCliente.resources
+C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaTipoProductosVendidos.resources
