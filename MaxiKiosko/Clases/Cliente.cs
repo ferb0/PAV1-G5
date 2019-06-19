@@ -79,6 +79,11 @@ namespace MaxiKiosko
             return this._BD.consulta("SELECT apellido, nombre, dni, domicilio, telefono, mail FROM cliente c;");
         }
 
+        public DataTable buscarTodosConNombreCompleto()
+        {
+            return this._BD.consulta("SELECT CONCAT(apellido,', ', nombre) as nombrecompleto, dni, domicilio, telefono, mail FROM cliente c WHERE dni <> 1");
+        }
+
         public void borrar(int dni)
         {
             string id_cuenta_corriente = this._BD.consulta("SELECT * FROM cliente WHERE dni =" + dni).Rows[0]["id_cuenta"].ToString();

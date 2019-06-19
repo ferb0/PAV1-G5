@@ -60,6 +60,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
             this.estadisticaVentasPorUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaVentasPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,7 +240,8 @@
             // 
             this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estadisticaVentasPorDíaToolStripMenuItem,
-            this.estadisticaVentasPorUsuarioToolStripMenuItem});
+            this.estadisticaVentasPorUsuarioToolStripMenuItem,
+            this.estadisticaVentasPorClienteToolStripMenuItem});
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
             this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
@@ -331,6 +333,13 @@
             this.estadisticaVentasPorUsuarioToolStripMenuItem.Text = "Estadistica ventas por usuario";
             this.estadisticaVentasPorUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorUsuarioToolStripMenuItem_Click);
             // 
+            // estadisticaVentasPorClienteToolStripMenuItem
+            // 
+            this.estadisticaVentasPorClienteToolStripMenuItem.Name = "estadisticaVentasPorClienteToolStripMenuItem";
+            this.estadisticaVentasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.estadisticaVentasPorClienteToolStripMenuItem.Text = "Estadistica ventas por cliente";
+            this.estadisticaVentasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorClienteToolStripMenuItem_Click);
+            // 
             // frmMaxiKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,6 +395,7 @@
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorDíaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorClienteToolStripMenuItem;
     }
 }
 
