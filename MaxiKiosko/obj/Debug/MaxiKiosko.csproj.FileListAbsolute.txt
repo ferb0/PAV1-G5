@@ -92,3 +92,5 @@ C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csproj.CopyComplete
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.exe
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.pdb
 C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaVentaPorDia.resources
+C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.csprojAssemblyReference.cache
+C:\repos\PAV1-G5\MaxiKiosko\obj\Debug\MaxiKiosko.Formularios.frmEstadisticaVentaPorDiaPorUsuario.resources

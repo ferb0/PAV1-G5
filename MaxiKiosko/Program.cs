@@ -17,7 +17,7 @@ namespace MaxiKiosko
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEstadisticaVentaPorDia());
+            Application.Run(new frmSesion());
             //Application.Run(new frmUsuario());
         }
     }

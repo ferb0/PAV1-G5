@@ -15,10 +15,12 @@ namespace MaxiKiosko.Formularios
     {
 
         private decimal numero_total = 0;
+        private int _idUsuario = 1;
         List<DetalleCompra> detalles = new System.Collections.Generic.List<DetalleCompra>();
-        public frmCompras()
+        public frmCompras(int idUsuario)
         {
             InitializeComponent();
+            _idUsuario = idUsuario;
             // Colocamos la fecha en txtFecha
             lblFechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             DataTable dt = new DataTable();
@@ -272,7 +274,7 @@ namespace MaxiKiosko.Formularios
             compra.detalle = detalles;
             compra.fecha_hora = DateTime.Now;
             compra.cuit = int.Parse(txtCUIT.Text.ToString());
-            compra.id_usuario = 1;
+            compra.id_usuario = _idUsuario;
             compra.nro_comprobante = int.Parse(txtComprobante.Text.ToString());
             compra.total = numero_total;
             try

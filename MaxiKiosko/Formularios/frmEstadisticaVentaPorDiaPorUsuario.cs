@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaxiKiosko.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,20 +11,15 @@ using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
-    public partial class frmEstadisticaVentaPorDia : Form
+    public partial class frmEstadisticaVentaPorDiaPorUsuario : Form
     {
-        public frmEstadisticaVentaPorDia()
+        public frmEstadisticaVentaPorDiaPorUsuario()
         {
             InitializeComponent();
             this.dtpFechaDesde.Format = DateTimePickerFormat.Custom;
             this.dtpFechaHasta.Format = DateTimePickerFormat.Custom;
             this.dtpFechaDesde.CustomFormat = "dd-MM-yyyy";
             this.dtpFechaHasta.CustomFormat = "dd-MM-yyyy";
-        }
-
-        private void FrmInicio_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void CmbBuscar_Click(object sender, EventArgs e)
@@ -56,6 +52,13 @@ namespace MaxiKiosko.Formularios
             {
                 MessageBox.Show("No hay resultados");
             }
+        }
+
+        private void FrmEstadisticaVentaPorDiaPorUsuario_Load(object sender, EventArgs e)
+        {
+            cmbUsuario.DataSource = new Usuario().mostrarTodosUsuarios();
+            cmbUsuario.ValueMember = "id_usuario";
+            cmbUsuario.DisplayMember = "nombre";
         }
     }
 }

@@ -42,12 +42,14 @@
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosConStockFaltanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeDeComprasPorProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaVentasPorDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +59,7 @@
             this.aBMToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_maxikiosko = new System.Windows.Forms.Label();
-            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticaVentasPorDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaVentasPorUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaxiKiosko.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,12 +194,6 @@
             this.informeDeComprasToolStripMenuItem.Text = "Informe de Compras por fechas";
             this.informeDeComprasToolStripMenuItem.Click += new System.EventHandler(this.InformeDeComprasToolStripMenuItem_Click);
             // 
-            // consultaDeStockToolStripMenuItem
-            // 
-            this.consultaDeStockToolStripMenuItem.Name = "consultaDeStockToolStripMenuItem";
-            this.consultaDeStockToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
-            this.consultaDeStockToolStripMenuItem.Text = "Consulta de Stock";
-            // 
             // informeDeProductosToolStripMenuItem
             // 
             this.informeDeProductosToolStripMenuItem.Name = "informeDeProductosToolStripMenuItem";
@@ -233,6 +228,28 @@
             this.informeDeComprasPorProveedorToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
             this.informeDeComprasPorProveedorToolStripMenuItem.Text = "Informe de Compras Por Proveedor";
             this.informeDeComprasPorProveedorToolStripMenuItem.Click += new System.EventHandler(this.InformeDeComprasPorProveedorToolStripMenuItem_Click);
+            // 
+            // consultaDeStockToolStripMenuItem
+            // 
+            this.consultaDeStockToolStripMenuItem.Name = "consultaDeStockToolStripMenuItem";
+            this.consultaDeStockToolStripMenuItem.Size = new System.Drawing.Size(325, 26);
+            this.consultaDeStockToolStripMenuItem.Text = "Consulta de Stock";
+            // 
+            // estadisticasToolStripMenuItem
+            // 
+            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estadisticaVentasPorDíaToolStripMenuItem,
+            this.estadisticaVentasPorUsuarioToolStripMenuItem});
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
+            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            // 
+            // estadisticaVentasPorDíaToolStripMenuItem
+            // 
+            this.estadisticaVentasPorDíaToolStripMenuItem.Name = "estadisticaVentasPorDíaToolStripMenuItem";
+            this.estadisticaVentasPorDíaToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.estadisticaVentasPorDíaToolStripMenuItem.Text = "Estadistica ventas por día";
+            this.estadisticaVentasPorDíaToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorDíaToolStripMenuItem_Click);
             // 
             // configuracionToolStripMenuItem
             // 
@@ -307,20 +324,12 @@
             this.label_maxikiosko.Text = "MaxiKiosko Felix";
             this.label_maxikiosko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // estadisticasToolStripMenuItem
+            // estadisticaVentasPorUsuarioToolStripMenuItem
             // 
-            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.estadisticaVentasPorDíaToolStripMenuItem});
-            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
-            // 
-            // estadisticaVentasPorDíaToolStripMenuItem
-            // 
-            this.estadisticaVentasPorDíaToolStripMenuItem.Name = "estadisticaVentasPorDíaToolStripMenuItem";
-            this.estadisticaVentasPorDíaToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.estadisticaVentasPorDíaToolStripMenuItem.Text = "Estadistica ventas por día";
-            this.estadisticaVentasPorDíaToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorDíaToolStripMenuItem_Click);
+            this.estadisticaVentasPorUsuarioToolStripMenuItem.Name = "estadisticaVentasPorUsuarioToolStripMenuItem";
+            this.estadisticaVentasPorUsuarioToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.estadisticaVentasPorUsuarioToolStripMenuItem.Text = "Estadistica ventas por usuario";
+            this.estadisticaVentasPorUsuarioToolStripMenuItem.Click += new System.EventHandler(this.EstadisticaVentasPorUsuarioToolStripMenuItem_Click);
             // 
             // frmMaxiKiosko
             // 
@@ -376,6 +385,7 @@
     private System.Windows.Forms.ToolStripMenuItem informeDeComprasPorProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorDíaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaVentasPorUsuarioToolStripMenuItem;
     }
 }
 

@@ -98,7 +98,7 @@ namespace MaxiKiosko
 
         private void ingresoDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCompras frm = new Formularios.frmCompras();
+            frmCompras frm = new Formularios.frmCompras(_id_usuario);
             frm.ShowDialog();
             frm.Dispose();
         }
@@ -155,6 +155,13 @@ namespace MaxiKiosko
         private void EstadisticaVentasPorDíaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEstadisticaVentaPorDia frm = new Formularios.frmEstadisticaVentaPorDia();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void EstadisticaVentasPorUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaVentaPorDiaPorUsuario frm = new Formularios.frmEstadisticaVentaPorDiaPorUsuario();
             frm.ShowDialog();
             frm.Dispose();
         }
