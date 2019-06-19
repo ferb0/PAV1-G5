@@ -385,6 +385,14 @@ FROM            usuario u LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ventas_por_dia" msprop:Generator_TableClassName="ventas_por_diaDataTable" msprop:Generator_TableVarName="tableventas_por_dia" msprop:Generator_TablePropName="ventas_por_dia" msprop:Generator_RowDeletingName="ventas_por_diaRowDeleting" msprop:Generator_RowChangingName="ventas_por_diaRowChanging" msprop:Generator_RowEvHandlerName="ventas_por_diaRowChangeEventHandler" msprop:Generator_RowDeletedName="ventas_por_diaRowDeleted" msprop:Generator_UserTableName="ventas_por_dia" msprop:Generator_RowChangedName="ventas_por_diaRowChanged" msprop:Generator_RowEvArgName="ventas_por_diaRowChangeEvent" msprop:Generator_RowClassName="ventas_por_diaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:unsignedShort" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

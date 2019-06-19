@@ -4,6 +4,13 @@
 
     partial class DataSet1
     {
+        partial class ventas_por_diaDataTable
+        {
+        }
+
+        partial class producto1DataTable
+        {
+        }
     }
 }
 
