@@ -79,5 +79,12 @@ namespace MaxiKiosko.Clases
                                      " LEFT JOIN cliente AS cli ON vent.dni = cli.dni"+
                                      " LEFT JOIN forma_pago AS fp ON vent.id_forma_pago = fp.id_forma_pago");
         }
+        public DataTable ConsultarReporte(DateTime fecha_inicio, DateTime fecha_fin)
+        {
+            //MessageBox.Show(fecha_inicio.ToString("yyyy/MM/dd HH:ss") + fecha_fin.ToString("yyyy/MM/dd HH:ss"));
+
+            return this._BD.consulta("call spRptVentasWithPrompt('" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "', '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "')");
+
+        }
     }
 }
