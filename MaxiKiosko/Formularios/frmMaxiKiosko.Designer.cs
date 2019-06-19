@@ -6,7 +6,6 @@
         /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Limpiar los recursos que se estén usando.
         /// </summary>
@@ -182,7 +181,7 @@
             this.informeDeProductosToolStripMenuItem,
             this.productosConStockFaltanteToolStripMenuItem,
             this.listadoDeClientesToolStripMenuItem,
-            this.listadoDeUsuariosToolStripMenuItem});
+            this.listadoDeUsuariosToolStripMenuItem,
             this.informeDeComprasPorProveedorToolStripMenuItem,
             this.consultaDeStockToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
@@ -229,7 +228,8 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formaDePagoToolStripMenuItem});
+            this.formaDePagoToolStripMenuItem
+    });
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
@@ -335,41 +335,40 @@
             this.menuMaxiKiosko.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+    }
 
-        }
+    #endregion
 
-        #endregion
-
-        private System.Windows.Forms.MenuStrip menuMaxiKiosko;
-        private System.Windows.Forms.Label label_maxikiosko;
-        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresoDeComprasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informeDeVentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informeDeComprasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeStockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formaDePagoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem ventasConsultaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasRealizadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informeDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productosConStockFaltanteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informeDeComprasPorProveedorToolStripMenuItem;
+    private System.Windows.Forms.MenuStrip menuMaxiKiosko;
+    private System.Windows.Forms.Label label_maxikiosko;
+    private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem ingresoDeComprasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
+    private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem informeDeVentasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem informeDeComprasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem consultaDeStockToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem tipoProductosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem formaDePagoToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem4;
+    private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem5;
+    private System.Windows.Forms.ToolStripMenuItem ventasConsultaToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem comprasRealizadasToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem informeDeProductosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem productosConStockFaltanteToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem listadoDeUsuariosToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem informeDeComprasPorProveedorToolStripMenuItem;
     }
 }
 
