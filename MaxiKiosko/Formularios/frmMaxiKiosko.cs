@@ -198,5 +198,19 @@ namespace MaxiKiosko
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void EstadisticaProductosVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaProductosVendidos frm = new Formularios.frmEstadisticaProductosVendidos();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void EstadisticaVentasPorHoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaVentaPorHora frm = new Formularios.frmEstadisticaVentaPorHora();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
-    public partial class frmEstadisticaTipoProductosVendidos : Form
+    public partial class frmEstadisticaProductosVendidos : Form
     {
-        public frmEstadisticaTipoProductosVendidos()
+        public frmEstadisticaProductosVendidos()
         {
             InitializeComponent();
             this.dtpFechaDesde.Format = DateTimePickerFormat.Custom;
@@ -37,13 +37,12 @@ namespace MaxiKiosko.Formularios
             string hasta = Convert.ToDateTime(dtpFechaHasta.Text).ToString("yyyy-MM-dd");
 
             Conexion conexion = new Conexion();
-            string sql = @"SELECT tp.descripcion as descriptor, count(*) as dato
+            string sql = @"SELECT pro.descripcion as descriptor, count(*) as dato
                             FROM detalle_venta AS dt
                             LEFT JOIN producto AS pro ON pro.id_producto = dt.id_producto
-                            LEFT JOIN tipo_producto AS tp ON tp.id_tipo_producto = pro.tipo_producto
                             LEFT JOIN venta AS v ON v.id_detalle_venta = dt.id_detalle_venta
                             WHERE fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "'" +
-                            " GROUP BY tp.descripcion";
+                            " GROUP BY pro.descripcion";
 
             DataTable dt = conexion.consulta(sql);
 
