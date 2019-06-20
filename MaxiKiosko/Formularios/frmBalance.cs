@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
-    public partial class frmEstadisticaVentaPorHora : Form
+    public partial class frmBalance : Form
     {
-        public frmEstadisticaVentaPorHora()
+        public frmBalance()
         {
             InitializeComponent();
             this.dtpFechaDesde.Format = DateTimePickerFormat.Custom;
@@ -29,17 +29,18 @@ namespace MaxiKiosko.Formularios
             string desde = Convert.ToDateTime(dtpFechaDesde.Text).ToString("yyyy-MM-dd");
 
             Conexion conexion = new Conexion();
-            string sql = @"SELECT HOUR(v.fecha_hora) as fecha, count(*) as total
-                            FROM venta AS v
-                            WHERE DATE(v.fecha_hora) = '"+ desde + "'" +
-                            "GROUP BY HOUR(v.fecha_hora);";
-
+            string sql = @"SELECT CONCAT(day(v.fecha_hora), ' - ' , MONTH(v.fecha_hora)) as descriptor, SUM(v.total) - (SELECT SUM(c.total) 
+                FROM compra as c 
+                WHERE date(c.fecha_hora) = '" + desde + "') AS total " +
+            " FROM venta as v " +
+            " WHERE date(v.fecha_hora) = '" + desde + "'" +
+            " GROUP BY DATE(v.fecha_hora);";
             DataTable dt = conexion.consulta(sql);
 
             if(dt.Rows.Count > 0)
             {
-                this.tipoProductosBindingSource.DataSource = conexion.consulta(sql);
-                this.rptTipoProductosVendidos.RefreshReport();
+                this.ventasPorDiaBindingSource.DataSource = conexion.consulta(sql);
+                this.rptVentasPorDia.RefreshReport();
             }
             else
             {

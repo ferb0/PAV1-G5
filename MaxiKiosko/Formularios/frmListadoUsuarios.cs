@@ -22,8 +22,6 @@ namespace MaxiKiosko.Formularios
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.usuario' Puede moverla o quitarla según sea necesario.
             this.usuarioTableAdapter.Fill(this.dataSet1.usuario);
-
-            this.rptListadoUsuario.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

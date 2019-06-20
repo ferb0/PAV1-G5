@@ -23,8 +23,6 @@ namespace MaxiKiosko.Formularios
         {
             // TODO: This line of code loads data into the 'DataSet1.proveedor' table. You can move, or remove it, as needed.
             this.proveedorTableAdapter.Fill(this.DataSet1.proveedor);
-
-            this.RptViewerProveedores.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

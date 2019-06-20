@@ -37,7 +37,7 @@ namespace MaxiKiosko.Formularios
                             FROM
                             (SELECT CONCAT(day(fecha_hora), ' - ' , MONTH(fecha_hora)) as fecha
                             FROM venta
-                            WHERE fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "' AND dni = " + cmbUsuario.SelectedValue +
+                            WHERE DATE(fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "' AND dni = " + cmbUsuario.SelectedValue +
                             " ) as tb " +
                             "GROUP BY tb.fecha;";
 

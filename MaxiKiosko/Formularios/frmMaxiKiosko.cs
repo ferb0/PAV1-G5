@@ -212,5 +212,19 @@ namespace MaxiKiosko
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void EstadisticaCompraPorProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaCompraPorProveedor frm = new Formularios.frmEstadisticaCompraPorProveedor();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        private void BalanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBalance frm = new Formularios.frmBalance();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }

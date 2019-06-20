@@ -19,14 +19,8 @@ namespace MaxiKiosko.Formularios
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.producto' Puede moverla o quitarla según sea necesario.
             this.productoTableAdapter.Fill(this.dataSet1.producto);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.producto' Puede moverla o quitarla según sea necesario.
-            this.productoTableAdapter.Fill(this.dataSet1.producto);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.producto' Puede moverla o quitarla según sea necesario.
             
-
-            this.RptViewerProductos.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

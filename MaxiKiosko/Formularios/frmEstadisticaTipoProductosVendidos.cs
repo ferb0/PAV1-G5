@@ -42,7 +42,7 @@ namespace MaxiKiosko.Formularios
                             LEFT JOIN producto AS pro ON pro.id_producto = dt.id_producto
                             LEFT JOIN tipo_producto AS tp ON tp.id_tipo_producto = pro.tipo_producto
                             LEFT JOIN venta AS v ON v.id_detalle_venta = dt.id_detalle_venta
-                            WHERE fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "'" +
+                            WHERE DATE(fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "'" +
                             " GROUP BY tp.descripcion";
 
             DataTable dt = conexion.consulta(sql);

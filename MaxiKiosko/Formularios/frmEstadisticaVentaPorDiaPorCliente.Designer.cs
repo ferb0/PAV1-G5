@@ -143,7 +143,7 @@
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptVentasPorDia);
             this.Name = "frmEstadisticaVentaPorDiaPorCliente";
-            this.Text = "Form1";
+            this.Text = "Estaditica Venta Por Dia";
             this.Load += new System.EventHandler(this.FrmEstadisticaVentaPorDiaPorUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ventasPorDiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

@@ -44,7 +44,7 @@ namespace MaxiKiosko.Formularios
             string desde = Convert.ToDateTime(dtpFechaDesde.Text).ToString("yyyy-MM-dd");
             string hasta = Convert.ToDateTime(dtpFechaHasta.Text).ToString("yyyy-MM-dd");
 
-            sql += " AND c.fecha_hora BETWEEN '" + desde + "' AND '" + hasta + "'";
+            sql += " AND DATE(c.fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "'";
             DataTable dt = conexion.consulta(sql);
             if(dt.Rows.Count > 0)
             {

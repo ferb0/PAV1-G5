@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaxiKiosko.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,20 +11,15 @@ using System.Windows.Forms;
 
 namespace MaxiKiosko.Formularios
 {
-    public partial class frmEstadisticaVentaPorDia : Form
+    public partial class frmEstadisticaCompraPorProveedor : Form
     {
-        public frmEstadisticaVentaPorDia()
+        public frmEstadisticaCompraPorProveedor()
         {
             InitializeComponent();
             this.dtpFechaDesde.Format = DateTimePickerFormat.Custom;
             this.dtpFechaHasta.Format = DateTimePickerFormat.Custom;
             this.dtpFechaDesde.CustomFormat = "dd-MM-yyyy";
             this.dtpFechaHasta.CustomFormat = "dd-MM-yyyy";
-        }
-
-        private void FrmInicio_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void CmbBuscar_Click(object sender, EventArgs e)
@@ -40,9 +36,9 @@ namespace MaxiKiosko.Formularios
             string sql = @"SELECT tb.fecha as fecha, count(tb.fecha) as total
                             FROM
                             (SELECT CONCAT(day(fecha_hora), ' - ' , MONTH(fecha_hora)) as fecha
-                            FROM venta
-                            WHERE DATE(fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "'" +
-                            ") as tb " +
+                            FROM compra 
+                            WHERE DATE(fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "' AND proveedor_cuit = " + cmbUsuario.SelectedValue +
+                            " ) as tb " +
                             "GROUP BY tb.fecha;";
 
             DataTable dt = conexion.consulta(sql);
@@ -56,6 +52,13 @@ namespace MaxiKiosko.Formularios
             {
                 MessageBox.Show("No hay resultados");
             }
+        }
+
+        private void FrmEstadisticaVentaPorDiaPorUsuario_Load(object sender, EventArgs e)
+        {
+            cmbUsuario.DataSource = new Proveedor().buscarTodos();
+            cmbUsuario.ValueMember = "cuit";
+            cmbUsuario.DisplayMember = "razon_social";
         }
     }
 }

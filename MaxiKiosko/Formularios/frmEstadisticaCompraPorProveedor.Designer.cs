@@ -1,6 +1,6 @@
 ﻿namespace MaxiKiosko.Formularios
 {
-    partial class frmEstadisticaVentaPorDiaPorUsuario
+    partial class frmEstadisticaCompraPorProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +62,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.ventasPorDiaBindingSource;
             this.rptVentasPorDia.LocalReport.DataSources.Add(reportDataSource1);
-            this.rptVentasPorDia.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estVentaPorDia.rdlc";
+            this.rptVentasPorDia.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estCompraPorDia.rdlc";
             this.rptVentasPorDia.Location = new System.Drawing.Point(12, 63);
             this.rptVentasPorDia.Name = "rptVentasPorDia";
             this.rptVentasPorDia.ServerReport.BearerToken = null;
@@ -82,7 +82,7 @@
             // 
             // dtpFechaHasta
             // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(484, 18);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(511, 18);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(131, 22);
             this.dtpFechaHasta.TabIndex = 15;
@@ -90,7 +90,7 @@
             // lbFechaHasta
             // 
             this.lbFechaHasta.AutoSize = true;
-            this.lbFechaHasta.Location = new System.Drawing.Point(429, 19);
+            this.lbFechaHasta.Location = new System.Drawing.Point(456, 19);
             this.lbFechaHasta.Name = "lbFechaHasta";
             this.lbFechaHasta.Size = new System.Drawing.Size(49, 17);
             this.lbFechaHasta.TabIndex = 14;
@@ -98,7 +98,7 @@
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(295, 18);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(322, 18);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(128, 22);
             this.dtpFechaDesde.TabIndex = 13;
@@ -106,7 +106,7 @@
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(235, 19);
+            this.lbFechaDesde.Location = new System.Drawing.Point(262, 19);
             this.lbFechaDesde.Name = "lbFechaDesde";
             this.lbFechaDesde.Size = new System.Drawing.Size(53, 17);
             this.lbFechaDesde.TabIndex = 12;
@@ -115,9 +115,9 @@
             // cmbUsuario
             // 
             this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(80, 18);
+            this.cmbUsuario.Location = new System.Drawing.Point(97, 18);
             this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(149, 24);
+            this.cmbUsuario.Size = new System.Drawing.Size(159, 24);
             this.cmbUsuario.TabIndex = 17;
             // 
             // label1
@@ -125,11 +125,11 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Usuario:";
+            this.label1.Text = "Proveedor:";
             // 
-            // frmEstadisticaVentaPorDiaPorUsuario
+            // frmEstadisticaCompraPorProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,8 +142,8 @@
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptVentasPorDia);
-            this.Name = "frmEstadisticaVentaPorDiaPorUsuario";
-            this.Text = "Estadistica Venta Por Dia";
+            this.Name = "frmEstadisticaCompraPorProveedor";
+            this.Text = "Estaditica Venta Por Dia";
             this.Load += new System.EventHandler(this.FrmEstadisticaVentaPorDiaPorUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ventasPorDiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

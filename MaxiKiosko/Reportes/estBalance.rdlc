@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3c087a3b-cd4f-4742-8281-cafe2bfd290e</rd:DataSourceID>
+      <rd:DataSourceID>8ff8ea19-5503-4c79-8256-4ad4a8455d9e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -17,19 +17,19 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="fecha">
-          <DataField>fecha</DataField>
+        <Field Name="descriptor">
+          <DataField>descriptor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="total">
           <DataField>total</DataField>
-          <rd:TypeName>System.UInt16</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
         <rd:SchemaPath>C:\repos\PAV1-G5\MaxiKiosko\DataSet\DSReportes.xsd</rd:SchemaPath>
-        <rd:TableName>ventas_por_dia</rd:TableName>
+        <rd:TableName>balance</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -46,15 +46,15 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!fecha.Value</GroupExpression>
+                      <GroupExpression>=Fields!descriptor.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!fecha.Value</Value>
+                      <Value>=Fields!descriptor.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!fecha.Value</Label>
+                  <Label>=Fields!descriptor.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -355,7 +355,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Compras por dia</Caption>
+                <Caption>Balance por día</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -385,10 +385,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.79587cm</Top>
-            <Left>1.3335cm</Left>
+            <Top>0.6477cm</Top>
+            <Left>0.7747cm</Left>
             <Height>5cm</Height>
-            <Width>11.1995cm</Width>
+            <Width>7.5cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -444,7 +444,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -457,8 +457,17 @@
                               </TextRuns>
                               <Style />
                             </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -479,21 +488,21 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="fecha">
+                        <Textbox Name="descriptor">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fecha.Value</Value>
+                                  <Value>=Fields!descriptor.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>fecha</rd:DefaultName>
+                          <rd:DefaultName>descriptor</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -558,8 +567,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.79587cm</Top>
-            <Left>13.99117cm</Left>
+            <Top>0.6477cm</Top>
+            <Left>9.38953cm</Left>
             <Height>1.2cm</Height>
             <Width>5cm</Width>
             <ZIndex>1</ZIndex>
@@ -570,10 +579,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.88184in</Height>
+        <Height>2.7235in</Height>
         <Style />
       </Body>
-      <Width>7.64534in</Width>
+      <Width>6.91609in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -593,5 +602,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>1960bf18-782e-4bf4-999e-f602e36f4ca4</rd:ReportID>
+  <rd:ReportID>709b4664-54ea-488c-bff5-0666381f439f</rd:ReportID>
 </Report>

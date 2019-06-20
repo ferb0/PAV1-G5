@@ -19,10 +19,7 @@ namespace MaxiKiosko.Formularios
 
         private void frmListadoCliente_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.cliente' Puede moverla o quitarla según sea necesario.
             this.clienteTableAdapter.Fill(this.dataSet1.cliente);
-
-            this.rptViewerClientes.RefreshReport();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
