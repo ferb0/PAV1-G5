@@ -78,7 +78,7 @@ namespace MaxiKiosko
         {
             return this._BD.consulta("SELECT p.id_producto, p.descripcion, tp.descripcion 'tipo',p.precio, p.stock FROM producto p" +
                                      " INNER JOIN tipo_producto tp ON p.tipo_producto = tp.id_tipo_producto" +
-                                     " WHERE p.stock < " + subString);
+                                     " WHERE p.stock <= " + subString + " ORDER BY p.stock DESC");
         }
 
         public DataTable buscarTodos()

@@ -59,48 +59,51 @@
             reportDataSource1.Value = this.tipoProductosBindingSource;
             this.rptTipoProductosVendidos.LocalReport.DataSources.Add(reportDataSource1);
             this.rptTipoProductosVendidos.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estVentaPorHora.rdlc";
-            this.rptTipoProductosVendidos.Location = new System.Drawing.Point(12, 63);
+            this.rptTipoProductosVendidos.Location = new System.Drawing.Point(9, 51);
+            this.rptTipoProductosVendidos.Margin = new System.Windows.Forms.Padding(2);
             this.rptTipoProductosVendidos.Name = "rptTipoProductosVendidos";
             this.rptTipoProductosVendidos.ServerReport.BearerToken = null;
-            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(776, 375);
+            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(804, 305);
             this.rptTipoProductosVendidos.TabIndex = 0;
             // 
             // cmbBuscar
             // 
             this.cmbBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.cmbBuscar.Location = new System.Drawing.Point(216, 7);
-            this.cmbBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBuscar.Location = new System.Drawing.Point(162, 6);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(53, 49);
+            this.cmbBuscar.Size = new System.Drawing.Size(40, 40);
             this.cmbBuscar.TabIndex = 16;
             this.cmbBuscar.UseVisualStyleBackColor = true;
             this.cmbBuscar.Click += new System.EventHandler(this.CmbBuscar_Click);
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(70, 18);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(52, 15);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(128, 22);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaDesde.TabIndex = 13;
             // 
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(10, 19);
+            this.lbFechaDesde.Location = new System.Drawing.Point(8, 15);
+            this.lbFechaDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaDesde.Name = "lbFechaDesde";
-            this.lbFechaDesde.Size = new System.Drawing.Size(51, 17);
+            this.lbFechaDesde.Size = new System.Drawing.Size(40, 13);
             this.lbFechaDesde.TabIndex = 12;
             this.lbFechaDesde.Text = "Fecha:";
             // 
             // frmEstadisticaVentaPorHora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(822, 366);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptTipoProductosVendidos);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEstadisticaVentaPorHora";
             this.Text = "Estadisticas de Ventas Por Hora";
             this.Load += new System.EventHandler(this.FrmInicio_Load);

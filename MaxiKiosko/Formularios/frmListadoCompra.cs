@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -29,6 +30,7 @@ namespace MaxiKiosko.Formularios
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
+
             Conexion conexion = new Conexion();
             string sql = @"SELECT c.id_compra, c.fecha_hora, p.cuit, p.razon_social, u.nombre_usuario, c.numero_comprobante, c.total
                            FROM compra c 
@@ -54,6 +56,7 @@ namespace MaxiKiosko.Formularios
             else
             {
                 MessageBox.Show("No hay resultados");
+                rptCompras.Clear();
             }
         }
     }

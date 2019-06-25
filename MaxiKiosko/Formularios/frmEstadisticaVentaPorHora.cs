@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+
+
 
 namespace MaxiKiosko.Formularios
 {
@@ -21,11 +24,14 @@ namespace MaxiKiosko.Formularios
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-            
+
+            //this.reportViewer1.RefreshReport();
         }
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
+            ReportParameter pfecha = new ReportParameter("rptParameterFecha",dtpFechaDesde.Text.ToString());
+            rptTipoProductosVendidos.LocalReport.SetParameters(pfecha);
             string desde = Convert.ToDateTime(dtpFechaDesde.Text).ToString("yyyy-MM-dd");
 
             Conexion conexion = new Conexion();

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -24,7 +25,14 @@ namespace MaxiKiosko.Formularios
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
+            rptVentasPorDia.LocalReport.DataSources.Clear();
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterCliente", cmbUsuario.Text));
+            rptVentasPorDia.LocalReport.SetParameters(parms);
+
+            if (Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
             {
                 MessageBox.Show("La fecha hasta no puede ser mayor a la fecha desde");
             }
@@ -45,12 +53,17 @@ namespace MaxiKiosko.Formularios
 
             if(dt.Rows.Count > 0)
             {
+                System.Data.DataSet ds = conexion.obtenerComoDataSet(sql);
+                ReportDataSource datasource = new ReportDataSource("DataSet1", ds.Tables[0]);
+                rptVentasPorDia.LocalReport.DataSources.Add(datasource);
+                //rptVentasPorDia.LocalReport.DataSources.Clear();
                 this.ventasPorDiaBindingSource.DataSource = conexion.consulta(sql);
                 this.rptVentasPorDia.RefreshReport();
             }
             else
             {
                 MessageBox.Show("No hay resultados");
+                rptVentasPorDia.Clear();
             }
         }
 

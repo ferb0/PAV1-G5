@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -28,7 +29,12 @@ namespace MaxiKiosko.Formularios
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
+            rptTipoProductosVendidos.LocalReport.SetParameters(parms);
+
+            if (Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
             {
                 MessageBox.Show("La fecha hasta no puede ser mayor a la fecha desde");
             }
@@ -42,7 +48,8 @@ namespace MaxiKiosko.Formularios
                             LEFT JOIN producto AS pro ON pro.id_producto = dt.id_producto
                             LEFT JOIN venta AS v ON v.id_detalle_venta = dt.id_detalle_venta
                             WHERE DATE(fecha_hora) BETWEEN '" + desde + "' AND '" + hasta + "'" +
-                            " GROUP BY pro.descripcion";
+                            " GROUP BY pro.descripcion" +
+                            " ORDER BY dato DESC";
 
             DataTable dt = conexion.consulta(sql);
 

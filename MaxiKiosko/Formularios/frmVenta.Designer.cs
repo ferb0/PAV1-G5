@@ -33,7 +33,7 @@
             this.datagrid_venta = new System.Windows.Forms.DataGridView();
             this.lbFecha = new System.Windows.Forms.Label();
             this.lbFormaPago = new System.Windows.Forms.Label();
-	        this.cmbFormaPago = new System.Windows.Forms.ComboBox();
+            this.cmbFormaPago = new System.Windows.Forms.ComboBox();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.lbClienteDni = new System.Windows.Forms.Label();
             this.lbClienteObservacion = new System.Windows.Forms.Label();
@@ -41,17 +41,19 @@
             this.txtClienteDni = new System.Windows.Forms.TextBox();
             this.txtClienteNombreYApellido = new System.Windows.Forms.TextBox();
             this.groupBoxCliente = new System.Windows.Forms.GroupBox();
-            this.groupBoxProducto = new System.Windows.Forms.GroupBox();
             this.cmdBuscarCliente = new System.Windows.Forms.Button();
+            this.groupBoxProducto = new System.Windows.Forms.GroupBox();
             this.lbProductoCodigo = new System.Windows.Forms.Label();
-            this.cmdBuscarProducto = new System.Windows.Forms.Button();
-            this.cmdAgregarProducto = new System.Windows.Forms.Button();
-            this.txtProductoCantidad = new System.Windows.Forms.TextBox();
             this.txtProductoCodigo = new System.Windows.Forms.TextBox();
             this.lbProductoCantidad = new System.Windows.Forms.Label();
+            this.txtProductoCantidad = new System.Windows.Forms.TextBox();
+            this.cmdAgregarProducto = new System.Windows.Forms.Button();
+            this.cmdBuscarProducto = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_venta)).BeginInit();
+            this.groupBoxCliente.SuspendLayout();
+            this.groupBoxProducto.SuspendLayout();
             this.SuspendLayout();
             // 
             // eventLog1
@@ -67,6 +69,174 @@
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            // 
+            // datagrid_venta
+            // 
+            this.datagrid_venta.AllowUserToAddRows = false;
+            this.datagrid_venta.AllowUserToDeleteRows = false;
+            this.datagrid_venta.AllowUserToResizeRows = false;
+            this.datagrid_venta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_venta.Location = new System.Drawing.Point(15, 300);
+            this.datagrid_venta.Name = "datagrid_venta";
+            this.datagrid_venta.ReadOnly = true;
+            this.datagrid_venta.RowHeadersVisible = false;
+            this.datagrid_venta.Size = new System.Drawing.Size(500, 200);
+            this.datagrid_venta.TabIndex = 3;
+            this.datagrid_venta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellDoubleClick);
+            this.datagrid_venta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellEndEdit);
+            // 
+            // lbFecha
+            // 
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lbFecha.Location = new System.Drawing.Point(380, 15);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(150, 13);
+            this.lbFecha.TabIndex = 0;
+            this.lbFecha.Text = "Fecha y Hora del sistema";
+            // 
+            // lbFormaPago
+            // 
+            this.lbFormaPago.AutoSize = true;
+            this.lbFormaPago.Location = new System.Drawing.Point(15, 540);
+            this.lbFormaPago.Name = "lbFormaPago";
+            this.lbFormaPago.Size = new System.Drawing.Size(82, 13);
+            this.lbFormaPago.TabIndex = 7;
+            this.lbFormaPago.Text = "Forma de Pago:";
+            // 
+            // cmbFormaPago
+            // 
+            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormaPago.FormattingEnabled = true;
+            this.cmbFormaPago.Location = new System.Drawing.Point(15, 560);
+            this.cmbFormaPago.Name = "cmbFormaPago";
+            this.cmbFormaPago.Size = new System.Drawing.Size(260, 21);
+            this.cmbFormaPago.TabIndex = 6;
+            // 
+            // lbDateTime
+            // 
+            this.lbDateTime.AutoSize = true;
+            this.lbDateTime.Location = new System.Drawing.Point(400, 30);
+            this.lbDateTime.Name = "lbDateTime";
+            this.lbDateTime.Size = new System.Drawing.Size(0, 13);
+            this.lbDateTime.TabIndex = 1;
+            // 
+            // lbClienteDni
+            // 
+            this.lbClienteDni.AutoSize = true;
+            this.lbClienteDni.Location = new System.Drawing.Point(15, 72);
+            this.lbClienteDni.Name = "lbClienteDni";
+            this.lbClienteDni.Size = new System.Drawing.Size(65, 13);
+            this.lbClienteDni.TabIndex = 5;
+            this.lbClienteDni.Text = "Documento:";
+            // 
+            // lbClienteObservacion
+            // 
+            this.lbClienteObservacion.AutoSize = true;
+            this.lbClienteObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic);
+            this.lbClienteObservacion.Location = new System.Drawing.Point(190, 30);
+            this.lbClienteObservacion.Name = "lbClienteObservacion";
+            this.lbClienteObservacion.Size = new System.Drawing.Size(223, 26);
+            this.lbClienteObservacion.TabIndex = 7;
+            this.lbClienteObservacion.Text = "* Si no selecciona ningún cliente y \n se tomará por defecto CONSUMIDOR FINAL";
+            // 
+            // lbClienteNombreYApellido
+            // 
+            this.lbClienteNombreYApellido.AutoSize = true;
+            this.lbClienteNombreYApellido.Location = new System.Drawing.Point(200, 72);
+            this.lbClienteNombreYApellido.Name = "lbClienteNombreYApellido";
+            this.lbClienteNombreYApellido.Size = new System.Drawing.Size(47, 13);
+            this.lbClienteNombreYApellido.TabIndex = 3;
+            this.lbClienteNombreYApellido.Text = "Nombre:";
+            // 
+            // txtClienteDni
+            // 
+            this.txtClienteDni.Enabled = false;
+            this.txtClienteDni.Location = new System.Drawing.Point(80, 70);
+            this.txtClienteDni.Name = "txtClienteDni";
+            this.txtClienteDni.Size = new System.Drawing.Size(110, 20);
+            this.txtClienteDni.TabIndex = 6;
+            // 
+            // txtClienteNombreYApellido
+            // 
+            this.txtClienteNombreYApellido.Enabled = false;
+            this.txtClienteNombreYApellido.Location = new System.Drawing.Point(255, 70);
+            this.txtClienteNombreYApellido.Name = "txtClienteNombreYApellido";
+            this.txtClienteNombreYApellido.Size = new System.Drawing.Size(220, 20);
+            this.txtClienteNombreYApellido.TabIndex = 4;
+            // 
+            // groupBoxCliente
+            // 
+            this.groupBoxCliente.Controls.Add(this.cmdBuscarCliente);
+            this.groupBoxCliente.Controls.Add(this.lbClienteNombreYApellido);
+            this.groupBoxCliente.Controls.Add(this.txtClienteNombreYApellido);
+            this.groupBoxCliente.Controls.Add(this.lbClienteDni);
+            this.groupBoxCliente.Controls.Add(this.txtClienteDni);
+            this.groupBoxCliente.Controls.Add(this.lbClienteObservacion);
+            this.groupBoxCliente.Location = new System.Drawing.Point(15, 50);
+            this.groupBoxCliente.Name = "groupBoxCliente";
+            this.groupBoxCliente.Size = new System.Drawing.Size(500, 110);
+            this.groupBoxCliente.TabIndex = 4;
+            this.groupBoxCliente.TabStop = false;
+            this.groupBoxCliente.Text = "Cliente";
+            // 
+            // cmdBuscarCliente
+            // 
+            this.cmdBuscarCliente.Location = new System.Drawing.Point(15, 30);
+            this.cmdBuscarCliente.Name = "cmdBuscarCliente";
+            this.cmdBuscarCliente.Size = new System.Drawing.Size(150, 25);
+            this.cmdBuscarCliente.TabIndex = 2;
+            this.cmdBuscarCliente.Text = "Buscar Cliente";
+            this.cmdBuscarCliente.Click += new System.EventHandler(this.cmdBuscarCliente_Click);
+            // 
+            // groupBoxProducto
+            // 
+            this.groupBoxProducto.Controls.Add(this.lbProductoCodigo);
+            this.groupBoxProducto.Controls.Add(this.txtProductoCodigo);
+            this.groupBoxProducto.Controls.Add(this.lbProductoCantidad);
+            this.groupBoxProducto.Controls.Add(this.txtProductoCantidad);
+            this.groupBoxProducto.Controls.Add(this.cmdAgregarProducto);
+            this.groupBoxProducto.Controls.Add(this.cmdBuscarProducto);
+            this.groupBoxProducto.Location = new System.Drawing.Point(15, 180);
+            this.groupBoxProducto.Name = "groupBoxProducto";
+            this.groupBoxProducto.Size = new System.Drawing.Size(500, 100);
+            this.groupBoxProducto.TabIndex = 5;
+            this.groupBoxProducto.TabStop = false;
+            this.groupBoxProducto.Text = "Agregar Productos";
+            // 
+            // lbProductoCodigo
+            // 
+            this.lbProductoCodigo.AutoSize = true;
+            this.lbProductoCodigo.Location = new System.Drawing.Point(15, 17);
+            this.lbProductoCodigo.Name = "lbProductoCodigo";
+            this.lbProductoCodigo.Size = new System.Drawing.Size(43, 13);
+            this.lbProductoCodigo.TabIndex = 0;
+            this.lbProductoCodigo.Text = "Codigo:";
+            // 
+            // txtProductoCodigo
+            // 
+            this.txtProductoCodigo.Location = new System.Drawing.Point(65, 15);
+            this.txtProductoCodigo.Name = "txtProductoCodigo";
+            this.txtProductoCodigo.Size = new System.Drawing.Size(150, 20);
+            this.txtProductoCodigo.TabIndex = 1;
+            this.txtProductoCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCodigo_KeyPress);
+            // 
+            // lbProductoCantidad
+            // 
+            this.lbProductoCantidad.AutoSize = true;
+            this.lbProductoCantidad.Location = new System.Drawing.Point(230, 17);
+            this.lbProductoCantidad.Name = "lbProductoCantidad";
+            this.lbProductoCantidad.Size = new System.Drawing.Size(52, 13);
+            this.lbProductoCantidad.TabIndex = 2;
+            this.lbProductoCantidad.Text = "Cantidad:";
+            // 
+            // txtProductoCantidad
+            // 
+            this.txtProductoCantidad.Location = new System.Drawing.Point(290, 15);
+            this.txtProductoCantidad.Name = "txtProductoCantidad";
+            this.txtProductoCantidad.Size = new System.Drawing.Size(50, 20);
+            this.txtProductoCantidad.TabIndex = 2;
+            this.txtProductoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCantidad_KeyPress);
             // 
             // cmdAgregarProducto
             // 
@@ -86,169 +256,15 @@
             this.cmdBuscarProducto.Text = "Buscar Producto";
             this.cmdBuscarProducto.Click += new System.EventHandler(this.cmdBuscarProducto_Click);
             // 
-            // datagrid_venta
-            // 
-            this.datagrid_venta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_venta.Location = new System.Drawing.Point(15, 300);
-            this.datagrid_venta.AllowUserToAddRows = false;
-            this.datagrid_venta.AllowUserToDeleteRows = false;
-            this.datagrid_venta.AllowUserToResizeRows = false;
-            this.datagrid_venta.Name = "datagrid_venta";
-            this.datagrid_venta.Size = new System.Drawing.Size(500, 200);
-            this.datagrid_venta.TabIndex = 3;
-            this.datagrid_venta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellEndEdit);
-            this.datagrid_venta.ReadOnly = true;
-            this.datagrid_venta.RowHeadersVisible = false;
-            this.datagrid_venta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_venta_CellDoubleClick);
-            //
-            // groupboxCliente
-            //
-            this.groupBoxCliente.Name = "groupBoxCliente";
-            this.groupBoxCliente.Location = new System.Drawing.Point(15, 50);
-            this.groupBoxCliente.Size = new System.Drawing.Size(500, 110);
-            this.groupBoxCliente.Text = "Cliente";
-            this.groupBoxCliente.Controls.Add(this.cmdBuscarCliente);
-            this.groupBoxCliente.Controls.Add(this.lbClienteNombreYApellido);
-            this.groupBoxCliente.Controls.Add(this.txtClienteNombreYApellido);
-            this.groupBoxCliente.Controls.Add(this.lbClienteDni);
-            this.groupBoxCliente.Controls.Add(this.txtClienteDni);
-            this.groupBoxCliente.Controls.Add(this.lbClienteObservacion);
-            //
-            // groupboxProducto
-            //
-            this.groupBoxProducto.Name = "groupBoxProducto";
-            this.groupBoxProducto.Location = new System.Drawing.Point(15, 180);
-            this.groupBoxProducto.Size = new System.Drawing.Size(500, 100);
-            this.groupBoxProducto.Text = "Agregar Productos";
-            this.groupBoxProducto.Controls.Add(this.lbProductoCodigo);
-            this.groupBoxProducto.Controls.Add(this.txtProductoCodigo);
-            this.groupBoxProducto.Controls.Add(this.lbProductoCantidad);
-            this.groupBoxProducto.Controls.Add(this.txtProductoCantidad);
-            this.groupBoxProducto.Controls.Add(this.cmdAgregarProducto);
-            this.groupBoxProducto.Controls.Add(this.cmdBuscarProducto);
-            // 
-            // lbFecha
-            // 
-            this.lbFecha.AutoSize = true;
-            this.lbFecha.Location = new System.Drawing.Point(380, 15);
-            this.lbFecha.Name = "lbFecha";
-            this.lbFecha.Size = new System.Drawing.Size(40, 15);
-            this.lbFecha.Text = "Fecha y Hora del sistema";
-            this.lbFecha.Font = new System.Drawing.Font(this.Font, System.Drawing.FontStyle.Bold);
-            // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbTotal.Location = new System.Drawing.Point(360, 515);
             this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(157, 24);
+            this.lbTotal.TabIndex = 6;
             this.lbTotal.Text = "Total: $ 4500.15";
-            this.lbTotal.Hide();
-            this.lbTotal.Font = new System.Drawing.Font(this.Font.FontFamily, 14, System.Drawing.FontStyle.Bold);
-            // 
-            // lbDateTime
-            // 
-            this.lbDateTime.AutoSize = true;
-            this.lbDateTime.Location = new System.Drawing.Point(400, 30);
-            this.lbDateTime.Name = "lbDateTime";
-            this.lbDateTime.Size = new System.Drawing.Size(40, 15);
-            // 
-            // cmdBuscarCliente
-            // 
-            this.cmdBuscarCliente.Location = new System.Drawing.Point(15, 30);
-            this.cmdBuscarCliente.Name = "cmdGuardar";
-            this.cmdBuscarCliente.Size = new System.Drawing.Size(150, 25);
-            this.cmdBuscarCliente.TabIndex = 2;
-            this.cmdBuscarCliente.Text = "Buscar Cliente";
-            this.cmdBuscarCliente.Click += new System.EventHandler(this.cmdBuscarCliente_Click);
-            //TODO agregar lupa a la derecha del boton
-            // 
-            // lbClienteObservacion
-            // 
-            this.lbClienteObservacion.AutoSize = true;
-            this.lbClienteObservacion.Location = new System.Drawing.Point(190, 30);
-            this.lbClienteObservacion.Name = "lbClienteNombreYApellido";
-            this.lbClienteObservacion.Size = new System.Drawing.Size(40, 15);
-            this.lbClienteObservacion.Text = "* Si no selecciona ningún cliente y \n se tomará por defecto CONSUMIDOR FINAL";
-            this.lbClienteObservacion.Font = new System.Drawing.Font(this.Font.FontFamily,8,System.Drawing.FontStyle.Italic);
-            // 
-            // lbClienteNombreYApellido
-            // 
-            this.lbClienteNombreYApellido.AutoSize = true;
-            this.lbClienteNombreYApellido.Location = new System.Drawing.Point(200, 72);
-            this.lbClienteNombreYApellido.Name = "lbClienteNombreYApellido";
-            this.lbClienteNombreYApellido.Size = new System.Drawing.Size(40, 15);
-            this.lbClienteNombreYApellido.Text = "Nombre:";
-            // 
-            // lbClienteDni
-            // 
-            this.lbClienteDni.AutoSize = true;
-            this.lbClienteDni.Location = new System.Drawing.Point(15, 72);
-            this.lbClienteDni.Name = "lbClienteDni";
-            this.lbClienteDni.Size = new System.Drawing.Size(40, 15);
-            this.lbClienteDni.Text = "Documento:";
-            //
-            // txtClienteDni
-            //
-            this.txtClienteDni.Location = new System.Drawing.Point(80, 70);
-            this.txtClienteDni.Name = "txtClienteDni";
-            this.txtClienteDni.Size = new System.Drawing.Size(110, 20);
-            this.txtClienteDni.Enabled = false;
-            //
-            // txtClienteNombreYApellido
-            //
-            this.txtClienteNombreYApellido.Location = new System.Drawing.Point(255, 70);
-            this.txtClienteNombreYApellido.Name = "txtClienteNombreYApellido";
-            this.txtClienteNombreYApellido.Size = new System.Drawing.Size(220, 20);
-            this.txtClienteNombreYApellido.Enabled = false;
-            //
-            // txtProductoCodigo
-            //
-            this.txtProductoCodigo.Location = new System.Drawing.Point(65, 15);
-            this.txtProductoCodigo.Name = "txtProductoCodigo";
-            this.txtProductoCodigo.Size = new System.Drawing.Size(150, 20);
-            this.txtProductoCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCodigo_KeyPress);
-            this.txtProductoCodigo.TabIndex = 1;
-            // 
-            // lbProductoCodigo
-            // 
-            this.lbProductoCodigo.AutoSize = true;
-            this.lbProductoCodigo.Location = new System.Drawing.Point(15, 17);
-            this.lbProductoCodigo.Name = "lbProductoCodigo";
-            this.lbProductoCodigo.Size = new System.Drawing.Size(40, 15);
-            this.lbProductoCodigo.Text = "Codigo:";
-            //
-            // txtProductoCantidad
-            //
-            this.txtProductoCantidad.Location = new System.Drawing.Point(290, 15);
-            this.txtProductoCantidad.Name = "txtProductoCantidad";
-            this.txtProductoCantidad.Size = new System.Drawing.Size(50, 20);
-            this.txtProductoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductoCantidad_KeyPress);
-            this.txtProductoCantidad.TabIndex = 2;
-            // 
-            // lbProductoCantidad
-            // 
-            this.lbProductoCantidad.AutoSize = true;
-            this.lbProductoCantidad.Location = new System.Drawing.Point(230, 17);
-            this.lbProductoCantidad.Name = "lbProductoCantidad";
-            this.lbProductoCantidad.Size = new System.Drawing.Size(40, 15);
-            this.lbProductoCantidad.Text = "Cantidad:";
-            // 
-            // lbFormaPago
-            // 
-            this.lbFormaPago.AutoSize = true;
-            this.lbFormaPago.Location = new System.Drawing.Point(15, 540);
-            this.lbFormaPago.Name = "lbFormaPago";
-            this.lbFormaPago.Size = new System.Drawing.Size(40, 15);
-            this.lbFormaPago.Text = "Forma de Pago:";
-    	    //
-    	    // cmbFormaPago
-    	    //
-    	    this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-    	    this.cmbFormaPago.FormattingEnabled = true;
-    	    this.cmbFormaPago.Location = new System.Drawing.Point(15, 560);
-    	    this.cmbFormaPago.Name = "cmbFormaPago";
-    	    this.cmbFormaPago.Size = new System.Drawing.Size(260, 20);
-    	    this.cmbFormaPago.TabIndex = 6;
             // 
             // frmVenta
             // 
@@ -262,16 +278,21 @@
             this.Controls.Add(this.groupBoxProducto);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cmdGuardar);
-	    this.Controls.Add(this.cmbFormaPago);
-	    this.Controls.Add(this.lbFormaPago);
-            this.Name = "frmVenta";
-            this.Text = "Nueva Venta";
+            this.Controls.Add(this.cmbFormaPago);
+            this.Controls.Add(this.lbFormaPago);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Name = "frmVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nueva Venta";
+            this.Load += new System.EventHandler(this.frmVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_venta)).EndInit();
+            this.groupBoxCliente.ResumeLayout(false);
+            this.groupBoxCliente.PerformLayout();
+            this.groupBoxProducto.ResumeLayout(false);
+            this.groupBoxProducto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

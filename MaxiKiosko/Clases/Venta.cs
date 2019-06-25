@@ -67,7 +67,7 @@ namespace MaxiKiosko.Clases
                             this.fecha.ToString("yyyy/MM/dd HH:ss") + "', '" +
                             this.total + "', '" +
                             this.formaPago + "', " +
-			                ((this.idCliente == 0) ? "NULL" : this.idCliente.ToString()) + ", '" +
+			                ((this.idCliente == 0) ? "1" : this.idCliente.ToString()) + ", '" +
                             last_id_detalle + "', " +
                             this.idUsuario +
                              ")";
@@ -83,8 +83,15 @@ namespace MaxiKiosko.Clases
         {
             //MessageBox.Show(fecha_inicio.ToString("yyyy/MM/dd HH:ss") + fecha_fin.ToString("yyyy/MM/dd HH:ss"));
 
-            return this._BD.consulta("call spRptVentasWithPrompt('" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "', '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "')");
-
+            //return this._BD.consulta("call spRptVentasWithPrompt('" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "', '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "')");
+            return this._BD.consulta("SELECT venta.nro_ticket, venta.fecha_hora, venta.dni, cliente.nombre, cliente.apellido, venta.id_detalle_venta, forma_pago.descripcion as forma_pago, detalle_venta.cantidad, producto.descripcion AS producto, detalle_venta.precio_historico " +
+                                     "FROM producto INNER JOIN detalle_venta ON producto.id_producto = detalle_venta.id_producto " +
+                                     "INNER JOIN tipo_producto ON producto.tipo_producto = tipo_producto.id_tipo_producto " +
+                                     "INNER JOIN venta ON detalle_venta.id_detalle_venta = venta.id_detalle_venta " +
+                                     "INNER JOIN cliente ON venta.dni = cliente.dni " +
+                                     "INNER JOIN forma_pago ON venta.id_forma_pago = forma_pago.id_forma_pago " +
+                                     "WHERE venta.fecha_hora >= '" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "' AND venta.fecha_hora <= '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "'" +
+                                     " GROUP BY venta.nro_ticket, venta.total, venta.id_detalle_venta, producto.descripcion");
         }
     }
 }

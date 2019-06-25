@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ventasPorDiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
             this.rptVentasPorDia = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -59,81 +58,84 @@
             this.rptVentasPorDia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.ventasPorDiaBindingSource;
-            this.rptVentasPorDia.LocalReport.DataSources.Add(reportDataSource1);
-            this.rptVentasPorDia.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estVentaPorDia.rdlc";
-            this.rptVentasPorDia.Location = new System.Drawing.Point(12, 63);
+            this.rptVentasPorDia.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estVentaPorDiaPorCliente.rdlc";
+            this.rptVentasPorDia.Location = new System.Drawing.Point(9, 51);
+            this.rptVentasPorDia.Margin = new System.Windows.Forms.Padding(2);
             this.rptVentasPorDia.Name = "rptVentasPorDia";
             this.rptVentasPorDia.ServerReport.BearerToken = null;
-            this.rptVentasPorDia.Size = new System.Drawing.Size(776, 375);
+            this.rptVentasPorDia.Size = new System.Drawing.Size(808, 305);
             this.rptVentasPorDia.TabIndex = 0;
             // 
             // cmbBuscar
             // 
             this.cmbBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.cmbBuscar.Location = new System.Drawing.Point(649, 7);
-            this.cmbBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBuscar.Location = new System.Drawing.Point(487, 6);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(53, 49);
+            this.cmbBuscar.Size = new System.Drawing.Size(40, 40);
             this.cmbBuscar.TabIndex = 16;
             this.cmbBuscar.UseVisualStyleBackColor = true;
             this.cmbBuscar.Click += new System.EventHandler(this.CmbBuscar_Click);
             // 
             // dtpFechaHasta
             // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(484, 18);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(363, 15);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(131, 22);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(99, 20);
             this.dtpFechaHasta.TabIndex = 15;
             // 
             // lbFechaHasta
             // 
             this.lbFechaHasta.AutoSize = true;
-            this.lbFechaHasta.Location = new System.Drawing.Point(429, 19);
+            this.lbFechaHasta.Location = new System.Drawing.Point(322, 15);
+            this.lbFechaHasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaHasta.Name = "lbFechaHasta";
-            this.lbFechaHasta.Size = new System.Drawing.Size(49, 17);
+            this.lbFechaHasta.Size = new System.Drawing.Size(38, 13);
             this.lbFechaHasta.TabIndex = 14;
             this.lbFechaHasta.Text = "Hasta:";
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(295, 18);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(221, 15);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(128, 22);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaDesde.TabIndex = 13;
             // 
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(235, 19);
+            this.lbFechaDesde.Location = new System.Drawing.Point(176, 15);
+            this.lbFechaDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaDesde.Name = "lbFechaDesde";
-            this.lbFechaDesde.Size = new System.Drawing.Size(53, 17);
+            this.lbFechaDesde.Size = new System.Drawing.Size(41, 13);
             this.lbFechaDesde.TabIndex = 12;
             this.lbFechaDesde.Text = "Desde:";
             // 
             // cmbUsuario
             // 
             this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(80, 18);
+            this.cmbUsuario.Location = new System.Drawing.Point(60, 15);
+            this.cmbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(149, 24);
+            this.cmbUsuario.Size = new System.Drawing.Size(113, 21);
             this.cmbUsuario.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 22);
+            this.label1.Location = new System.Drawing.Point(10, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Cliente:";
             // 
             // frmEstadisticaVentaPorDiaPorCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(826, 366);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbUsuario);
             this.Controls.Add(this.cmbBuscar);
@@ -142,8 +144,9 @@
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptVentasPorDia);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEstadisticaVentaPorDiaPorCliente";
-            this.Text = "Estaditica Venta Por Dia";
+            this.Text = "Estaditica Venta Por Dia - Clientes";
             this.Load += new System.EventHandler(this.FrmEstadisticaVentaPorDiaPorUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ventasPorDiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

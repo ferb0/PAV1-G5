@@ -60,10 +60,10 @@
             reportDataSource1.Value = this.productoBindingSource;
             this.rptViewerProductoStock.LocalReport.DataSources.Add(reportDataSource1);
             this.rptViewerProductoStock.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.rptProductosStock.rdlc";
-            this.rptViewerProductoStock.Location = new System.Drawing.Point(12, 128);
+            this.rptViewerProductoStock.Location = new System.Drawing.Point(12, 93);
             this.rptViewerProductoStock.Name = "rptViewerProductoStock";
             this.rptViewerProductoStock.ServerReport.BearerToken = null;
-            this.rptViewerProductoStock.Size = new System.Drawing.Size(776, 310);
+            this.rptViewerProductoStock.Size = new System.Drawing.Size(776, 345);
             this.rptViewerProductoStock.TabIndex = 0;
             // 
             // txtBuscar
@@ -106,7 +106,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.rptViewerProductoStock);
             this.Name = "frmListadoProductosStock";
-            this.Text = "Listado de productos con stock menor a ";
+            this.Text = "Listado de productos con stock menor o igual ";
             this.Load += new System.EventHandler(this.frmListadoProductosStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

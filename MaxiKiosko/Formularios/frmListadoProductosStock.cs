@@ -24,10 +24,18 @@ namespace MaxiKiosko.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Producto producto = new Producto();
-            DataTable dt = producto.consultarProductoStock(txtBuscar.Text);
-            productoBindingSource.DataSource = dt;
-            rptViewerProductoStock.RefreshReport();
+            if (txtBuscar.Text == "")
+            {
+                MessageBox.Show("Ingrese un número");
+            }
+            else
+            {
+                Producto producto = new Producto();
+                DataTable dt = producto.consultarProductoStock(txtBuscar.Text);
+                productoBindingSource.DataSource = dt;
+                rptViewerProductoStock.RefreshReport();
+            }
+
         }
     }
 }

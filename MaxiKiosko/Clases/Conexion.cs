@@ -12,7 +12,7 @@ namespace MaxiKiosko
     class Conexion
     {
         MySqlCommand cmd = new MySqlCommand();
-        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=alejandro;database=maxiKiosko;allowuservariables=True; password=123qwe;");
+        MySqlConnection conexion = new MySqlConnection("server=localhost;user id=root;database=maxiKiosko;allowuservariables=True; password=root;");
         
 
         public void conectar()
@@ -35,7 +35,18 @@ namespace MaxiKiosko
             cerrar();
             return tabla;
         }
-        
+
+        public System.Data.DataSet obtenerComoDataSet(string comando)
+        {
+            conectar();
+            MySql.Data.MySqlClient.MySqlDataAdapter ad = new MySql.Data.MySqlClient.MySqlDataAdapter(comando, conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            ad.Fill(ds);
+            cerrar();
+            return ds;
+
+        }
+
         public void grabar_modificar(string comando){
             conectar();
             cmd.CommandText = comando;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -24,7 +25,14 @@ namespace MaxiKiosko.Formularios
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
+            rptVentasPorDia.LocalReport.DataSources.Clear();
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterUser", cmbUsuario.Text));
+            rptVentasPorDia.LocalReport.SetParameters(parms);
+            
+            if (Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
             {
                 MessageBox.Show("La fecha hasta no puede ser mayor a la fecha desde");
             }
@@ -42,15 +50,20 @@ namespace MaxiKiosko.Formularios
                             "GROUP BY tb.fecha;";
 
             DataTable dt = conexion.consulta(sql);
-
+            
             if(dt.Rows.Count > 0)
             {
-                this.ventasPorDiaBindingSource.DataSource = conexion.consulta(sql);
+                System.Data.DataSet ds = conexion.obtenerComoDataSet(sql);
+                ReportDataSource datasource = new ReportDataSource("DataSet1", ds.Tables[0]);
+                rptVentasPorDia.LocalReport.DataSources.Add(datasource);
+                //rptVentasPorDia.LocalReport.DataSources.Clear();
+                this.ventasPorDiabindingSource.DataSource = conexion.consulta(sql);
                 this.rptVentasPorDia.RefreshReport();
             }
             else
             {
                 MessageBox.Show("No hay resultados");
+                rptVentasPorDia.Clear();
             }
         }
 
@@ -59,6 +72,9 @@ namespace MaxiKiosko.Formularios
             cmbUsuario.DataSource = new Usuario().mostrarTodosUsuarios();
             cmbUsuario.ValueMember = "id_usuario";
             cmbUsuario.DisplayMember = "nombre";
+            //this.rptVentasPorDia.RefreshReport();
+            //this.rptVentasPorDia.RefreshReport();
         }
+
     }
 }

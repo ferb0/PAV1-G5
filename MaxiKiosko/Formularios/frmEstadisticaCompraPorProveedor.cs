@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -24,7 +25,13 @@ namespace MaxiKiosko.Formularios
 
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterProveedor", cmbUsuario.Text));
+            rptVentasPorDia.LocalReport.SetParameters(parms);
+
+            if (Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))
             {
                 MessageBox.Show("La fecha hasta no puede ser mayor a la fecha desde");
             }
@@ -51,6 +58,7 @@ namespace MaxiKiosko.Formularios
             else
             {
                 MessageBox.Show("No hay resultados");
+                rptVentasPorDia.Clear();
             }
         }
 

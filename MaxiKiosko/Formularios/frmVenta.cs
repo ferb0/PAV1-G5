@@ -267,5 +267,10 @@ namespace MaxiKiosko.Formularios
 		this.cmbFormaPago.DisplayMember = "descripcion";
 		this.cmbFormaPago.ValueMember = "id_forma_pago";
 	}
+
+        private void frmVenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -140,7 +140,7 @@ namespace MaxiKiosko
 
         private void InformeDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListadoCompra frm = new Formularios.frmListadoCompra();
+            frmListadoComprasConDetalle frm = new Formularios.frmListadoComprasConDetalle();
             frm.ShowDialog();
             frm.Dispose();
         }

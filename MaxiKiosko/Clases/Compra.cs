@@ -83,11 +83,7 @@ namespace MaxiKiosko.Clases
 
                 //MessageBox.Show(SqlInsert);
             }
-
-
-
-
-
+                                                  
             //string sqlLastId = @" SELECT id_detalle_compra FROM detalle_compra ORDER BY id_detalle_compra DESC LIMIT 1";
             //DataTable dt = this._BD.consulta(sqlLastId);
 
@@ -124,6 +120,21 @@ namespace MaxiKiosko.Clases
             //this._BD.grabar_modificar(SqlInsert);
             ////MessageBox.Show(SqlInsert);
 
+        }
+
+        public DataTable ConsultarReporte(DateTime fecha_inicio, DateTime fecha_fin)
+        {
+            //MessageBox.Show(fecha_inicio.ToString("yyyy/MM/dd HH:ss") + fecha_fin.ToString("yyyy/MM/dd HH:ss"));
+
+            //return this._BD.consulta("call spRptVentasWithPrompt('" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "', '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "')");
+            return this._BD.consulta("SELECT compra.id_compra, compra.fecha_hora, compra.proveedor_cuit, proveedor.razon_social, compra.numero_comprobante, producto.descripcion, tipo_producto.descripcion AS tipo_producto, detalle_compra.cantidad, detalle_compra.costo, compra.total " +
+                                     " FROM compra INNER JOIN " +
+                                     " detalle_compra ON compra.id_compra = detalle_compra.id_compra INNER JOIN " +
+                                     " producto ON detalle_compra.id_producto = producto.id_producto INNER JOIN " +
+                                     " proveedor ON compra.proveedor_cuit = proveedor.cuit INNER JOIN " +
+                                     " tipo_producto ON producto.tipo_producto = tipo_producto.id_tipo_producto " +
+                                     "WHERE compra.fecha_hora >= '" + fecha_inicio.ToString("yyyy/MM/dd HH:ss") + "' AND compra.fecha_hora <= '" + fecha_fin.ToString("yyyy/MM/dd HH:ss") + "'" +
+                                     " GROUP BY compra.id_compra, compra.total, producto.descripcion ");
         }
     }
 }
