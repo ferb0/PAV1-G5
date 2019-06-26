@@ -63,7 +63,7 @@
             this.rptViewerProductoStock.Location = new System.Drawing.Point(12, 93);
             this.rptViewerProductoStock.Name = "rptViewerProductoStock";
             this.rptViewerProductoStock.ServerReport.BearerToken = null;
-            this.rptViewerProductoStock.Size = new System.Drawing.Size(776, 345);
+            this.rptViewerProductoStock.Size = new System.Drawing.Size(860, 456);
             this.rptViewerProductoStock.TabIndex = 0;
             // 
             // txtBuscar
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);

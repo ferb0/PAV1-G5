@@ -65,7 +65,7 @@
             this.rptTipoProductosVendidos.Margin = new System.Windows.Forms.Padding(2);
             this.rptTipoProductosVendidos.Name = "rptTipoProductosVendidos";
             this.rptTipoProductosVendidos.ServerReport.BearerToken = null;
-            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(799, 305);
+            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(866, 500);
             this.rptTipoProductosVendidos.TabIndex = 0;
             // 
             // cmbBuscar
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lbFechaHasta);

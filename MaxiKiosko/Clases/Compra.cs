@@ -13,14 +13,14 @@ namespace MaxiKiosko.Clases
         Conexion _BD = new Conexion();
 
         public int id_compra { get; set; }
-        public int cuit { get; set; }
-        public int nro_comprobante { get; set; }
+        public long cuit { get; set; }
+        public long nro_comprobante { get; set; }
         public List<DetalleCompra> detalle { get; set; }
         public DateTime fecha_hora { get; set; }
         public int id_usuario { get; set; }
         public decimal total { get; set; }
 
-        public Compra(int id_compra, int cuit, int nro_comprobante, List<DetalleCompra> detalle, DateTime fecha_hora, int id_usuario, decimal total)
+        public Compra(int id_compra, long cuit, long nro_comprobante, List<DetalleCompra> detalle, DateTime fecha_hora, int id_usuario, decimal total)
         {
             this.id_compra = id_compra;
             this.cuit = cuit;

@@ -62,10 +62,10 @@
             this.rptTipoProductosVendidos.LocalReport.DataSources.Add(reportDataSource1);
             this.rptTipoProductosVendidos.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estTipoProductosVendidos.rdlc";
             this.rptTipoProductosVendidos.Location = new System.Drawing.Point(9, 51);
-            this.rptTipoProductosVendidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rptTipoProductosVendidos.Margin = new System.Windows.Forms.Padding(2);
             this.rptTipoProductosVendidos.Name = "rptTipoProductosVendidos";
             this.rptTipoProductosVendidos.ServerReport.BearerToken = null;
-            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(805, 305);
+            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(866, 500);
             this.rptTipoProductosVendidos.TabIndex = 0;
             // 
             // cmbBuscar
@@ -81,7 +81,7 @@
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Location = new System.Drawing.Point(194, 15);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(99, 20);
             this.dtpFechaHasta.TabIndex = 15;
@@ -99,7 +99,7 @@
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Location = new System.Drawing.Point(52, 15);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaDesde.TabIndex = 13;
@@ -118,14 +118,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lbFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptTipoProductosVendidos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEstadisticaTipoProductosVendidos";
             this.Text = "Estadisticas Tipo de Producto";
             this.Load += new System.EventHandler(this.FrmInicio_Load);

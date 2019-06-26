@@ -17,8 +17,8 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="descriptor">
-          <DataField>descriptor</DataField>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="total">
@@ -28,7 +28,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\repos\PAV1-G5\MaxiKiosko\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\PAV\PAV1-G5\MaxiKiosko\DataSet\DSReportes.xsd</rd:SchemaPath>
         <rd:TableName>balance</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -46,15 +46,15 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!descriptor.Value</GroupExpression>
+                      <GroupExpression>=Fields!fecha.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!descriptor.Value</Value>
+                      <Value>=Fields!fecha.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!descriptor.Value</Label>
+                  <Label>=Fields!fecha.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -83,7 +83,9 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Style />
+                  <Style>
+                    <ShadowOffset>0.5pt</ShadowOffset>
+                  </Style>
                   <ChartEmptyPoints>
                     <Style />
                     <ChartMarker>
@@ -108,7 +110,6 @@
                   <ChartAxis Name="Primary">
                     <Style>
                       <Border>
-                        <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
@@ -146,6 +147,7 @@
                       </Style>
                     </ChartMajorTickMarks>
                     <ChartMinorTickMarks>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -221,14 +223,13 @@
                   <ChartAxis Name="Primary">
                     <Style>
                       <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
+                        <Style>Solid</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption />
+                      <Caption>$</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
@@ -334,40 +335,7 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
-            <ChartTitles>
-              <ChartTitle Name="Default">
-                <Caption>Balance por día</Caption>
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextAlign>Left</TextAlign>
-                  <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
-                </Style>
-                <Position>TopLeft</Position>
-              </ChartTitle>
-            </ChartTitles>
-            <Palette>Pacific</Palette>
+            <Palette>Excel</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -385,7 +353,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.6477cm</Top>
+            <Top>2.10291cm</Top>
             <Left>0.7747cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
@@ -496,21 +464,21 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="descriptor">
+                        <Textbox Name="fecha">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!descriptor.Value</Value>
+                                  <Value>=Fields!fecha.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>descriptor</rd:DefaultName>
+                          <rd:DefaultName>fecha</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -556,72 +524,6 @@
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Total</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightGreen</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox3">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!total.Value)</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
@@ -638,15 +540,17 @@
                 <TablixMember>
                   <Group Name="Detalles" />
                 </TablixMember>
-                <TablixMember>
-                  <KeepWithGroup>Before</KeepWithGroup>
-                </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.6477cm</Top>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!fecha.Value</Value>
+              </SortExpression>
+            </SortExpressions>
+            <Top>2.10291cm</Top>
             <Left>9.38953cm</Left>
-            <Height>1.8cm</Height>
+            <Height>1.2cm</Height>
             <Width>5cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -655,11 +559,72 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox24">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Resultado diario de los ingresos/egresos de dinero </Value>
+                    <Style>
+                      <FontSize>16pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Periodo: </Value>
+                    <Style>
+                      <FontSize>16pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!rptParameterDesde.Value</Value>
+                    <Style>
+                      <FontSize>16pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> - </Value>
+                    <Style>
+                      <FontSize>16pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!rptParameterHasta.Value</Value>
+                    <Style>
+                      <FontSize>16pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox24</rd:DefaultName>
+            <Top>0.28787cm</Top>
+            <Left>0.73766cm</Left>
+            <Height>1.47312cm</Height>
+            <Width>15.35875cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>11.5cm</Height>
         <Style />
       </Body>
-      <Width>21cm</Width>
+      <Width>23.18662cm</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -738,10 +703,34 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="rptParameterDesde">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="rptParameterHasta">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>rptParameterDesde</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>rptParameterHasta</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>

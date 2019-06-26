@@ -63,7 +63,7 @@
             this.rptTipoProductosVendidos.Margin = new System.Windows.Forms.Padding(2);
             this.rptTipoProductosVendidos.Name = "rptTipoProductosVendidos";
             this.rptTipoProductosVendidos.ServerReport.BearerToken = null;
-            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(804, 305);
+            this.rptTipoProductosVendidos.Size = new System.Drawing.Size(866, 500);
             this.rptTipoProductosVendidos.TabIndex = 0;
             // 
             // cmbBuscar
@@ -87,7 +87,7 @@
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(8, 15);
+            this.lbFechaDesde.Location = new System.Drawing.Point(8, 20);
             this.lbFechaDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaDesde.Name = "lbFechaDesde";
             this.lbFechaDesde.Size = new System.Drawing.Size(40, 13);
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);

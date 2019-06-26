@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.compraDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -57,14 +57,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.compraDetalleBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.compraDetalleBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.rptComprasConDetalle.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 95);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(939, 355);
+            this.reportViewer1.Size = new System.Drawing.Size(933, 464);
             this.reportViewer1.TabIndex = 0;
             // 
             // compraDetalleTableAdapter
@@ -88,7 +88,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(443, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(409, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(40, 40);
             this.btnBuscar.TabIndex = 2;
@@ -98,25 +98,25 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 38);
+            this.label2.Location = new System.Drawing.Point(248, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha Hasta";
+            this.label2.Text = "Hasta:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 39);
+            this.label1.Location = new System.Drawing.Point(72, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Fecha Desde";
+            this.label1.Text = "Desde:";
             // 
             // dateTimePickerHasta
             // 
             this.dateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(324, 32);
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(292, 32);
             this.dateTimePickerHasta.Name = "dateTimePickerHasta";
             this.dateTimePickerHasta.Size = new System.Drawing.Size(96, 20);
             this.dateTimePickerHasta.TabIndex = 0;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 450);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmListadoComprasConDetalle";

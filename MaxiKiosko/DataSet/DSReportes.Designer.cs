@@ -3532,7 +3532,7 @@ namespace MaxiKiosko.DataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class balanceDataTable : global::System.Data.TypedTableBase<balanceRow> {
             
-            private global::System.Data.DataColumn columndescriptor;
+            private global::System.Data.DataColumn columnfecha;
             
             private global::System.Data.DataColumn columntotal;
             
@@ -3571,9 +3571,9 @@ namespace MaxiKiosko.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn descriptorColumn {
+            public global::System.Data.DataColumn fechaColumn {
                 get {
-                    return this.columndescriptor;
+                    return this.columnfecha;
                 }
             }
             
@@ -3622,10 +3622,10 @@ namespace MaxiKiosko.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public balanceRow AddbalanceRow(string descriptor, decimal total) {
+            public balanceRow AddbalanceRow(string fecha, decimal total) {
                 balanceRow rowbalanceRow = ((balanceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        descriptor,
+                        fecha,
                         total};
                 rowbalanceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbalanceRow);
@@ -3649,15 +3649,15 @@ namespace MaxiKiosko.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columndescriptor = base.Columns["descriptor"];
+                this.columnfecha = base.Columns["fecha"];
                 this.columntotal = base.Columns["total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columndescriptor = new global::System.Data.DataColumn("descriptor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescriptor);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
             }
@@ -5177,17 +5177,17 @@ namespace MaxiKiosko.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string descriptor {
+            public string fecha {
                 get {
                     try {
-                        return ((string)(this[this.tablebalance.descriptorColumn]));
+                        return ((string)(this[this.tablebalance.fechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descriptor\' in table \'balance\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha\' in table \'balance\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablebalance.descriptorColumn] = value;
+                    this[this.tablebalance.fechaColumn] = value;
                 }
             }
             
@@ -5209,14 +5209,14 @@ namespace MaxiKiosko.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdescriptorNull() {
-                return this.IsNull(this.tablebalance.descriptorColumn);
+            public bool IsfechaNull() {
+                return this.IsNull(this.tablebalance.fechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdescriptorNull() {
-                this[this.tablebalance.descriptorColumn] = global::System.Convert.DBNull;
+            public void SetfechaNull() {
+                this[this.tablebalance.fechaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -65,10 +65,10 @@
             this.rptCompras.LocalReport.DataSources.Add(reportDataSource1);
             this.rptCompras.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.rptComprasPorProveedor.rdlc";
             this.rptCompras.Location = new System.Drawing.Point(9, 51);
-            this.rptCompras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rptCompras.Margin = new System.Windows.Forms.Padding(2);
             this.rptCompras.Name = "rptCompras";
             this.rptCompras.ServerReport.BearerToken = null;
-            this.rptCompras.Size = new System.Drawing.Size(582, 305);
+            this.rptCompras.Size = new System.Drawing.Size(866, 500);
             this.rptCompras.TabIndex = 0;
             // 
             // lbProveedor
@@ -85,7 +85,7 @@
             // 
             this.cmbProveedor.FormattingEnabled = true;
             this.cmbProveedor.Location = new System.Drawing.Point(72, 16);
-            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(132, 21);
             this.cmbProveedor.TabIndex = 5;
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpFechaDesde);
@@ -149,7 +149,7 @@
             this.Controls.Add(this.lbProveedor);
             this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.rptCompras);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmListadoComprasPorProveedor";
             this.Text = "Listado de Compras";
             this.Load += new System.EventHandler(this.FrmListadoComprasPorProveedor_Load);

@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RptViewerProductos = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
+            this.RptViewerProductos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.productoTableAdapter = new MaxiKiosko.DataSet.DataSet1TableAdapters.productoTableAdapter();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "producto";
+            this.productoBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RptViewerProductos
             // 
@@ -53,18 +63,8 @@
             this.RptViewerProductos.Location = new System.Drawing.Point(12, 88);
             this.RptViewerProductos.Name = "RptViewerProductos";
             this.RptViewerProductos.ServerReport.BearerToken = null;
-            this.RptViewerProductos.Size = new System.Drawing.Size(776, 350);
+            this.RptViewerProductos.Size = new System.Drawing.Size(860, 461);
             this.RptViewerProductos.TabIndex = 0;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataMember = "producto";
-            this.productoBindingSource.DataSource = this.dataSet1;
             // 
             // productoTableAdapter
             // 
@@ -92,15 +92,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.RptViewerProductos);
             this.Name = "frmListadoProductos";
             this.Text = "Listado de Productos";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

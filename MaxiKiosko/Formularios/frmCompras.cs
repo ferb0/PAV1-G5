@@ -273,9 +273,9 @@ namespace MaxiKiosko.Formularios
             }
             compra.detalle = detalles;
             compra.fecha_hora = DateTime.Now;
-            compra.cuit = int.Parse(txtCUIT.Text.ToString());
+            compra.cuit = long.Parse(txtCUIT.Text.ToString());
             compra.id_usuario = _idUsuario;
-            compra.nro_comprobante = int.Parse(txtComprobante.Text.ToString());
+            compra.nro_comprobante = long.Parse(txtComprobante.Text.ToString());
             compra.total = numero_total;
             try
             {

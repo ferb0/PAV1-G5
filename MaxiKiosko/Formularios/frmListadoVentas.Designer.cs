@@ -67,7 +67,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 104);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(958, 418);
+            this.reportViewer1.Size = new System.Drawing.Size(882, 456);
             this.reportViewer1.TabIndex = 0;
             // 
             // spRptVentasTableAdapter
@@ -91,7 +91,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(598, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(523, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(40, 40);
             this.btnBuscar.TabIndex = 2;
@@ -101,7 +101,7 @@
             // dateTimePickerHasta
             // 
             this.dateTimePickerHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(488, 32);
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(427, 32);
             this.dateTimePickerHasta.Name = "dateTimePickerHasta";
             this.dateTimePickerHasta.Size = new System.Drawing.Size(78, 20);
             this.dateTimePickerHasta.TabIndex = 1;
@@ -109,16 +109,16 @@
             // lblFechaHasta
             // 
             this.lblFechaHasta.AutoSize = true;
-            this.lblFechaHasta.Location = new System.Drawing.Point(414, 38);
+            this.lblFechaHasta.Location = new System.Drawing.Point(383, 38);
             this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblFechaHasta.Size = new System.Drawing.Size(38, 13);
             this.lblFechaHasta.TabIndex = 0;
-            this.lblFechaHasta.Text = "Fecha Hasta";
+            this.lblFechaHasta.Text = "Hasta:";
             // 
             // dateTimePickerDesde
             // 
             this.dateTimePickerDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(296, 33);
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(266, 32);
             this.dateTimePickerDesde.Name = "dateTimePickerDesde";
             this.dateTimePickerDesde.Size = new System.Drawing.Size(78, 20);
             this.dateTimePickerDesde.TabIndex = 1;
@@ -128,15 +128,15 @@
             this.lblFechaDesde.AutoSize = true;
             this.lblFechaDesde.Location = new System.Drawing.Point(219, 38);
             this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblFechaDesde.Size = new System.Drawing.Size(41, 13);
             this.lblFechaDesde.TabIndex = 0;
-            this.lblFechaDesde.Text = "Fecha Desde";
+            this.lblFechaDesde.Text = "Desde:";
             // 
             // frmListadoVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 523);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmListadoVentas";

@@ -64,7 +64,7 @@
             // lbFechaHasta
             // 
             this.lbFechaHasta.AutoSize = true;
-            this.lbFechaHasta.Location = new System.Drawing.Point(322, 15);
+            this.lbFechaHasta.Location = new System.Drawing.Point(322, 18);
             this.lbFechaHasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaHasta.Name = "lbFechaHasta";
             this.lbFechaHasta.Size = new System.Drawing.Size(38, 13);
@@ -82,7 +82,7 @@
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(176, 15);
+            this.lbFechaDesde.Location = new System.Drawing.Point(177, 20);
             this.lbFechaDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaDesde.Name = "lbFechaDesde";
             this.lbFechaDesde.Size = new System.Drawing.Size(41, 13);
@@ -114,7 +114,7 @@
             this.rptVentasPorDia.Location = new System.Drawing.Point(2, 52);
             this.rptVentasPorDia.Name = "rptVentasPorDia";
             this.rptVentasPorDia.ServerReport.BearerToken = null;
-            this.rptVentasPorDia.Size = new System.Drawing.Size(838, 311);
+            this.rptVentasPorDia.Size = new System.Drawing.Size(880, 311);
             this.rptVentasPorDia.TabIndex = 19;
             // 
             // ventasPorDiabindingSource
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.rptVentasPorDia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbUsuario);

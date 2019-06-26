@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
             this.rptViewerClientes = new Microsoft.Reporting.WinForms.ReportViewer();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataSet1 = new MaxiKiosko.DataSet.DataSet1();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new MaxiKiosko.DataSet.DataSet1TableAdapters.clienteTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rptViewerClientes
             // 
@@ -52,12 +62,12 @@
             this.rptViewerClientes.Location = new System.Drawing.Point(12, 94);
             this.rptViewerClientes.Name = "rptViewerClientes";
             this.rptViewerClientes.ServerReport.BearerToken = null;
-            this.rptViewerClientes.Size = new System.Drawing.Size(776, 344);
+            this.rptViewerClientes.Size = new System.Drawing.Size(860, 455);
             this.rptViewerClientes.TabIndex = 0;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(12, 37);
+            this.txtBuscar.Location = new System.Drawing.Point(69, 43);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(196, 20);
             this.txtBuscar.TabIndex = 5;
@@ -65,22 +75,12 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::MaxiKiosko.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(232, 20);
+            this.btnBuscar.Location = new System.Drawing.Point(287, 32);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(40, 40);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.dataSet1;
             // 
             // clienteTableAdapter
             // 
@@ -90,15 +90,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.rptViewerClientes);
             this.Name = "frmListadoCliente";
             this.Text = "Listado Clientes";
             this.Load += new System.EventHandler(this.frmListadoCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -62,10 +62,10 @@
             this.rptVentasPorDia.LocalReport.DataSources.Add(reportDataSource1);
             this.rptVentasPorDia.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.estVentaPorDia.rdlc";
             this.rptVentasPorDia.Location = new System.Drawing.Point(9, 51);
-            this.rptVentasPorDia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rptVentasPorDia.Margin = new System.Windows.Forms.Padding(2);
             this.rptVentasPorDia.Name = "rptVentasPorDia";
             this.rptVentasPorDia.ServerReport.BearerToken = null;
-            this.rptVentasPorDia.Size = new System.Drawing.Size(798, 305);
+            this.rptVentasPorDia.Size = new System.Drawing.Size(866, 500);
             this.rptVentasPorDia.TabIndex = 0;
             // 
             // cmbBuscar
@@ -81,7 +81,7 @@
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Location = new System.Drawing.Point(194, 15);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(99, 20);
             this.dtpFechaHasta.TabIndex = 15;
@@ -89,7 +89,7 @@
             // lbFechaHasta
             // 
             this.lbFechaHasta.AutoSize = true;
-            this.lbFechaHasta.Location = new System.Drawing.Point(153, 15);
+            this.lbFechaHasta.Location = new System.Drawing.Point(153, 20);
             this.lbFechaHasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaHasta.Name = "lbFechaHasta";
             this.lbFechaHasta.Size = new System.Drawing.Size(38, 13);
@@ -99,7 +99,7 @@
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Location = new System.Drawing.Point(52, 15);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(97, 20);
             this.dtpFechaDesde.TabIndex = 13;
@@ -107,7 +107,7 @@
             // lbFechaDesde
             // 
             this.lbFechaDesde.AutoSize = true;
-            this.lbFechaDesde.Location = new System.Drawing.Point(8, 15);
+            this.lbFechaDesde.Location = new System.Drawing.Point(7, 20);
             this.lbFechaDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaDesde.Name = "lbFechaDesde";
             this.lbFechaDesde.Size = new System.Drawing.Size(41, 13);
@@ -118,14 +118,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 366);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.lbFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.lbFechaDesde);
             this.Controls.Add(this.rptVentasPorDia);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEstadisticaVentaPorDia";
             this.Text = "Estadisticas Venta";
             this.Load += new System.EventHandler(this.FrmInicio_Load);

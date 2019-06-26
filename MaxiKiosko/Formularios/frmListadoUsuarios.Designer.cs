@@ -56,10 +56,10 @@
             reportDataSource1.Value = this.usuarioBindingSource;
             this.rptListadoUsuario.LocalReport.DataSources.Add(reportDataSource1);
             this.rptListadoUsuario.LocalReport.ReportEmbeddedResource = "MaxiKiosko.Reportes.rptUsuario.rdlc";
-            this.rptListadoUsuario.Location = new System.Drawing.Point(12, 101);
+            this.rptListadoUsuario.Location = new System.Drawing.Point(3, 101);
             this.rptListadoUsuario.Name = "rptListadoUsuario";
             this.rptListadoUsuario.ServerReport.BearerToken = null;
-            this.rptListadoUsuario.Size = new System.Drawing.Size(776, 337);
+            this.rptListadoUsuario.Size = new System.Drawing.Size(877, 454);
             this.rptListadoUsuario.TabIndex = 0;
             // 
             // txtBuscar
@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.rptListadoUsuario);
