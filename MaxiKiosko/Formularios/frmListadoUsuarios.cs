@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace MaxiKiosko.Formularios
 {
@@ -26,6 +27,10 @@ namespace MaxiKiosko.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
+            rptListadoUsuario.LocalReport.SetParameters(parms);
+
             Usuario usr = new Usuario();
             DataTable dt = usr.buscarUsuario(txtBuscar.Text);
             usuarioBindingSource.DataSource = dt;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaxiKiosko.Formularios;
+using MaxiKiosko.Clases;
 
 namespace MaxiKiosko
 {
@@ -25,6 +26,7 @@ namespace MaxiKiosko
         {
             // Sesion frm_sesion = new Sesion();
             // frm_sesion.ShowDialog();
+            lblUsuario.Text = "Usuario: " + Global.username;
 
         }
 

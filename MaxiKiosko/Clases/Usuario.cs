@@ -126,5 +126,13 @@ namespace MaxiKiosko.Clases
             //MessageBox.Show(sqlBuscar);
             return _BD.consulta(sqlBuscar);
         }
+        public DataTable mostrarUsuarioLogueado(string user)
+        {
+            string sqlConsulta = "";
+            sqlConsulta = @"SELECT u.id_usuario, u.nombre_usuario, r.id_rol, r.nombre 
+                            FROM usuario u INNER JOIN rol r ON u.rol=r.id_rol 
+                            WHERE u.nombre_usuario = '" + user + "'";
+             return _BD.consulta(sqlConsulta);
+        }
     }
 }

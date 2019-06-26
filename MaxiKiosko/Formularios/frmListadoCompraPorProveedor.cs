@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using MaxiKiosko.Clases;
 
 
 namespace MaxiKiosko.Formularios
@@ -41,6 +42,7 @@ namespace MaxiKiosko.Formularios
             parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
             parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
             parms.Add(new ReportParameter("rptParameterProveedor", cmbProveedor.Text));
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
             rptCompras.LocalReport.SetParameters(parms);
 
             if (Convert.ToDateTime(dtpFechaHasta.Text) < Convert.ToDateTime(dtpFechaDesde.Text))

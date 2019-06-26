@@ -65,12 +65,22 @@ namespace MaxiKiosko.Formularios
             {
                 //this._id = int.Parse(tabla.Rows[0][0].ToString());
                 //this.Close();
+                Usuario usuario = new Usuario();
+                DataTable tablau = new DataTable();
+                tablau = usuario.mostrarUsuarioLogueado(this.txt_usuario.Text.Trim());
+                if (tabla.Rows.Count == 1)
+                {
+                    Global.userID= int.Parse(tablau.Rows[0][0].ToString());
+                    Global.username = tablau.Rows[0][1].ToString();
+                    Global.rolID = int.Parse(tablau.Rows[0][2].ToString());
+                    Global.rol_name= tablau.Rows[0][3].ToString();
+                }
                 frmMaxiKiosko MK = new frmMaxiKiosko();
                 MK._id_usuario = int.Parse(tabla.Rows[0][0].ToString());
                 MK._nombre_usuario = tabla.Rows[0][1].ToString();
                 MK._rol = tabla.Rows[0][5].ToString();
 
-                //MessageBox.Show(MK._rol);
+                //MessageBox.Show(Global.username);
 
                 this.Hide();
                 MK.ShowDialog();

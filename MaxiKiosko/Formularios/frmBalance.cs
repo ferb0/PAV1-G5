@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using MaxiKiosko.Clases;
 
 
 namespace MaxiKiosko.Formularios
@@ -34,6 +35,7 @@ namespace MaxiKiosko.Formularios
             ReportParameterCollection parms = new ReportParameterCollection();
             parms.Add(new ReportParameter("rptParameterDesde", dtpFechaDesde.Text.ToString()));
             parms.Add(new ReportParameter("rptParameterHasta", dtpFechaHasta.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
             rptVentasPorDia.LocalReport.SetParameters(parms);
 
 

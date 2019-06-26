@@ -274,7 +274,7 @@ namespace MaxiKiosko.Formularios
             compra.detalle = detalles;
             compra.fecha_hora = DateTime.Now;
             compra.cuit = long.Parse(txtCUIT.Text.ToString());
-            compra.id_usuario = _idUsuario;
+            compra.id_usuario = Global.userID;
             compra.nro_comprobante = long.Parse(txtComprobante.Text.ToString());
             compra.total = numero_total;
             try
@@ -303,6 +303,11 @@ namespace MaxiKiosko.Formularios
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmCompras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

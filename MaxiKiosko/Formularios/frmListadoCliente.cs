@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+using MaxiKiosko.Clases;
 
 namespace MaxiKiosko.Formularios
 {
@@ -24,6 +26,11 @@ namespace MaxiKiosko.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
+            rptViewerClientes.LocalReport.SetParameters(parms);
+
+
             Cliente cl = new Cliente();
             DataTable dt = cl.consultarCliente(txtBuscar.Text);
             clienteBindingSource.DataSource = dt;

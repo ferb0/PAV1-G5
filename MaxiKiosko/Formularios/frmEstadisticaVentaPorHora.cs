@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using MaxiKiosko.Clases;
 
 
 
@@ -31,6 +32,9 @@ namespace MaxiKiosko.Formularios
         private void CmbBuscar_Click(object sender, EventArgs e)
         {
             ReportParameter pfecha = new ReportParameter("rptParameterFecha",dtpFechaDesde.Text.ToString());
+            ReportParameterCollection parms = new ReportParameterCollection();
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
+            rptTipoProductosVendidos.LocalReport.SetParameters(parms);
             rptTipoProductosVendidos.LocalReport.SetParameters(pfecha);
             string desde = Convert.ToDateTime(dtpFechaDesde.Text).ToString("yyyy-MM-dd");
 

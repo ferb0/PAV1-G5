@@ -33,6 +33,7 @@ namespace MaxiKiosko.Formularios
             ReportParameterCollection parms = new ReportParameterCollection();
             parms.Add(new ReportParameter("rptParameterDesde", dateTimePickerDesde.Text.ToString()));
             parms.Add(new ReportParameter("rptParameterHasta", dateTimePickerHasta.Text.ToString()));
+            parms.Add(new ReportParameter("rptParameterUsuario", Global.username));
             reportViewer1.LocalReport.SetParameters(parms);
 
             if (dateTimePickerDesde.Value.Date > DateTime.Now.Date)

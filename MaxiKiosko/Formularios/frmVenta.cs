@@ -231,7 +231,7 @@ namespace MaxiKiosko.Formularios
             venta.detalle = detalles;
             venta.fecha = DateTime.Now;
 	        venta.formaPago = (int)this.cmbFormaPago.SelectedValue;
-            venta.idUsuario = _idUsuario;
+            venta.idUsuario = Global.userID;
             if(txtClienteDni.Text != "")
             {
                 venta.idCliente = int.Parse(txtClienteDni.Text);

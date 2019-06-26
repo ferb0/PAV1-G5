@@ -33,7 +33,9 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtComprobante = new System.Windows.Forms.TextBox();
             this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmdBuscarProveedor = new System.Windows.Forms.Button();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.groupBoxProducto = new System.Windows.Forms.GroupBox();
@@ -52,8 +54,6 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtComprobante = new System.Windows.Forms.TextBox();
             this.groupBoxProveedores.SuspendLayout();
             this.groupBoxProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_compra)).BeginInit();
@@ -113,12 +113,29 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "label1";
             // 
+            // txtComprobante
+            // 
+            this.txtComprobante.Location = new System.Drawing.Point(279, 96);
+            this.txtComprobante.Name = "txtComprobante";
+            this.txtComprobante.Size = new System.Drawing.Size(100, 20);
+            this.txtComprobante.TabIndex = 2;
+            this.txtComprobante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComprobante_KeyPress);
+            // 
             // txtCUIT
             // 
             this.txtCUIT.Location = new System.Drawing.Point(82, 57);
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(100, 20);
             this.txtCUIT.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(168, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Nro de Comprobante";
             // 
             // cmdBuscarProveedor
             // 
@@ -298,23 +315,6 @@
             this.cmdCancelar.UseVisualStyleBackColor = true;
             this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(168, 99);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Nro de Comprobante";
-            // 
-            // txtComprobante
-            // 
-            this.txtComprobante.Location = new System.Drawing.Point(279, 96);
-            this.txtComprobante.Name = "txtComprobante";
-            this.txtComprobante.Size = new System.Drawing.Size(100, 20);
-            this.txtComprobante.TabIndex = 2;
-            this.txtComprobante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComprobante_KeyPress);
-            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +330,7 @@
             this.Controls.Add(this.lblFecha);
             this.Name = "frmCompras";
             this.Text = "frmCompras";
+            this.Load += new System.EventHandler(this.frmCompras_Load);
             this.groupBoxProveedores.ResumeLayout(false);
             this.groupBoxProveedores.PerformLayout();
             this.groupBoxProducto.ResumeLayout(false);
